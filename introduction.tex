@@ -1,12 +1,37 @@
 \section{Introduction}
 In model-driven software engineering, the intensive use of generative programming techniques has become a common practice for software development since it reduces the development and maintenance effort by developing at a higher-level of abstraction through the use of domain-specific languages~\cite{brambilla2012model} (DSLs). 
 DSLs, as opposed to general-purpose languages, are software languages that focus on specific problem domains. Thus, the realization of model-driven software development for a specific domain requires the creation of effective code generators and compilers for these DSLs.
-The use of code generators is needed to transform manually designed models to software artifacts, which can be deployed on different target platforms. This can clearly reduce the effort of software implementation. A code generator is able to translate source code programs represented in a graphical modeling language (model) into general purpose programming languages such as C, Java, C++, etc. In turn, generated code is transformed into machine code (binaries) using a set of specific compilers.
+The use of code generators is needed to transform manually designed models to software artifacts, which can be deployed on different target platforms. 
+Code-generation environments automate and systematize the process of building
+families of software systems which can clearly reduce the effort of software implementation. In fact, a code generator is able to translate source code programs represented in a graphical/textual modeling language (model) into general purpose programming languages such as C, Java, C++, etc. In turn, generated code is transformed into machine code (binaries) using a set of specific compilers.
 These compilers serve as a basis to target different ranges of platforms. 
 %Many technologies, such as Docker containers, provide new opportunities to automate the deployment of produced code into a distributed and heterogeneous component-based infrastructure
+However, code generators can be difficult to understand since they involve a set of complex and heterogeneous technologies which make the task of performing design, implementation, and maintenance very hard and time-consuming[ref]. Generally, in order to check the correctness of code generation process, developers often use to define (at design time) a set of test cases that verify the functional outcome of generated code. Afterwards, test cases are executed within each specific target platform which can lead to either a correct behavior or a failure (e.g., crashes, bugs). 
+For non-functional testing of code generators, developers need to deploy and execute software artifacts within different execution platforms. Then, they have to collect and visualize information about the performance and efficiency of generated code. Finally, they report issues related to the code generation process such as incorrect typing, memory management leaks. etc. To do so, developers general use several platform-specific profilers and monitoring tools in order to find some inconsistencies or bugs during code execution. Ensuring the code quality of generated code can refer to several non-functional properties such as code size, resource or energy consumption, execution time, among others [ref]. Therefore, testing the non-functional properties remains challenging and time-consuming task because developers have to analyze and verify code for each target platform using platform dependent tools.
 
-In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, code size, among others~\cite{almagor2004finding,pan2006fast}.
-For example, embedded systems for which code is generated often have limited resources. 
+
+
+
+%In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, code size, among others~\cite{almagor2004finding,pan2006fast}.
+%For example, embedded systems for which code is generated often have limited resources. 
+%\begin{figure}[h]
+%	\includegraphics[width=1.\linewidth]{Ressources/app.png}
+%	\caption{Overview of the Docker-based testing architecture}
+%\end{figure}
+
+
+
+
+%Model-based code generators integrate rule-based model-to-model transformation languages such as ATL and template-based model-to-text transformation languages such as Acceleo to translate high-level system specifications into executable code and scripts. A
+
+
+
+
+
+
+
+
+\cleardoublepage
 Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resources\cite{nagiub2013automatic}. 
 As general-purpose optimizations, compiler creators\footnote{We consider compilers as a kind of code generators in this paper. Indeed, from the testing point of view, we do not make any differences between testing code generators and testing compilers} usually define fixed and program-independent sequence optimizations.
 For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options. 
