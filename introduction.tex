@@ -6,7 +6,9 @@ Code-generation environments automate and systematize the process of building
 families of software systems which can clearly reduce the effort of software implementation. In fact, a code generator is able to translate source code programs represented in a graphical/textual modeling language (model) into general purpose programming languages such as C, Java, C++, etc. In turn, generated code is transformed into machine code (binaries) using a set of specific compilers.
 These compilers serve as a basis to target different ranges of platforms. 
 %Many technologies, such as Docker containers, provide new opportunities to automate the deployment of produced code into a distributed and heterogeneous component-based infrastructure
-However, code generators can be difficult to understand since they involve a set of complex and heterogeneous technologies which make the task of performing design, implementation, and maintenance very hard and time-consuming[ref]. Generally, in order to check the correctness of code generation process, developers often use to define (at design time) a set of test cases that verify the functional outcome of generated code. Afterwards, test cases are executed within each specific target platform which can lead to either a correct behavior or a failure (e.g., crashes, bugs). 
+However, code generators can be difficult to understand since they involve a set of complex and heterogeneous technologies which make the task of performing design, implementation, and test very hard and time-consuming[ref]. Code generators have to respect different requirements which ensure software reliability and quality. In fact, a defective code generator can generate defective software artifacts. On one hand, the consequences range from uncompilable code or semantically dysfunctional code that causes serious damage to the target platform and should be corrected by hand each time the code generator runs. On the other hand, non-functional properties of generated artefacts play also an important role to 
+
+Generally, in order to check the correctness of code generation process, developers often use to define (at design time) a set of test cases that verify the functional outcome of generated code. Afterwards, test cases are executed within each specific target platform which can lead to either a correct behavior or a failure (e.g., crashes, bugs). 
 For non-functional testing of code generators, developers need to deploy and execute software artifacts within different execution platforms. Then, they have to collect and visualize information about the performance and efficiency of generated code. Finally, they report issues related to the code generation process such as incorrect typing, memory management leaks. etc. To do so, developers general use several platform-specific profilers and monitoring tools in order to find some inconsistencies or bugs during code execution. Ensuring the code quality of generated code can refer to several non-functional properties such as code size, resource or energy consumption, execution time, among others [ref]. Therefore, testing the non-functional properties remains challenging and time-consuming task because developers have to analyze and verify code for each target platform using platform dependent tools.
 
 
@@ -32,22 +34,22 @@ For non-functional testing of code generators, developers need to deploy and exe
 
 
 \cleardoublepage
-Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resources\cite{nagiub2013automatic}. 
-As general-purpose optimizations, compiler creators\footnote{We consider compilers as a kind of code generators in this paper. Indeed, from the testing point of view, we do not make any differences between testing code generators and testing compilers} usually define fixed and program-independent sequence optimizations.
-For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options. 
-However, industrial code generators may have a huge number of potential optimization combinations, making it hard and time-consuming for software developers to find the sequence of optimizations that satisfies user key objectives. 
+%Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resources\cite{nagiub2013automatic}. 
+%As general-purpose optimizations, compiler creators\footnote{We consider compilers as a kind of code generators in this paper. Indeed, from the testing point of view, we do not make any differences between testing code generators and testing compilers} usually define fixed and program-independent sequence optimizations.
+%For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options. 
+%However, industrial code generators may have a huge number of potential optimization combinations, making it hard and time-consuming for software developers to find the sequence of optimizations that satisfies user key objectives. 
 
-In this paper we explore the relationship between runtime execution of optimized code and non-functional properties.
-We propose a component-based tooled approach to check code generators non-functional properties through the monitoring of generated code in a controlled sandboxing environment. 
-Our approach is based on microservices to automate the deployment and monitoring of different variants of optimized code into a distributed and heterogeneous component-based infrastructure. 
-We assess the effectiveness of our approach by evaluating the optimizations performed by the GCC compiler, a widely used compiler in software engineering community. 
-We also present a number of case studies, in which the tool was successfully used.
+%In this paper we explore the relationship between runtime execution of optimized code and non-functional properties.
+%We propose a component-based tooled approach to check code generators non-functional properties through the monitoring of generated code in a controlled sandboxing environment. 
+%Our approach is based on microservices to automate the deployment and monitoring of different variants of optimized code into a distributed and heterogeneous component-based infrastructure. 
+%We assess the effectiveness of our approach by evaluating the optimizations performed by the GCC compiler, a widely used compiler in software engineering community. 
+%We also present a number of case studies, in which the tool was successfully used.
 %This to ensure the efficiency of generated code, deployed components must be checked and verified regarding their non-functional behavior
 %\footnote{\url{https://www.docker.com}} 
 
-The primary contribution of this paper can be summarized as follows: 
-(1) We propose a microservice infrastructure to ensure the deployment and monitoring of generated code regarding resource consumption; 
-(2) We evaluate the effectiveness of our approach by testing the GCC compiler optimizations across two case studies.
+%The primary contribution of this paper can be summarized as follows: 
+%(1) We propose a microservice infrastructure to ensure the deployment and monitoring of generated code regarding resource consumption; 
+%(2) We evaluate the effectiveness of our approach by testing the GCC compiler optimizations across two case studies.
  
 
 The paper is organized as follows.
