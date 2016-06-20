@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  20 JUN 2016 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  20 JUN 2016 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,6 +427,16 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 LaTeX Warning: Citation `brambilla2012model' on page 1 undefined on input line 
 2.
 
+<Ressources/background.pdf, id=1, 787.94376pt x 250.9375pt>
+File: Ressources/background.pdf Graphic file (type pdf)
+
+<use Ressources/background.pdf>
+Package pdftex.def Info: Ressources/background.pdf used on input line 19.
+(pdftex.def)             Requested size: 438.60315pt x 139.68166pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -440,7 +450,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
- [2]
+ [2 <./Ressources/background.pdf>]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -454,11 +464,14 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 64--65
  []
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 2368) in paragraph at lines 93--94
 []\OT1/ptm/m/n/10 For in-stance, we set the back-end con-tainer of our
  []
 
-<Ressources/infra.png, id=16, 483.8075pt x 370.38374pt>
+[3] <Ressources/infra.png, id=92, 483.8075pt x 370.38374pt>
 File: Ressources/infra.png Graphic file (type png)
 
 <use Ressources/infra.png>
@@ -468,7 +481,7 @@ Package pdftex.def Info: Ressources/infra.png used on input line 105.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./evaluation.tex [3]) (./related.tex) (./conclusion.tex)
+) (./evaluation.tex) (./related.tex) (./conclusion.tex)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -480,9 +493,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
-
- <./Ressources/infra.png>] (./main.aux)
+[4 <./Ressources/infra.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -492,10 +503,10 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5910 strings out of 493027
- 89044 string characters out of 6134069
- 202500 words of memory out of 5000000
- 9347 multiletter control sequences out of 15000+600000
+ 5915 strings out of 493027
+ 89177 string characters out of 6134069
+ 204922 words of memory out of 5000000
+ 9351 multiletter control sequences out of 15000+600000
  40839 words of font info for 76 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  38i,11n,42p,1832b,5069s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -508,10 +519,10 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
 015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 218359 bytes).
+Output written on main.pdf (4 pages, 376106 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

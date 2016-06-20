@@ -1,4 +1,49 @@
 \section{Motivation}
+
+In the past, researchers have shown that the main focus on code generators testing is to check the functionality of generated code. 
+A reliable and accepted way to increase confidence in the correct functioning of code generators is to validate the code generation process by means of test suites, which is common practice for compiler validation and testing.
+Therefore, developers try to check the syntactic and semantic correctness of generated code and ensure that the code is behaving correctly. In model-based testing, testing code generators focuses on testing generated code against its design. Thus, the model and the generated code are executed in parallel, by means of simulations, with the same set of test suites and test data. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage. 
+
+
+However, using 
+
+
+
+
+\iffalse 
+testing techniques check whether the code
+generators and the contained services work as desired (or stipulated). As the
+services are implemented as code, they can be tested the usual way, e.g., by
+means of unit tests.  
+While testing code generators is based on syntaxic and semeantic of generated software artifacts, checking the non-functional proper
+
+
+
+
+
+ 
+Testing, thus, does not verify the code against its design. In the
+case of automatic code generation, however, the model is tested
+against its requirements and the code can be verified against the
+executable model by means of dynamic testing. For this purpose,
+that both the model and the code are executable can be exploited.
+Both executables are stimulated with the same inputs (cf. Figure
+2). Afterwards, the two outputs will be compared with respect
+to certain acceptance criteria. This comparison yields some technical
+problems that must be considered. Due to quantization errors,
+the outputs of the model, for instance, and the output of the
+generated code are usually not identical. As a consequence, sophisticated
+signal comparison methods have to be applied.
+
+
+
+One of the great advantages of model-based development is
+the opportunity to simulate the model and the generated code at
+different stages of the development process. Here, different ways
+of simulation (cf. Figure 2) support the safeguarding of the model
+and the generated code:
+\fi
+
 //talk about platform specific profilers
 
 //heterogeneous execution platforms

@@ -15,7 +15,11 @@ For non-functional testing of code generators, developers need to deploy and exe
 This paper describes a runtime monitoring infrastructure based on system containers, as execution platform, to evaluate the consistency and coherence of generated code regarding the non-functional properties. This approach provides a fine-grained understanding of resource consumption and analysis of components behavior. 
 We evaluate our approach by analyzing the non-functional properties of HAXE, a popular high-level language that involves a set of cross-platform code generators able to compile to different targets. Our initial experimental results show that our approach is able to detect non-functional bugs within HAXE code generators.
 
-
+\begin{figure*}[h]
+	\includegraphics[width=0.85\linewidth]{Ressources/background.pdf}
+	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
+	%		\label{AAA}
+\end{figure*}
 
 %In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, code size, among others~\cite{almagor2004finding,pan2006fast}.
 %For example, embedded systems for which code is generated often have limited resources. 
