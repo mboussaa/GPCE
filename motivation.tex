@@ -1,9 +1,24 @@
 \section{Motivation}
 
-In the past, researchers have shown that the main focus on code generators testing is to check the functionality of generated code. 
-A reliable and accepted way to increase confidence in the correct functioning of code generators is to validate the code generation process by means of test suites, which is common practice for compiler validation and testing.
-Therefore, developers try to check the syntactic and semantic correctness of generated code and ensure that the code is behaving correctly. In model-based testing, testing code generators focuses on testing generated code against its design. Thus, the model and the generated code are executed in parallel, by means of simulations, with the same set of test suites and test data. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage. 
+A reliable and accepted way to increase confidence in the correct functioning of code generators is to validate and check the functionality of generated code, which is common practice for compiler validation and testing.
+Therefore, developers try to check the syntactic and semantic correctness of generated code by means of different techniques such as static analysis, test suites, etc., and ensure that the code is behaving correctly. 
+In model-based testing, testing code generators focuses on testing generated code against its design. Thus, the model and the generated code are executed in parallel with the same set of test suites, by means of simulations. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage. [ref back to back testing/systematic]
 
+
+Another important aspect for code generator's testing is to test the non-functional properties of produced code. Proving that the generated code is functionally correct is not enough to claim the effectiveness of the code generator under test. 
+In fact, code generators have to respect different requirements which preserve software reliability and quality. A non-efficient code generator might generate defective software artifacts that violates common software engineering practices Thus, poor-quality code can affect system reliability and performance (e.g., high resource usage, execution speed, etc.).
+
+
+Figure 1 shows an overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.
+First, software developers have to create, at design time, new models that define the behavior of end-user software artifacts using a high-level design language, generally DSLs. Afterwards, developers can use platform-specific code generators to ease the software development and generate automatically code for target language and platform. In this step, the code generator takes as an input the previously designed model and produce, as a consequence, software artifacts for the desired platform. Transformations from model to code within each code generator might integrate different rules. As an example, we distinguish model-to-model transformations languages such as ATL[ref] and template-based model-to-text transformation languages such as Acceleo [ref] to translate high-level system specifications into executable code and scripts [ref WS]. Next, generated software artifacts (e.g., JAVA, C\#, C++, etc.) need to be compiled, deployed and executed across different target platforms (e.g., Android, Web browser, JVM, Linux, etc.). 
+ Then, they have to collect and visualize information about the performance and efficiency of generated code. Finally, they report issues related to the code generation process such as incorrect typing, memory management leaks. etc. To do so, developers generally use several platform-specific profilers, trackers, and monitoring tools in order to find some inconsistencies or bugs during code execution. Ensuring the code quality of generated code can refer to several non-functional properties such as code size,
+resource or energy consumption, execution time, among others
+[ref]. Therefore, we believe that testing the non-functional
+properties of code generators remains challenging and time-consuming
+task because developers have to analyze and verify
+code for each target platform using platform-dependent tools.
+
+In some cases
 
 However, using 
 
@@ -55,7 +70,7 @@ and the generated code:
 //add figure of SOTA 
 
 
-
+\cleardoublepage
 \iffalse 
 \subsection{Compilers Optimizations}
 In the past, researchers have shown that the choice of optimization sequences may impact software performance~\cite{almagor2004finding,chen2012deconstructing}. 
