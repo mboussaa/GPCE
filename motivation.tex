@@ -2,72 +2,41 @@
 
 A reliable and accepted way to increase confidence in the correct functioning of code generators is to validate and check the functionality of generated code, which is common practice for compiler validation and testing.
 Therefore, developers try to check the syntactic and semantic correctness of generated code by means of different techniques such as static analysis, test suites, etc., and ensure that the code is behaving correctly. 
-In model-based testing, testing code generators focuses on testing generated code against its design. Thus, the model and the generated code are executed in parallel with the same set of test suites, by means of simulations. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage. [ref back to back testing/systematic]
+In model-based testing, testing code generators focuses on testing the generated code against its design. Thus, the model and the generated code are executed in parallel, by means of simulations, with the same set of test suites. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage. [ref back to back testing/systematic]
 
 
-Another important aspect for code generator's testing is to test the non-functional properties of produced code. Proving that the generated code is functionally correct is not enough to claim the effectiveness of the code generator under test. 
-In fact, code generators have to respect different requirements which preserve software reliability and quality. A non-efficient code generator might generate defective software artifacts that violates common software engineering practices Thus, poor-quality code can affect system reliability and performance (e.g., high resource usage, execution speed, etc.).
+Another important aspect of code generator's testing is to test the non-functional properties of produced code. Proving that the generated code is functionally correct is not enough to claim the effectiveness of the code generator under test. 
+In fact, code generators have to respect different requirements which preserve software reliability and quality. A non-efficient code generator might generate defective software artifacts (code smells) that violates common software engineering practices. Thus, poor-quality code can affect system reliability and performance (e.g., high resource usage, low execution speed, etc.).
 
 
-Figure 1 shows an overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.
-First, software developers have to create, at design time, new models that define the behavior of end-user software artifacts using a high-level design language, generally DSLs. Afterwards, developers can use platform-specific code generators to ease the software development and generate automatically code for target language and platform. In this step, the code generator takes as an input the previously designed model and produce, as a consequence, software artifacts for the desired platform. Transformations from model to code within each code generator might integrate different rules. As an example, we distinguish model-to-model transformations languages such as ATL[ref] and template-based model-to-text transformation languages such as Acceleo [ref] to translate high-level system specifications into executable code and scripts [ref WS]. Next, generated software artifacts (e.g., JAVA, C\#, C++, etc.) need to be compiled, deployed and executed across different target platforms (e.g., Android, Web browser, JVM, Linux, etc.). 
- Then, they have to collect and visualize information about the performance and efficiency of generated code. Finally, they report issues related to the code generation process such as incorrect typing, memory management leaks. etc. To do so, developers generally use several platform-specific profilers, trackers, and monitoring tools in order to find some inconsistencies or bugs during code execution. Ensuring the code quality of generated code can refer to several non-functional properties such as code size,
-resource or energy consumption, execution time, among others
-[ref]. Therefore, we believe that testing the non-functional
-properties of code generators remains challenging and time-consuming
-task because developers have to analyze and verify
-code for each target platform using platform-dependent tools.
+Figure 1 shows an overall overview of the different processes that are involved together to ensure the code generation and non-functional testing of produced code from design time to run time. We distinguish 4 major steps: the software design using high-level system specifications, code generation by means of code generators, code execution, and non-functional testing of generated code. 
 
-In some cases
+So first, software developers have to create, at design time, new models that describe software's behavior using a high-level design language, generally DSLs. Afterwards, developers can use platform-specific code generators to ease the software development and generate automatically code that targets different languages and platforms. We depict, in Figure 1, three code generators capable to generate code in three software programming languages (JAVA, C\# and C++). In this step, the code generator takes as an input the previously designed model and produce, as a consequence, software artifacts for the desired target platform. Transformations from model to code within each code generator might be different and may integrate different transformation rules. As an example, we distinguish model-to-model transformations languages such as ATL[ref] and template-based model-to-text transformation languages such as Acceleo [ref] to translate high-level system specifications into executable code and scripts [ref WS]. The main task of code generators is to transform models to general-purpose and platform-dependent languages. In the next step, generated software artifacts (e.g., JAVA, C\#, C++, etc.) with their generated test suites are compiled, deployed and executed across different target platforms (e.g., Android, ARM/Linux, JVM, x86/Linux, etc.). Thus, several code compilers are needed to transform source code to machine code (binaries) in order to get executed. 
+Finally, to perform the non-functional testing of generated code, developers have to collect and visualize information about the performance and efficiency of running code across the different platforms. 
+Therefore, they generally use several platform-specific profilers, trackers, instrumenting and monitoring tools in order to find some inconsistencies or bugs during code execution. Ensuring the code quality of generated code can refer to several non-functional properties such as code size, resource or energy consumption, execution time, among others. Finding inconsistencies within code generators involves analyzing and inspecting the code and that, for each execution platform. For example, one of the solutions is to analyze the memory footprint of software execution and find memory leaks. Developers then, can inspect the source code and find some parts of the code-base that have triggered this issue. Such non-functional error could occur when the code generator produces code that presents for example: incorrect typing, faulty memory management, code-smells, etc. Therefore, software testers generally use to report statistics about the performance of generated code in order to fix, refactor, and optimize the code generation process.
 
-However, using 
+In short, then, we believe that testing the non-functional properties of code generators remains challenging and time-consuming task because developers have to analyze and verify code for each target platform using platform-dependent tools which makes the task of maintaining code generators very tedious. The heterogeneity of platforms and the diversity of target software languages increase the need of supporting tools that can evaluate the consistency and coherence of generated code regarding the non-functional properties. This paper describes a new approach, based on micro-services as execution platforms, to automate and ease the non-functional testing of code generators. This runtime monitoring infrastructure provides a fine-grained understanding of resource consumption and analysis of generated code's behavior.
+
+
+
+ 
 
 
 
 
 \iffalse 
-testing techniques check whether the code
-generators and the contained services work as desired (or stipulated). As the
-services are implemented as code, they can be tested the usual way, e.g., by
-means of unit tests.  
-While testing code generators is based on syntaxic and semeantic of generated software artifacts, checking the non-functional proper
-
-
-
-
-
- 
-Testing, thus, does not verify the code against its design. In the
-case of automatic code generation, however, the model is tested
-against its requirements and the code can be verified against the
-executable model by means of dynamic testing. For this purpose,
-that both the model and the code are executable can be exploited.
-Both executables are stimulated with the same inputs (cf. Figure
-2). Afterwards, the two outputs will be compared with respect
-to certain acceptance criteria. This comparison yields some technical
-problems that must be considered. Due to quantization errors,
-the outputs of the model, for instance, and the output of the
-generated code are usually not identical. As a consequence, sophisticated
-signal comparison methods have to be applied.
-
-
-
-One of the great advantages of model-based development is
-the opportunity to simulate the model and the generated code at
-different stages of the development process. Here, different ways
-of simulation (cf. Figure 2) support the safeguarding of the model
-and the generated code:
+//footprint
+//It is also possible to automatically generate test suites for software artfacts 
+//model coverage
+//System resources and architecture of each execution platform might vary 
+//talk about platform specific profilers
+//heterogeneous execution platforms
+//the need of system level abstraction/virtualization to handle heterogeneity
+//ease the monitoring process 
+//add figure of SOTA 
 \fi
 
-//talk about platform specific profilers
 
-//heterogeneous execution platforms
-
-//the need of system level abstraction/virtualization to handle heterogeneity
-
-//ease the monitoring process 
-
-//add figure of SOTA 
 
 
 \cleardoublepage

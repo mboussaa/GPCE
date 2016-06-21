@@ -7,10 +7,10 @@
 The intensive use of domain specific languages (DSL) and generative programming techniques provides an elegant engineering solution to deal with the heterogeneity of platforms or technological stacks. The use of DSLs also leads to the creation of numerous code generators and compilers that will automatically translate high-level system
 specifications into multi-target executable code and scripts. 
 %These practices reduce clearly the development and maintenance effort by developing at a higher-level of abstraction. 
-However, the use of code generators may induce different bugs and inconsistencies within generated software artifacts. Although software designers generally provide high-level test suites to verify the functional outcome of generated code, it remains challenging and tedious to verify the behavior of produced code in terms of non-functional properties.
+However, the use of code generators may induce different bugs and inconsistencies within generated software artifacts. Although software designers provide generally high-level test suites to verify the functional outcome of generated code, it remains challenging and tedious to verify the behavior of produced code in terms of non-functional properties.
 %However, industrial code generators may have a huge number of bugs and 
 
-This paper describes a runtime monitoring infrastructure based on system containers, as execution platform, to evaluate the consistency and coherence of generated code regarding the non-functional properties. This approach provides a fine-grained understanding of resource consumption and analysis of components behavior. 
+This paper describes a runtime monitoring infrastructure based on system containers, as execution platforms, to evaluate the consistency and coherence of generated code regarding the non-functional properties. This approach provides a fine-grained understanding of resource consumption and analysis of components behavior. 
 We evaluate our approach by analyzing the non-functional properties of HAXE, a popular high-level language that involves a set of cross-platform code generators able to compile to different targets. Our initial experimental results show that our approach is able to detect some non-functional inconsistencies within HAXE code generators.
 %We evaluate the effectiveness of our approach by verifying the optimizations performed by the GCC compiler, a widely used compiler in software engineering community. We also present a number of case studies, in which the tool was successfully used.
 

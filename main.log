@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  21 JUN 2016 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  22 JUN 2016 01:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,20 +437,25 @@ Package pdftex.def Info: Ressources/background.pdf used on input line 19.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 25.
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ])
-(./motivation.tex [2 <./Ressources/background.pdf>]) (./infra.tex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
+(./motivation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./Ressources/background.pdf>] [3
+
+]) (./infra.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
- [3
+ [4
 
 ]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -470,7 +475,7 @@ Underfull \hbox (badness 2368) in paragraph at lines 93--94
 []\OT1/ptm/m/n/10 For in-stance, we set the back-end con-tainer of our
  []
 
-<Ressources/infra.png, id=103, 483.8075pt x 370.38374pt>
+<Ressources/infra.png, id=107, 483.8075pt x 370.38374pt>
 File: Ressources/infra.png Graphic file (type png)
 
 <use Ressources/infra.png>
@@ -483,7 +488,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ) (./evaluation.tex) (./related.tex) (./conclusion.tex)
 Underfull \vbox (badness 2376) has occurred while \output is active []
 
- [4]
+ [5]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -495,7 +500,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
+[6
 
  <./Ressources/infra.png>] (./main.aux)
 
@@ -518,15 +523,16 @@ Here is how much of TeX's memory you used:
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 397918 bytes).
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (6 pages, 407021 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
