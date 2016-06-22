@@ -45,6 +45,12 @@ To ease the monitoring process, we use google containers called cAdvisor as Cont
 cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our Docker host. It will then have access to the resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described above to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption of each container. cAdvisor has been widely in different projects such as Heapster\footnote{https://github.com/kubernetes/heapster} and Google Cloud Platform\footnote{https://cloud.google.com/}.
 
 However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, To make gathered data truly valuable for resources usage monitoring, it becomes necessary to log it in a database at runtime. Thus, we link our monitoring component to a back-end database for better understanding of non-functional properties. 
+
+\begin{figure*}[h]
+	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
+	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
+	%		\label{AAA}
+\end{figure*}
 \subsubsection{Back-end Database Component}
 This component represents a times-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g, 8083) exposed by the database component.
 
@@ -91,11 +97,7 @@ To give an idea about data stored in InfluxDB. The following table describes the
  \end{table}
 
 For instance, we set the back-end container of our component-based infrastructure. It would be nice to pull all pieces together to view resource consumption graphs within a complete dashboard. It is relevant to show performance profiles of memory and CPU consumption for example of our running applications overtime. To do that, we present a front-end visualization component for performance profiling. 
-\begin{figure*}[h]
-	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
-	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
-	%		\label{AAA}
-\end{figure*}
+
 \subsubsection{Front-end Visualization Component}
 Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. Therefore, we provide a dashboard to run queries and view different profiles of resource consumption of running components through web UI. Thereby, we can compare visually the profiles of resource consumption among containers. Moreover, we use this component to export the data currently being viewed into static CSV document. Thereby, we can perform statistical analysis on this data to detect inconsistencies or performance anomalies. An overview of the monitoring dashboard is shown in Figure 3.
 
