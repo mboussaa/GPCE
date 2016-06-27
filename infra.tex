@@ -110,6 +110,11 @@ Apart from that, our framework provides also information about the size of gener
 For instance, resource usage statistics are collected and stored using these two components. It is relevant to show resource usage profiles of running programs overtime. To do so, we present a front-end visualization component for performance profiling. 
 
 \subsubsection{Front-end Visualization Component}
+\begin{figure*}[h]
+	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
+	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
+	%		\label{AAA}
+\end{figure*}
 %Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. 
 Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. Therefore, we provide a dashboard to run queries and view different profiles of resource consumption of running components through web UI. Thereby, we can compare visually the profiles of resource consumption among containers. Moreover, we use this component to export the data currently being viewed into static CSV document. So, we can perform statistical analysis on this data to detect inconsistencies or performance anomalies.
 %Moreover, we use this component to export the data currently being viewed into static CSV document. 
@@ -128,8 +133,4 @@ First, instead of configuring all code generators under test (GUTs) within the s
 \end{remark}
 
 
-\begin{figure*}[h]
-	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
-	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
-	%		\label{AAA}
-\end{figure*}
+
