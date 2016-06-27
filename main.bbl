@@ -1,9 +1,16 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{16}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bragan{\c{c}}a and Machado(2008)]{bragancca2008transformation}
+A.~Bragan{\c{c}}a and R.~J. Machado.
+\newblock Transformation patterns for multi-staged model driven software
+  development.
+\newblock In \emph{Software Product Line Conference, 2008. SPLC'08. 12th
+  International}, pages 329--338. IEEE, 2008.
 
 \bibitem[Brambilla et~al.(2012)Brambilla, Cabot, and
   Wimmer]{brambilla2012model}
@@ -11,5 +18,100 @@ M.~Brambilla, J.~Cabot, and M.~Wimmer.
 \newblock Model-driven software engineering in practice.
 \newblock \emph{Synthesis Lectures on Software Engineering}, 1\penalty0
   (1):\penalty0 1--182, 2012.
+
+\bibitem[Czarnecki and Helsen(2003)]{czarnecki2003classification}
+K.~Czarnecki and S.~Helsen.
+\newblock Classification of model transformation approaches.
+\newblock In \emph{Proceedings of the 2nd OOPSLA Workshop on Generative
+  Techniques in the Context of the Model Driven Architecture}, volume~45, pages
+  1--17. USA, 2003.
+
+\bibitem[Delgado et~al.(2004)Delgado, Gates, and Roach]{delgado2004taxonomy}
+N.~Delgado, A.~Q. Gates, and S.~Roach.
+\newblock A taxonomy and catalog of runtime software-fault monitoring tools.
+\newblock \emph{IEEE Transactions on software Engineering}, 30\penalty0
+  (12):\penalty0 859--872, 2004.
+
+\bibitem[Demertzi et~al.(2011)Demertzi, Annavaram, and
+  Hall]{demertzi2011analyzing}
+M.~Demertzi, M.~Annavaram, and M.~Hall.
+\newblock Analyzing the effects of compiler optimizations on application
+  reliability.
+\newblock In \emph{Workload Characterization (IISWC), 2011 IEEE International
+  Symposium on}, pages 184--193. IEEE, 2011.
+
+\bibitem[France and Rumpe(2007)]{france2007model}
+R.~France and B.~Rumpe.
+\newblock Model-driven development of complex software: A research roadmap.
+\newblock In \emph{2007 Future of Software Engineering}, pages 37--54. IEEE
+  Computer Society, 2007.
+
+\bibitem[Guana and Stroulia(2014)]{guana2014chaintracker}
+V.~Guana and E.~Stroulia.
+\newblock Chaintracker, a model-transformation trace analysis tool for
+  code-generation environments.
+\newblock In \emph{ICMT}, pages 146--153. Springer, 2014.
+
+\bibitem[Guana and Stroulia(2015)]{guana2015developers}
+V.~Guana and E.~Stroulia.
+\newblock How do developers solve software-engineering tasks on model-based
+  code generators? an empirical study design.
+\newblock In \emph{First International Workshop on Human Factors in Modeling
+  (HuFaMo 2015). CEUR-WS}, pages 33--38, 2015.
+
+\bibitem[J{\"o}rges and Steffen(2014)]{jorges2014back}
+S.~J{\"o}rges and B.~Steffen.
+\newblock Back-to-back testing of model-based code generators.
+\newblock In \emph{International Symposium On Leveraging Applications of Formal
+  Methods, Verification and Validation}, pages 425--444. Springer, 2014.
+
+\bibitem[Jouault and Kurtev(2005)]{jouault2005transforming}
+F.~Jouault and I.~Kurtev.
+\newblock Transforming models with atl.
+\newblock In \emph{International Conference on Model Driven Engineering
+  Languages and Systems}, pages 128--138. Springer, 2005.
+
+\bibitem[Musset et~al.(2006)Musset, Juliot, Lacrampe, Piers, Brun, Goubet,
+  Lussaud, and Allilaire]{musset2006acceleo}
+J.~Musset, {\'E}.~Juliot, S.~Lacrampe, W.~Piers, C.~Brun, L.~Goubet,
+  Y.~Lussaud, and F.~Allilaire.
+\newblock Acceleo user guide.
+\newblock \emph{See also http://acceleo.
+  org/doc/obeo/en/acceleo-2.6-user-guide. pdf}, 2, 2006.
+
+\bibitem[Nethercote and Seward(2007)]{nethercote2007valgrind}
+N.~Nethercote and J.~Seward.
+\newblock Valgrind: a framework for heavyweight dynamic binary instrumentation.
+\newblock In \emph{ACM Sigplan notices}, volume~42, pages 89--100. ACM, 2007.
+
+\bibitem[Pan and Eigenmann(2006)]{pan2006fast}
+Z.~Pan and R.~Eigenmann.
+\newblock Fast and effective orchestration of compiler optimizations for
+  automatic performance tuning.
+\newblock In \emph{International Symposium on Code Generation and Optimization
+  (CGO'06)}, pages 12--pp. IEEE, 2006.
+
+\bibitem[Spoiala et~al.(2016)Spoiala, Calinciuc, Turcu, and
+  Filote]{spoiala2016performance}
+C.~C. Spoiala, A.~Calinciuc, C.~O. Turcu, and C.~Filote.
+\newblock Performance comparison of a webrtc server on docker versus virtual
+  machine.
+\newblock In \emph{2016 International Conference on Development and Application
+  Systems (DAS)}, pages 295--298. IEEE, 2016.
+
+\bibitem[Stuermer et~al.(2007)Stuermer, Conrad, Doerr, and
+  Pepper]{stuermer2007systematic}
+I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper.
+\newblock Systematic testing of model-based code generators.
+\newblock \emph{IEEE Transactions on Software Engineering}, 33\penalty0
+  (9):\penalty0 622, 2007.
+
+\bibitem[St{\"u}rmer et~al.(2005)St{\"u}rmer, Weinberg, and
+  Conrad]{sturmer2005overview}
+I.~St{\"u}rmer, D.~Weinberg, and M.~Conrad.
+\newblock Overview of existing safeguarding techniques for automatically
+  generated code.
+\newblock In \emph{ACM SIGSOFT Software Engineering Notes}, volume~30, pages
+  1--6. ACM, 2005.
 
 \end{thebibliography}

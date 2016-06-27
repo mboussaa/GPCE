@@ -535,17 +535,10 @@
 
 \if \@natbib
 
-\if \@authoryear
-  \typeout{Using natbib package with 'authoryear' citation style.}
-  \usepackage[authoryear,square]{natbib}
-  \bibpunct{(}{)}{;}{a}{}{,}    % Change fences to parentheses;
-                                % citation separator to semicolon;
-                                % eliminate comma between author and year.
-  \let \cite = \citep
-\else
+
   \typeout{Using natbib package with 'numbers' citation style.}
   \usepackage[numbers,sort&compress,square]{natbib}
-\fi
+
 \setlength{\bibsep}{3pt plus .5pt minus .25pt}
 
 \fi

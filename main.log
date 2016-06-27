@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  24 JUN 2016 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  27 JUN 2016 04:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -29,7 +29,7 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \standardtextwidth=\dimen103
 \standardvspace=\skip43
 
-Using natbib package with 'authoryear' citation style.
+Using natbib package with 'numbers' citation style.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip44
@@ -49,72 +49,17 @@ LaTeX Info: Redefining \cite on input line 694.
 \@authori=\count91
 \@measbox=\box26
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/10 v2.15b AMS math features
-\@mathmargin=\skip51
-
-For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen104
-))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen105
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
-)
-\inf@bad=\count92
-LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count93
-\leftroot@=\count94
-LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count95
-\DOTSCASE@=\count96
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen106
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
-\dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
-\tag@help=\toks17
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
-\andhelp@=\toks18
-\eqnshift@=\dimen107
-\alignsep@=\dimen108
-\tagshift@=\dimen109
-\tagwidth@=\dimen110
-\totwidth@=\dimen111
-\lineht@=\dimen112
-\@envbody=\toks19
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/hhline.sty
+Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count104
+\c@AlgoLine=\count92
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip54
+\algocf@hangindent=\skip51
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -129,46 +74,46 @@ Package `algorithm2e' Release 5.1 -- october 19 2015 --
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
 ********************************************************
-\skiptotal=\skip55
-\skiplinenumber=\skip56
-\skiprule=\skip57
-\skiphlne=\skip58
-\skiptext=\skip59
-\skiplength=\skip60
-\algomargin=\skip61
-\skipalgocfslide=\skip62
-\algowidth=\dimen113
-\inoutsize=\dimen114
-\inoutindent=\dimen115
-\interspacetitleruled=\dimen116
-\interspacealgoruled=\dimen117
-\interspacetitleboxruled=\dimen118
-\algocf@ruledwidth=\skip63
-\algocf@inoutbox=\box29
-\algocf@inputbox=\box30
-\AlCapSkip=\skip64
-\AlCapHSkip=\skip65
-\algoskipindent=\skip66
-\algocf@nlbox=\box31
-\algocf@hangingbox=\box32
-\algocf@untilbox=\box33
-\algocf@skipuntil=\skip67
-\algocf@capbox=\box34
-\algoheightruledefault=\skip68
-\algoheightrule=\skip69
-\algotitleheightruledefault=\skip70
-\algotitleheightrule=\skip71
-\c@algocfline=\count105
-\c@algocfproc=\count106
-\c@algocf=\count107
-\algocf@algoframe=\box35
-\algocf@algobox=\box36
+\skiptotal=\skip52
+\skiplinenumber=\skip53
+\skiprule=\skip54
+\skiphlne=\skip55
+\skiptext=\skip56
+\skiplength=\skip57
+\algomargin=\skip58
+\skipalgocfslide=\skip59
+\algowidth=\dimen104
+\inoutsize=\dimen105
+\inoutindent=\dimen106
+\interspacetitleruled=\dimen107
+\interspacealgoruled=\dimen108
+\interspacetitleboxruled=\dimen109
+\algocf@ruledwidth=\skip60
+\algocf@inoutbox=\box27
+\algocf@inputbox=\box28
+\AlCapSkip=\skip61
+\AlCapHSkip=\skip62
+\algoskipindent=\skip63
+\algocf@nlbox=\box29
+\algocf@hangingbox=\box30
+\algocf@untilbox=\box31
+\algocf@skipuntil=\skip64
+\algocf@capbox=\box32
+\algoheightruledefault=\skip65
+\algoheightrule=\skip66
+\algotitleheightruledefault=\skip67
+\algotitleheightrule=\skip68
+\c@algocfline=\count93
+\c@algocfproc=\count94
+\c@algocf=\count95
+\algocf@algoframe=\box33
+\algocf@algobox=\box34
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks16
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
@@ -190,35 +135,47 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count108
+\Gread@gobject=\count96
 ))
-\Gin@req@height=\dimen119
-\Gin@req@width=\dimen120
+\Gin@req@height=\dimen110
+\Gin@req@width=\dimen111
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks17
+\thm@bodyfont=\toks18
+\thm@headfont=\toks19
+\thm@notefont=\toks20
+\thm@headpunct=\toks21
+\thm@preskip=\skip69
+\thm@postskip=\skip70
+\thm@headsep=\skip71
+\dth@everypar=\toks22
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count109
-\c@ALC@line=\count110
-\c@ALC@rem=\count111
-\c@ALC@depth=\count112
+\c@ALC@unique=\count97
+\c@ALC@line=\count98
+\c@ALC@rem=\count99
+\c@ALC@depth=\count100
 \ALC@tlm=\skip72
 \algorithmicindent=\skip73
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen121
+\bigstrutjot=\dimen112
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip74
 \subfigcapskip=\skip75
-\subfigcaptopadj=\dimen122
+\subfigcaptopadj=\dimen113
 \subfigbottomskip=\skip76
-\subfigcapmargin=\dimen123
+\subfigcapmargin=\dimen114
 \subfiglabelskip=\skip77
-\c@subfigure=\count113
-\c@lofdepth=\count114
-\c@subtable=\count115
-\c@lotdepth=\count116
+\c@subfigure=\count101
+\c@lofdepth=\count102
+\c@subtable=\count103
+\c@lotdepth=\count104
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -228,24 +185,24 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@bottom=\skip79
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count117
-\lst@gtempboxa=\box37
-\lst@token=\toks22
-\lst@length=\count118
-\lst@currlwidth=\dimen124
-\lst@column=\count119
-\lst@pos=\count120
-\lst@lostspace=\dimen125
-\lst@width=\dimen126
-\lst@newlines=\count121
-\lst@lineno=\count122
-\lst@maxwidth=\dimen127
+\lst@mode=\count105
+\lst@gtempboxa=\box35
+\lst@token=\toks23
+\lst@length=\count106
+\lst@currlwidth=\dimen115
+\lst@column=\count107
+\lst@pos=\count108
+\lst@lostspace=\dimen116
+\lst@width=\dimen117
+\lst@newlines=\count109
+\lst@lineno=\count110
+\lst@maxwidth=\dimen118
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count123
-\lst@skipnumbers=\count124
-\lst@framebox=\box38
+\c@lstnumber=\count111
+\lst@skipnumbers=\count112
+\lst@framebox=\box36
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -261,7 +218,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 143.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
+\Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -270,35 +227,35 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 87.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
-\scratchdimen=\dimen128
-\scratchbox=\box39
-\nofMPsegments=\count126
-\nofMParguments=\count127
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count128
-\MPscratchDim=\dimen129
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count113
+\scratchdimen=\dimen119
+\scratchbox=\box37
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen120
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -346,17 +303,17 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count131
+\c@lstlisting=\count119
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 114
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 115
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 114.
+LaTeX Font Info:    No file OMScmss.fd. on input line 115.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 114.
+(Font)              for symbol `textbraceleft' on input line 115.
 
 (./abstract.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -373,7 +330,7 @@ Missing character: There is no “ in font ptmr7t!
 File: Ressources/background.pdf Graphic file (type pdf)
 
 <use Ressources/background.pdf>
-Package pdftex.def Info: Ressources/background.pdf used on input line 12.
+Package pdftex.def Info: Ressources/background.pdf used on input line 13.
 (pdftex.def)             Requested size: 504.0pt x 164.19328pt.
 
 
@@ -385,13 +342,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Non-PDF special ignored!
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 27.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 29.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -406,71 +363,66 @@ Underfull \hbox (badness 1009) in paragraph at lines 18--19
  []
 
 ) (./infra.tex
-Underfull \vbox (badness 3989) has occurred while \output is active []
-
- [3]
-Underfull \vbox (badness 2698) has occurred while \output is active []
-
-
-Overfull \hbox (10.9917pt too wide) in paragraph at lines 46--47
-\OT1/ptm/m/n/10 sump-tion) and $\OML/cmm/m/it/10 =sys=fs=cgroup=memory=docker=\
-OT1/cmr/m/n/10 (\OML/cmm/m/it/10 longid\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =$
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 14.
+ [3] [4]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Overfull \hbox (6.437pt too wide) in paragraph at lines 93--93
+[]\OT1/ptm/m/n/10 Network| 
  []
 
-[4] <Ressources/background2.pdf, id=109, 1017.8025pt x 377.41pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]\OT1/ptm/m/n/10 Disk
+ []
+
+
+Overfull \hbox (5.98694pt too wide) in paragraph at lines 97--97
+[]\OT1/ptm/m/n/10 Memory| 
+ []
+
+<Ressources/background2.pdf, id=107, 1017.8025pt x 377.41pt>
 File: Ressources/background2.pdf Graphic file (type pdf)
 
 <use Ressources/background2.pdf>
-Package pdftex.def Info: Ressources/background2.pdf used on input line 54.
+Package pdftex.def Info: Ressources/background2.pdf used on input line 131.
 (pdftex.def)             Requested size: 504.0pt x 186.8905pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-Overfull \hbox (6.437pt too wide) in paragraph at lines 86--86
-[]\OT1/ptm/m/n/10 Network| 
- []
+) (./evaluation.tex
+Underfull \vbox (badness 3199) has occurred while \output is active []
 
+ [5]
+Underfull \vbox (badness 2027) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--88
-[]\OT1/ptm/m/n/10 Disk
- []
-
-
-Overfull \hbox (5.98694pt too wide) in paragraph at lines 90--90
-[]\OT1/ptm/m/n/10 Memory| 
- []
-
-
-Overfull \hbox (8.77658pt too wide) in paragraph at lines 80--97
- [] 
- []
-
-
-Overfull \hbox (16.38806pt too wide) in paragraph at lines 103--104
-[]\OT1/ptm/m/n/10 For in-stance, we set the back-end con-tainer of our componen
-t-
- []
-
-) (./evaluation.tex [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<Ressources/settingup.pdf, id=114, 482.80376pt x 337.26pt>
+ [6 <./Ressources/background2.pdf>]
+<Ressources/settingup.pdf, id=254, 482.80376pt x 337.26pt>
 File: Ressources/settingup.pdf Graphic file (type pdf)
 
 <use Ressources/settingup.pdf>
-Package pdftex.def Info: Ressources/settingup.pdf used on input line 38.
+Package pdftex.def Info: Ressources/settingup.pdf used on input line 72.
 (pdftex.def)             Requested size: 240.0pt x 167.65181pt.
 ) (./related.tex) (./conclusion.tex) (./main.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./Ressources/background2.pdf>]) [7
 
- <./Ressources/settingup.pdf>] (./main.aux)
+Underfull \hbox (badness 4569) in paragraph at lines 50--54
+[]\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
+ []
+
+[7 <./Ressources/settingup.pdf>]) [8
+
+] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -480,29 +432,28 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5579 strings out of 493027
- 78379 string characters out of 6134069
- 192541 words of memory out of 5000000
- 8997 multiletter control sequences out of 15000+600000
- 30931 words of font info for 58 fonts, out of 8000000 for 9000
+ 5134 strings out of 493027
+ 74146 string characters out of 6134069
+ 185615 words of memory out of 5000000
+ 8564 multiletter control sequences out of 15000+600000
+ 29859 words of font info for 53 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 38i,11n,42p,1511b,4318s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,42p,1562b,4470s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 1306876 bytes).
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (8 pages, 1307149 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
+ 464 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

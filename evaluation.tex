@@ -33,11 +33,50 @@ It corresponds to the CPU usage. The CPU consumption is measured in seconds, as 
 Program execution time is measured in seconds.
  
 \subsubsection{Setting up Infrastructure}
+To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
+Figure X shows a big picture of the testing and monitoring infrastructure considered in these experiments.
+First, a meta-heuristic (mono or multi-objective) is applied to
+generate specific optimization sequences for the GCC compiler
+(step 1). During all experiments, we use GCC 4.8.4, as it is
+introduced in the motivation section, although it is possible
+to choose another compiler version using NOTICE since the
+process of optimizations extraction is done automatically.
+Then, we generate a new optimized code and deploy the
+output binary within a new instance of our preconfigured
+Docker image (step 2). While executing the optimized code
+inside the container, we collect runtime performance data (step
+4) and record it in a new time-series database using our
+InfluxDB back-end container (step 5). Next, NOTICE accesses
+remotely to stored data in InfluxDB using REST API calls and
+assigns new performance values to the current solution (step
+6). The choice of performance metrics depends on experiment
+objectives (Memory improvement, speedup, etc.).
+
+
+CADVISOR*******************
+
+The cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our host machine. It will then have access to resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described above to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption of each container. cAdvisor has been widely used in different projects such as Heapster\footnote{\url{https://github.com/kubernetes/heapster}} and Google Cloud Platform\footnote{\url{https://cloud.google.com/}}.
+ 
+*********************
+
+Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g., 8083) exposed by the database component.
+
+***********
+It is a web application running within a container. We run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. 
+We recall that InfluxDB also provides a web UI to query the database and show graphs. But, Grafana let us display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization.
+************
+
+
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=1\linewidth]{Ressources/settingup.pdf}
 	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
 \end{figure}
+To obtain comparable and reproducible results, we use the
+same hardware across all experiments: an AMD A10-7700K
+APU Radeon(TM) R7 Graphics processor with 4 CPU cores
+(2.0 GHz), running Linux with a 64 bit kernel and 16 GB of
+system memory.
 \subsection{Experimental Results}
 \subsection{Discussions}
 \iffalse

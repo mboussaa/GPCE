@@ -29,7 +29,7 @@
 % 11pt          To set in 11-point type instead of 9-point.
 % numbers       To obtain numeric citation style instead of author/year.
 
-\usepackage{amsmath}
+ 
 
 \newcommand{\cL}{{\cal L}}
 
@@ -37,14 +37,15 @@
 
 
 
-
+\usepackage{hhline}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage[pdftex]{graphicx} 
 %\usepackage{stfloats}
 %\usepackage{cite}
- 
+\usepackage{amsthm}
+\newtheorem*{remark}{Remark}
 \usepackage{algorithmic}
 \usepackage{multirow}
 %\fnbelowfloat
@@ -101,7 +102,7 @@
 
  
 
-\title{An Infrastructure for Testing Code Generators Using System Containers}
+\title{Towards a Container-based Approach for Non-functional Testing of Code Generators}
  
 
 \authorinfo{Mohamed Boussaa\and Olivier Barais\and Benoit Baudry}
@@ -139,7 +140,10 @@ This work was funded by the European Union Seventh Framework Program (FP7/2007-2
 % We recommend abbrvnat bibliography style.
 
 \bibliographystyle{abbrvnat}
+
 \bibliography{ref}
+
+ 
 % The bibliography should be embedded for final submission.
 
  
