@@ -54,7 +54,6 @@ To assess our approach, we configure our previously proposed container-based inf
 Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
 \begin{table*}[h]
 	\centering
-
 	\resizebox{\linewidth}{!}{%
 	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 		\cline{2-16}
@@ -97,6 +96,58 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 \caption{Memory stats}
 \label{my-label}
 \end{table*}
+
+
+\begin{table}[]
+	\centering
+
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		& JAVA & CPP  & CS   & PHP   \\ \hline
+		Color   & 1,86 & 2,72 & 1,40 & 2,78  \\ \hline
+		Core    & 9,99 & 0,86 & 1,08 & 1,13  \\ \hline
+		Hxmath  & 3,26 & 2,58 & 1,34 & 12,68 \\ \hline
+		Format  & 5,49 & 1,80 & 0,79 & 4,55  \\ \hline
+		Promise & 1,03 & 0,02 & 0,40 & 1,83  \\ \hline
+		Culture & 1,95 & 1,49 & 2,96 & 8,96  \\ \hline
+		Math    & 2,13 & 3,60 & 1,88 & 8,74  \\ \hline
+	\end{tabular}
+		\caption{Average memory usage compared to JS version}
+		\label{my-label}
+\end{table}
+\begin{table}[]
+	\centering
+
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		& JAVA & CPP  & CS   & PHP    \\ \hline
+		Color   & 1,63 & 2,10 & 2,28 & 13,86  \\ \hline
+		Core    & 0,95 & 0,71 & 1,14 & 57,39  \\ \hline
+		Hxmath  & 1,47 & 0,73 & 1,49 & 24,11  \\ \hline
+		Format  & 0,97 & 1,15 & 2,22 & 41,79  \\ \hline
+		Promise & 0,61 & 0,47 & 0,68 & 8,27   \\ \hline
+		Culture & 1,27 & 0,87 & 0,99 & 2,89   \\ \hline
+		Math    & 3,16 & 3,79 & 3,46 & 314,65 \\ \hline
+	\end{tabular}
+		\caption{Average execution time compared to JS version}
+		\label{my-label}
+\end{table}
+
+\begin{table}[]
+	\centering
+
+	\begin{tabular}{|l|l|l|}
+		\hline
+		& \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Average\\ speed\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Average\\ memory\end{tabular} \\ \hline
+		JAVA & 2,02                                                                         & 123,09                                                   \\ \hline
+		JS   & 1,35                                                                         & 48,45                                                    \\ \hline
+		CPP  & 2,13                                                                         & 133,98                                                   \\ \hline
+		CS   & 2,66                                                                         & 71,39                                                    \\ \hline
+		PHP  & 104,19                                                                       & 334,59                                                   \\ \hline
+	\end{tabular}
+		\caption{Average memory usage and execution speed per target language}
+		\label{my-label}
+\end{table}
 First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
 In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
 we execute the generated test suites, we provide a shared volume with
