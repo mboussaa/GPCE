@@ -55,6 +55,11 @@ It corresponds to the maximum memory consumption of the running container under 
 Program execution time is measured in seconds.
  
 \subsubsection{Setting up Infrastructure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Ressources/settingup.pdf}
+	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
+\end{figure}
 To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
 Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
 \begin{table*}[h]
@@ -153,6 +158,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\caption{Average memory usage and execution speed per target language}
 		\label{my-label}
 \end{table}
+
 First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
 In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
 we execute the generated test suites, we provide a shared volume with
@@ -165,17 +171,22 @@ Next, we run Grafana and we link it to InfluxDB by setting up the data source po
  
  
 
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=1\linewidth]{Ressources/settingup.pdf}
-	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
-\end{figure}
+
 To obtain comparable and reproducible results, we use the
 same hardware across all experiments: an AMD A10-7700K
 APU Radeon(TM) R7 Graphics processor with 4 CPU cores
 (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of
 system memory.
-
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Ressources/avgmem.pdf}
+	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Ressources/avgtime.pdf}
+	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
+\end{figure}
 \subsection{Experimental Results}
 The experimental consisted of comparing the execution time and memory consumption on the following targets: Java, JS, C++, CS, and PHP.
 
