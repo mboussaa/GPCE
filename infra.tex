@@ -36,7 +36,7 @@ Using Docker, we can define preconfigured applications and servers to host as vi
 %As properties, we can define the OS where the service has to run, dependencies, etc. 
 %A simple way to build images automatically is to use Dockerfiles which represents configuration files.
 %Docker can build images automatically by reading the instructions from a Dockerfile. 
-We use the Docker Hub\footnote{https://hub.docker.com/} for building, saving, and managing all our Docker images. 
+We use the Docker Hub\footnote{\url{https://hub.docker.com/}} for building, saving, and managing all our Docker images. 
 %It represents a cloud-based registry service for building and shipping application or service containers.
 We can then instantiate different containers from these Docker images. 
 %Basically, each container deploys an optimized version of the input source code program.
@@ -66,7 +66,7 @@ This component represents a time-series database back-end. It is plugged with th
 
 During the execution of generated code, resource usage stats are continuously sent to this component. When a container is killed, we are able to access to its relative resource usage metrics through the database. We choose a time series database because we are collecting time series data that correspond to the resource utilization profiles of programs execution.
 
-We use InfluxDB\footnote{https://github.com/influxdata/influxdb}, an open source distributed time-series database as a back-end to record data. InfluxDB allows the user to execute SQL-like queries on the database. For example, the following query reports the maximum memory usage of container $"generated\_code\_v1"$ since its creation:
+We use InfluxDB\footnote{\url{https://github.com/influxdata/influxdb}}, an open source distributed time-series database as a back-end to record data. InfluxDB allows the user to execute SQL-like queries on the database. For example, the following query reports the maximum memory usage of container $"generated\_code\_v1"$ since its creation:
 
 \begin{lstlisting}[
 language=SQL,

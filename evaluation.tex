@@ -1,24 +1,44 @@
 \section{Evaluation}
 So far, we have presented a sound procedure and automated component-based framework for extracting the non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study and the different methods we used to assess the effectiveness of our approach. 
-The experimental material is available for replication purposes.
+The experimental material is available for replication purposes\footnote{\url{https://testingcodegenerators.wordpress.com/}}.
 \subsection{Experimental Setup}
-\subsubsection{Code Generator Under Test: HAXE compilers}
-In order to test the applicability of our approach for non-functional testing of generated code based on system containers, we conduct experiments on a popular high-level programming language called HAXE and its code generators.
+\subsubsection{Code Generators Under Test: HAXE compilers}
+In order to test the applicability of our approach, we conduct experiments on a popular high-level programming language called HAXE and its code generators.
 
-Haxe is an open source toolkit for cross-platform development which compiles to a number of different programming platforms, including JavaScript, Flash, PHP, C++ and provides experimental support for C\# and Java. It can also generate bytecode that can be executed on Haxe VM called NekoVM.
-
-Haxe involves many features: the Haxe language, multi-platform compilers, and different libraries. The Haxe language is a high-level programming language which is strictly typed. This language supports both functional programming and object-oriented programming paradigms. It has a common type hierarchy, making certain API available on every targeted platform.
-
-Moreover, Haxe comes with a set of compilers that translate manually-written code in Haxe language to different target source code languages and platforms. 
+Haxe is an open source toolkit for cross-platform development which compiles to a number of different programming platforms, including JavaScript, Flash, PHP, C++, C\# and Java. Haxe involves many features: the Haxe language, multi-platform compilers, and different native libraries. 
+The Haxe language is a high-level programming language which is strictly typed. This language supports both functional programming and object-oriented programming paradigms. It has a common type hierarchy, making certain API available on every targeted platform.
+Moreover, Haxe comes with a set of compilers that translate manually-written code (in Haxe language) to different target languages and platforms. 
 Haxe code can be compiled for applications running on desktop, mobile and web platforms. Compilers ensure the correctness of user code in terms of syntax and type safety.
-
 Haxe comes also with a set of standard libraries that can be used on all supported targets and platform-specific libraries for each of them.
 
-The process of code transformation and generation can be descibed as following: Haxe compilers analyzes the source code written in Haxe language then, the code is parsed into a typed structure and type-checked, resulting a typed abstract syntax tree (AST). This AST is optimized and transformed afterwards to produce source code for target platform/language.
+The process of code transformation and generation can be descibed as following: Haxe compilers analyzes the source code written in Haxe language then, the code is checked and parsed into a typed structure, resulting in a typed abstract syntax tree (AST). This AST is optimized and transformed afterwards to produce source code for target platform/language.
 
-Haxe offers the option of choosing which platform to target for each program using a command-line tool
-which compiles Haxe code into source code or bytecode of a target language or platform. Moreover, some optimizations and debugging information can be enabled through CLI but in our experiments, we did not turned on any further options. 
+Haxe offers the option of choosing which platform to target for each program using a command-line tool. Moreover, some optimizations and debugging information can be enabled through CLI but in our experiments, we did not turned on any further options. 
 
+\subsubsection{Cross-platform Benchmarking}
+One way to prove the effectiveness of our approach is to create benchmarks. Thus, we use Haxe language, code generators, and a set of libraries to build a cross-platform benchmark based on this language. In fact, the provided benchmark is composed of a collection of cross-platform libraries that can be compiled to different targets\footnote{\url{http://thx-lib.org/}}. In these experiments, we are considering  five targets: Java, JS, C++, CS, and PHP. 
+Each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different features of the API. They can be executed within the target platform to test the functional behavior of generated programs. We use these test suites then, to generate a load and stress the target library. This can be useful to study the impact of this load on the resource usage of the system. In fact, we have removed all the tests that fail to compile to our five targets and we kept only test suites that are functionally correct. Thus, we run each test suite 1000 times to get comparable values in terms of resource usage.
+Table 2 describes the Haxe libraries that we have selected from this benchmark to evaluate our
+approach.
+
+\begin{table}[h]
+	\centering
+
+	\begin{tabular}{|c|c|p{4.3cm}|}
+		\hline
+		\textbf{Library} & \textbf{\#TestSuites} & \textbf{Description} \\
+		\hhline{|=|=|=|}
+		Color  &  19 &  Color conversion from/to any color space   \\ \hline
+		Core & 51  & Provides extensions to many types  \\ \hline
+		Hxmath & 6  & A 2D/3D math library  \\ \hline
+	    Format  &  4 & Format library such as dates, number formats   \\ \hline
+		Promise & 3  & Library for lightweight promises and futures  \\ \hline
+		Culture & 4  & Localization library for Haxe \\ \hline
+		Math & 3  & Generation of random values \\ \hline
+	\end{tabular}
+		\caption{Description of selected benchmark libraries}
+		\label{my-label}
+\end{table}
 
 \subsubsection{Evaluation Metrics Used}
 We use to evaluate the efficiency of generated code using the following non-functional metrics:
@@ -26,46 +46,24 @@ We use to evaluate the efficiency of generated code using the following non-func
 -\textit{Memory Usage (MU)}:
 It corresponds to the maximum memory consumption of the running container under test. Memory usage is measured in bytes.
 
--\textit{CPU Usage (CU)}:  
-It corresponds to the CPU usage. The CPU consumption is measured in seconds, as the CPU time.
-
 -\textit{Execution Time (T)}:
 Program execution time is measured in seconds.
  
 \subsubsection{Setting up Infrastructure}
 To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
-Figure X shows a big picture of the testing and monitoring infrastructure considered in these experiments.
-First, a meta-heuristic (mono or multi-objective) is applied to
-generate specific optimization sequences for the GCC compiler
-(step 1). During all experiments, we use GCC 4.8.4, as it is
-introduced in the motivation section, although it is possible
-to choose another compiler version using NOTICE since the
-process of optimizations extraction is done automatically.
-Then, we generate a new optimized code and deploy the
-output binary within a new instance of our preconfigured
-Docker image (step 2). While executing the optimized code
-inside the container, we collect runtime performance data (step
-4) and record it in a new time-series database using our
-InfluxDB back-end container (step 5). Next, NOTICE accesses
-remotely to stored data in InfluxDB using REST API calls and
-assigns new performance values to the current solution (step
-6). The choice of performance metrics depends on experiment
-objectives (Memory improvement, speedup, etc.).
+Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
 
+First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
+In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
+we execute the generated test suites, we provide a shared volume with
+the host machine so that, binaries can be executed in the execution container (Step 2). In fact, for the code execution we created, as well, a new Docker image in where we install all execution tools and environments such as php interpreter, NodeJS, etc. 
 
-CADVISOR*******************
+In the meantime, while running test suites inside the container, we collect runtime resource usage data using cAdvisor (step 3). The cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our host machine. It will then have access to resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described previously to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI (\textit{http://localhost:8080}) to view live resource consumption of each container. cAdvisor has been widely used in different projects such as Heapster\footnote{\url{https://github.com/kubernetes/heapster}} and Google Cloud Platform\footnote{\url{https://cloud.google.com/}}. In this experiment, we choose to gather information about the memory usage of running container.
+Afterwards, we record these data into a new time-series database using our InfluxDB back-end container (step 4). Thus, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g., \textit{8083}) exposed by the database component. 
 
-The cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our host machine. It will then have access to resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described above to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption of each container. cAdvisor has been widely used in different projects such as Heapster\footnote{\url{https://github.com/kubernetes/heapster}} and Google Cloud Platform\footnote{\url{https://cloud.google.com/}}.
+Next, we run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. We recall that InfluxDB also provides a web UI to query the database and show graphs (step 5). But, Grafana let us display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization and analysis (step 6). In our experiment, we are gathering the maximum memory usage values without presenting the graphs of resource usage profiles.
  
-*********************
-
-Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g., 8083) exposed by the database component.
-
-***********
-It is a web application running within a container. We run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. 
-We recall that InfluxDB also provides a web UI to query the database and show graphs. But, Grafana let us display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization.
-************
-
+ 
 
 \begin{figure}[hbt]
 	\centering
@@ -78,6 +76,7 @@ APU Radeon(TM) R7 Graphics processor with 4 CPU cores
 (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of
 system memory.
 \subsection{Experimental Results}
+The experimental consisted of comparing the execution time and memory consumption on the following targets: Java, JS, C++, CS, and PHP.
 \subsection{Discussions}
 \iffalse
 In this section, we evaluate the implementation of our approach across two case studies. These experiments aim at answering the following research questions:
@@ -98,7 +97,7 @@ These two case studies  also enable to validate the global approach for non func
 In the first experiment, we set up our infrastructure for testing and monitoring of generated code. In this part, we compile the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we study the impact of these optimizations on memory consumption and execution time using our Docker-based infrastructure.
 
 \subsubsection{FFmpeg: Multimedia Encoding Library}
-FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert, and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and an important amount of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
+FFmpeg\footnote{\url{https://www.ffmpeg.org/}} is a complete, cross-platform solution to record, convert, and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and an important amount of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
 \subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
 
 
