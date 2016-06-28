@@ -69,8 +69,33 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\multicolumn{1}{|l|}{Math}    & 5,26   & 0,98   & 12,51   & 1,66   & 0,75  & 3.10   & 6,30   & 0,93   & 16,29  & 5,75   & 0,94  & 14,14  & \cellcolor[HTML]{C0C0C0}523,17 & 55,45 & \cellcolor[HTML]{C0C0C0}1448,9  \\ \hline
 	\end{tabular}%
 }
-	\caption{My caption}
+	\caption{Execution time stats}
 	\label{my-label}
+\end{table*}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+
+
+\begin{table*}[h]
+	\centering
+	
+	\resizebox{\linewidth}{!}{%
+\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+	\cline{2-16}
+	& \multicolumn{3}{c|}{JAVA} & \multicolumn{3}{c|}{JS} & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{CS} & \multicolumn{3}{c|}{PHP}   \\ \cline{2-16} 
+	& Avg     & Min   & Max     & Avg     & Min  & Max    & Avg     & Min  & Max     & Avg     & Min  & Max    & Avg     & Min    & Max     \\ \hline
+	\multicolumn{1}{|l|}{Color}   & 115,98  & 0,53  & 1362,55 & 62,33   & 0,70 & 900,70 & 169,90  & 0,16 & 2275,49 & 87,51   & 0,42 & 1283,3 & 173,69  & 0,81   & 2189,85 \\ \hline
+	\multicolumn{1}{|l|}{Core}    & 21,94   & 0,52  & 1057,32 & 2,19    & 0,64 & 59,96  & 1,89    & 0,29 & 35,97   & 2,38    & 0,59 & 42,92  & 2,49    & 0,46   & 32,91   \\ \hline
+	\multicolumn{1}{|l|}{Hxmath}  & 121,47  & 0,70  & 389,72  & 37,23   & 1,37 & 111,68 & 96,15   & 1,20 & 296,43  & 50,19   & 0,81 & 156,40 & 472,26  & 1,11   & 1192,98 \\ \hline
+	\multicolumn{1}{|l|}{Format}  & 214,04  & 0,67  & 685,90  & 38,93   & 2,42 & 92,34  & 70,29   & 1,12 & 204,85  & 31,11   & 1,08 & 69,16  & 177,17  & 0,58   & 385,11  \\ \hline
+	\multicolumn{1}{|l|}{Promise} & 32,85   & 1,23  & 128,29  & 31,65   & 0,54 & 55,29  & 0,93    & 0,45 & 1,73    & 12,85   & 0,87 & 34,49  & 57,96   & 0,65   & 134,20  \\ \hline
+	\multicolumn{1}{|l|}{Culture} & 2,20    & 1,15  & 4,04    & 1,12    & 0,70 & 1,59   & 1,68    & 1,35 & 2,02    & 3,34    & 0,55 & 11,20  & 10,11   & 1,11   & 36,32   \\ \hline
+	\multicolumn{1}{|l|}{Math}    & 353,18  & 1,21  & 831,44  & 165,71  & 0,93 & 493,66 & 597,02  & 1,61 & 1492,97 & 312,37  & 3,37 & 806,33 & 1448,45 & 626,83 & 3088,15 \\ \hline
+\end{tabular}%
+}
+\caption{Memory stats}
+\label{my-label}
 \end{table*}
 First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
 In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
