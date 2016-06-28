@@ -52,7 +52,26 @@ Program execution time is measured in seconds.
 \subsubsection{Setting up Infrastructure}
 To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
 Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
+\begin{table*}[h]
+	\centering
 
+	\resizebox{\linewidth}{!}{%
+	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+		\cline{2-16}
+		& \multicolumn{3}{c|}{JAVA} & \multicolumn{3}{c|}{JS} & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{CS} & \multicolumn{3}{c|}{PHP}                                                 \\ \cline{2-16} 
+		& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg                            & Min   & Max                             \\ \hline
+		\multicolumn{1}{|l|}{Color}   & 2.72   & 0,69   & 28,58   & 1,67   & 0,52  & 16,66  & 3,52   & 0,37   & 48,31  & 3,81   & 0,52  & 45,97  & \cellcolor[HTML]{C0C0C0}23,16  & 0,61  & \cellcolor[HTML]{C0C0C0}279,27  \\ \hline
+		\multicolumn{1}{|l|}{Core}    & 0,82   & 0,57   & 8,71    & 0,86   & 0,51  & 14,01  & 0,61   & 0,42   & 8,11   & 0,98   & 0,50  & 21,60  & \cellcolor[HTML]{C0C0C0}49,52  & 0,47  & \cellcolor[HTML]{C0C0C0}2479,07 \\ \hline
+		\multicolumn{1}{|l|}{Hxmath}  & 1,62   & 0,66   & 3,38    & 1,1    & 0,54  & 2,04   & 0,81   & 0,39   & 1,42   & 1,64   & 0,56  & 4,01   & \cellcolor[HTML]{C0C0C0}26,53  & 1,06  & \cellcolor[HTML]{C0C0C0}73,44   \\ \hline
+		\multicolumn{1}{|l|}{Format}  & 2,19   & 0,71   & 5,03    & 2,23   & 0,60  & 5,402  & 2,57   & 0,37   & 7,67   & 4,97   & 0,54  & 12,38  & \cellcolor[HTML]{C0C0C0}93,53  & 1,11  & \cellcolor[HTML]{C0C0C0}220,75  \\ \hline
+		\multicolumn{1}{|l|}{Promise} & 0,89   & 0,63   & 1,72    & 1,44   & 0,54  & 2,09   & 0,69   & 0,39   & 1,12   & 0,99   & 0,48  & 1,71   & \cellcolor[HTML]{C0C0C0}11,96  & 1,13  & \cellcolor[HTML]{C0C0C0}31,18   \\ \hline
+		\multicolumn{1}{|l|}{Culture} & 0,64   & 0,55   & 0,82    & 0,50   & 0,46  & 0,57   & 0,44   & 0,37   & 0,62   & 0,50   & 0,43  & 0,65   & 1,46                           & 0,61  & 3,79                            \\ \hline
+		\multicolumn{1}{|l|}{Math}    & 5,26   & 0,98   & 12,51   & 1,66   & 0,75  & 3.10   & 6,30   & 0,93   & 16,29  & 5,75   & 0,94  & 14,14  & \cellcolor[HTML]{C0C0C0}523,17 & 55,45 & \cellcolor[HTML]{C0C0C0}1448,9  \\ \hline
+	\end{tabular}%
+}
+	\caption{My caption}
+	\label{my-label}
+\end{table*}
 First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
 In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
 we execute the generated test suites, we provide a shared volume with
@@ -75,8 +94,14 @@ same hardware across all experiments: an AMD A10-7700K
 APU Radeon(TM) R7 Graphics processor with 4 CPU cores
 (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of
 system memory.
+
 \subsection{Experimental Results}
 The experimental consisted of comparing the execution time and memory consumption on the following targets: Java, JS, C++, CS, and PHP.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+
 \subsection{Discussions}
 \iffalse
 In this section, we evaluate the implementation of our approach across two case studies. These experiments aim at answering the following research questions:
