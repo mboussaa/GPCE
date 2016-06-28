@@ -15,9 +15,11 @@ The process of code transformation and generation can be descibed as following: 
 
 Haxe offers the option of choosing which platform to target for each program using a command-line tool. Moreover, some optimizations and debugging information can be enabled through CLI but in our experiments, we did not turned on any further options. 
 
-\subsubsection{Cross-platform Benchmarking}
+\subsubsection{Cross-platform Benchmark}
 One way to prove the effectiveness of our approach is to create benchmarks. Thus, we use Haxe language, code generators, and a set of libraries to build a cross-platform benchmark based on this language. In fact, the provided benchmark is composed of a collection of cross-platform libraries that can be compiled to different targets\footnote{\url{http://thx-lib.org/}}. In these experiments, we are considering  five targets: Java, JS, C++, CS, and PHP. 
-Each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different features of the API. They can be executed within the target platform to test the functional behavior of generated programs. We use these test suites then, to generate a load and stress the target library. This can be useful to study the impact of this load on the resource usage of the system. In fact, we have removed all the tests that fail to compile to our five targets and we kept only test suites that are functionally correct. Thus, we run each test suite 1000 times to get comparable values in terms of resource usage.
+Each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different features of the API. They can be executed within the target platform to test the functional behavior of generated programs. In fact, we have removed all the tests that fail to compile to our five targets due to bugs, crashes and failers. We kept only test suites that are functionally correct.
+
+We use these test suites then, to generate a load and stress the target library. This can be useful to study the impact of this load on the resource usage of the system.  Thus, we run each test suite 1000 times to get comparable values in terms of resource usage.
 Table 2 describes the Haxe libraries that we have selected from this benchmark to evaluate our
 approach.
 
@@ -57,15 +59,15 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 	\resizebox{\linewidth}{!}{%
 	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 		\cline{2-16}
-		& \multicolumn{3}{c|}{JAVA} & \multicolumn{3}{c|}{JS} & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{CS} & \multicolumn{3}{c|}{PHP}                                                 \\ \cline{2-16} 
-		& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg                            & Min   & Max                             \\ \hline
-		\multicolumn{1}{|l|}{Color}   & 2.72   & 0,69   & 28,58   & 1,67   & 0,52  & 16,66  & 3,52   & 0,37   & 48,31  & 3,81   & 0,52  & 45,97  & \cellcolor[HTML]{C0C0C0}23,16  & 0,61  & \cellcolor[HTML]{C0C0C0}279,27  \\ \hline
-		\multicolumn{1}{|l|}{Core}    & 0,82   & 0,57   & 8,71    & 0,86   & 0,51  & 14,01  & 0,61   & 0,42   & 8,11   & 0,98   & 0,50  & 21,60  & \cellcolor[HTML]{C0C0C0}49,52  & 0,47  & \cellcolor[HTML]{C0C0C0}2479,07 \\ \hline
-		\multicolumn{1}{|l|}{Hxmath}  & 1,62   & 0,66   & 3,38    & 1,1    & 0,54  & 2,04   & 0,81   & 0,39   & 1,42   & 1,64   & 0,56  & 4,01   & \cellcolor[HTML]{C0C0C0}26,53  & 1,06  & \cellcolor[HTML]{C0C0C0}73,44   \\ \hline
-		\multicolumn{1}{|l|}{Format}  & 2,19   & 0,71   & 5,03    & 2,23   & 0,60  & 5,402  & 2,57   & 0,37   & 7,67   & 4,97   & 0,54  & 12,38  & \cellcolor[HTML]{C0C0C0}93,53  & 1,11  & \cellcolor[HTML]{C0C0C0}220,75  \\ \hline
-		\multicolumn{1}{|l|}{Promise} & 0,89   & 0,63   & 1,72    & 1,44   & 0,54  & 2,09   & 0,69   & 0,39   & 1,12   & 0,99   & 0,48  & 1,71   & \cellcolor[HTML]{C0C0C0}11,96  & 1,13  & \cellcolor[HTML]{C0C0C0}31,18   \\ \hline
+		& \multicolumn{3}{c|}{\textbf{JAVA}} & \multicolumn{3}{c|}{\textbf{JS}} & \multicolumn{3}{c|}{\textbf{CPP}} & \multicolumn{3}{c|}{\textbf{CS}} & \multicolumn{3}{c|}{\textbf{PHP}}                                                 \\ \cline{2-16} 
+		& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg   & Min   & Max \\ \hhline{|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|}
+		\multicolumn{1}{|l|}{Color}   & 2.72   & 0,69   & 28,58   & 1,67   & 0,52  & 16,66  & 3,52   & 0,37   & 48,31  & 3,81   & 0,52  & 45,97  & 23,16  & 0,61  &  279,27  \\ \hline
+		\multicolumn{1}{|l|}{Core}    & 0,82   & 0,57   & 8,71    & 0,86   & 0,51  & 14,01  & 0,61   & 0,42   & 8,11   & 0,98   & 0,50  & 21,60  &  49,52  & 0,47  &  2479,07 \\ \hline
+		\multicolumn{1}{|l|}{Hxmath}  & 1,62   & 0,66   & 3,38    & 1,1    & 0,54  & 2,04   & 0,81   & 0,39   & 1,42   & 1,64   & 0,56  & 4,01   &  26,53  & 1,06  &  73,44   \\ \hline
+		\multicolumn{1}{|l|}{Format}  & 2,19   & 0,71   & 5,03    & 2,23   & 0,60  & 5,402  & 2,57   & 0,37   & 7,67   & 4,97   & 0,54  & 12,38  &  93,53  & 1,11  &  220,75  \\ \hline
+		\multicolumn{1}{|l|}{Promise} & 0,89   & 0,63   & 1,72    & 1,44   & 0,54  & 2,09   & 0,69   & 0,39   & 1,12   & 0,99   & 0,48  & 1,71   &  11,96  & 1,13  &  31,18   \\ \hline
 		\multicolumn{1}{|l|}{Culture} & 0,64   & 0,55   & 0,82    & 0,50   & 0,46  & 0,57   & 0,44   & 0,37   & 0,62   & 0,50   & 0,43  & 0,65   & 1,46                           & 0,61  & 3,79                            \\ \hline
-		\multicolumn{1}{|l|}{Math}    & 5,26   & 0,98   & 12,51   & 1,66   & 0,75  & 3.10   & 6,30   & 0,93   & 16,29  & 5,75   & 0,94  & 14,14  & \cellcolor[HTML]{C0C0C0}523,17 & 55,45 & \cellcolor[HTML]{C0C0C0}1448,9  \\ \hline
+		\multicolumn{1}{|l|}{Math}    & 5,26   & 0,98   & 12,51   & 1,66   & 0,75  & 3.10   & 6,30   & 0,93   & 16,29  & 5,75   & 0,94  & 14,14  & 523,17 & 55,45 &  1448,9  \\ \hline
 	\end{tabular}%
 }
 	\caption{Execution time stats}
@@ -82,8 +84,8 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 	\resizebox{\linewidth}{!}{%
 \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 	\cline{2-16}
-	& \multicolumn{3}{c|}{JAVA} & \multicolumn{3}{c|}{JS} & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{CS} & \multicolumn{3}{c|}{PHP}   \\ \cline{2-16} 
-	& Avg     & Min   & Max     & Avg     & Min  & Max    & Avg     & Min  & Max     & Avg     & Min  & Max    & Avg     & Min    & Max     \\ \hline
+		& \multicolumn{3}{c|}{\textbf{JAVA}} & \multicolumn{3}{c|}{\textbf{JS}} & \multicolumn{3}{c|}{\textbf{CPP}} & \multicolumn{3}{c|}{\textbf{CS}} & \multicolumn{3}{c|}{\textbf{PHP}}                                                 \\ \cline{2-16} 
+	& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg   & Min   & Max \\ \hhline{|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|}
 	\multicolumn{1}{|l|}{Color}   & 115,98  & 0,53  & 1362,55 & 62,33   & 0,70 & 900,70 & 169,90  & 0,16 & 2275,49 & 87,51   & 0,42 & 1283,3 & 173,69  & 0,81   & 2189,85 \\ \hline
 	\multicolumn{1}{|l|}{Core}    & 21,94   & 0,52  & 1057,32 & 2,19    & 0,64 & 59,96  & 1,89    & 0,29 & 35,97   & 2,38    & 0,59 & 42,92  & 2,49    & 0,46   & 32,91   \\ \hline
 	\multicolumn{1}{|l|}{Hxmath}  & 121,47  & 0,70  & 389,72  & 37,23   & 1,37 & 111,68 & 96,15   & 1,20 & 296,43  & 50,19   & 0,81 & 156,40 & 472,26  & 1,11   & 1192,98 \\ \hline
@@ -103,7 +105,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		& JAVA & CPP  & CS   & PHP   \\ \hline
+		& \textbf{JAVA} & \textbf{CPP}  & \textbf{CS}   & \textbf{PHP}   \\ \hhline{|=|=|=|=|=|}
 		Color   & 1,86 & 2,72 & 1,40 & 2,78  \\ \hline
 		Core    & 9,99 & 0,86 & 1,08 & 1,13  \\ \hline
 		Hxmath  & 3,26 & 2,58 & 1,34 & 12,68 \\ \hline
@@ -120,7 +122,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		& JAVA & CPP  & CS   & PHP    \\ \hline
+		& \textbf{JAVA} & \textbf{CPP}  & \textbf{CS}   & \textbf{PHP}    \\ 	\hhline{|=|=|=|=|=|}
 		Color   & 1,63 & 2,10 & 2,28 & 13,86  \\ \hline
 		Core    & 0,95 & 0,71 & 1,14 & 57,39  \\ \hline
 		Hxmath  & 1,47 & 0,73 & 1,49 & 24,11  \\ \hline
@@ -136,9 +138,9 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 \begin{table}[]
 	\centering
 
-	\begin{tabular}{|l|l|l|}
+	\begin{tabular}{|l|l||l|}
 		\hline
-		& \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Average\\ speed\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Average\\ memory\end{tabular} \\ \hline
+		& \multicolumn{1}{c||}{\begin{tabular}[c]{@{}c@{}}\textbf{Average}\\ \textbf{speed}\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{Average}\\ \textbf{memory}\end{tabular} \\ 	\hhline{|=|=|=|}
 		JAVA & 2,02                                                                         & 123,09                                                   \\ \hline
 		JS   & 1,35                                                                         & 48,45                                                    \\ \hline
 		CPP  & 2,13                                                                         & 133,98                                                   \\ \hline
