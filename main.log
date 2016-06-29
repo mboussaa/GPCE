@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.10)  29 JUN 2016 17:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.10)  29 JUN 2016 17:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -264,19 +264,19 @@ LaTeX Warning: Label `my-label' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 107.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 111.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -343,15 +343,15 @@ e
 ))
 \c@lstlisting=\count120
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 121
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 125
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 121.
+LaTeX Font Info:    No file OMScmss.fd. on input line 125.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 121.
+(Font)              for symbol `textbraceleft' on input line 125.
 
 (./abstract.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -373,24 +373,22 @@ Non-PDF special ignored!
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 17.
+(Font)              <7> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 17.
+(Font)              <5> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 17.
+(Font)              <8> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 17.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 23.
+(Font)              <6> on input line 21.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
 ) (./motivation.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
+[2]
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
 )
@@ -400,51 +398,49 @@ File: Ressources/background.pdf Graphic file (type pdf)
 <use Ressources/background.pdf>
 Package pdftex.def Info: Ressources/background.pdf used on input line 12.
 (pdftex.def)             Requested size: 504.0pt x 164.19328pt.
+ [3]
+<Ressources/background2.pdf, id=20, 1017.8025pt x 377.41pt>
+File: Ressources/background2.pdf Graphic file (type pdf)
+
+<use Ressources/background2.pdf>
+Package pdftex.def Info: Ressources/background2.pdf used on input line 51.
+(pdftex.def)             Requested size: 504.0pt x 186.8905pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3] [4 <./Ressources/background.pdf>]
-Underfull \vbox (badness 3838) has occurred while \output is active []
+[4 <./Ressources/background.pdf>]
+Underfull \vbox (badness 5533) has occurred while \output is active []
 
- [5]
+ [5 <./Ressources/background2.pdf>]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Overfull \hbox (6.437pt too wide) in paragraph at lines 122--122
+Overfull \hbox (6.437pt too wide) in paragraph at lines 134--134
 []|\OT1/ptm/m/n/10 Network| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 []|\OT1/ptm/m/n/10 Disk
  []
 
 
-Overfull \hbox (5.98694pt too wide) in paragraph at lines 126--126
+Overfull \hbox (5.98694pt too wide) in paragraph at lines 138--138
 []|\OT1/ptm/m/n/10 Memory| 
  []
 
 
-Overfull \hbox (1.44109pt too wide) in paragraph at lines 114--132
+Overfull \hbox (1.44109pt too wide) in paragraph at lines 126--144
  [] 
  []
 
-<Ressources/background2.pdf, id=111, 1017.8025pt x 377.41pt>
-File: Ressources/background2.pdf Graphic file (type pdf)
 
-<use Ressources/background2.pdf>
-Package pdftex.def Info: Ressources/background2.pdf used on input line 143.
-(pdftex.def)             Requested size: 504.0pt x 186.8905pt.
+Underfull \vbox (badness 1360) has occurred while \output is active []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./evaluation.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [6])
+(./evaluation.tex
+Underfull \vbox (badness 1694) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 40--40
@@ -457,15 +453,17 @@ Overfull \hbox (1.80586pt too wide) in paragraph at lines 32--44
  []
 
 
-Underfull \vbox (badness 4832) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [7 <./Ressources/background2.pdf>]
-<Ressources/settingup.pdf, id=259, 482.80376pt x 337.26pt>
+[7] <Ressources/settingup.pdf, id=259, 482.80376pt x 337.26pt>
 File: Ressources/settingup.pdf Graphic file (type pdf)
 
 <use Ressources/settingup.pdf>
 Package pdftex.def Info: Ressources/settingup.pdf used on input line 62.
 (pdftex.def)             Requested size: 240.0pt x 167.65181pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: No positions in optional float specifier.
@@ -477,18 +475,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./Ressources/settingup.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[8 <./Ressources/settingup.pdf>]) (./related.tex) (./conclusion.tex)
+(./main.bbl
+Underfull \vbox (badness 7030) has occurred while \output is active []
 
-)
-(./related.tex) (./conclusion.tex) (./main.bbl
+
 Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
 
-[9]) [10
-
-] (./main.aux)
+) [9] [10] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -499,11 +495,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5628 strings out of 494310
  78905 string characters out of 6162891
- 230434 words of memory out of 5000000
+ 233587 words of memory out of 5000000
  8842 multiletter control sequences out of 15000+600000
  30126 words of font info for 54 fonts, out of 8000000 for 9000
  375 hyphenation exceptions out of 8191
- 41i,12n,42p,1716b,1268s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,42p,1721b,1268s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
@@ -515,7 +511,7 @@ ts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1336933 bytes).
+Output written on main.pdf (10 pages, 1336486 bytes).
 PDF statistics:
  474 PDF objects out of 1000 (max. 8388607)
  297 compressed objects within 3 object streams
