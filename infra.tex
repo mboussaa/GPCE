@@ -1,4 +1,28 @@
+
+
+
 \section{Approach overview}
+
+\subsection{Non-Functional  testing of a family of code generators: a common process}
+
+Figure 1 summarizes a general overview of the different processes that are involved together to ensure the code generation and non-functional testing of produced code from design time to run time. We distinguish 4 major steps: the software design using high-level system specifications, code generation by means of code generators, code execution, and non-functional testing of generated code. 
+
+
+\begin{figure*}[t]
+	\includegraphics[width=1\linewidth]{Ressources/background.pdf}
+	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to run time.}
+	%		\label{AAA}
+\end{figure*}
+
+
+Firstly, software developers have to define, at design time, software's behavior using a high-level abstract language (DSLs, models, program). Afterwards, developers can use platform-specific code generators to ease the software development and generate automatically code that targets different languages and platforms. We depict, in Figure 1, three code generators capable to generate code in three software programming languages (JAVA, C\# and C++). In this step, code generators transform the previously designed model to produce, as a consequence, software artifacts for the target platform.
+
+% Transformations from model to code within each code generator might be different and may integrate different transformation rules. As an example, we distinguish model-to-model transformations languages such as ATL~\cite{jouault2005transforming} and template-based model-to-text transformation languages such as Acceleo~\cite{musset2006acceleo} to translate high-level system specifications into executable code and scripts~\cite{bragancca2008transformation,czarnecki2003classification}. The main task of code generators is to transform models to general-purpose and platform-dependent languages.
+In the next step, generated software artifacts (e.g., JAVA, C\#, C++, etc.) are compiled, deployed and executed across different target platforms (e.g., Android, ARM/Linux, JVM, x86/Linux, etc.). Thus, several code compilers are needed to transform source code to machine code (binaries) in order to get executed. 
+
+Finally, to perform the non-functional testing of generated code, developers have to collect, visualize and compare information about the performance and efficiency of running code across the different platforms. 
+Therefore, they generally use several platform-specific profilers, trackers, instrumenting and monitoring tools in order to find some inconsistencies or bugs during code execution~\cite{guana2014chaintracker,delgado2004taxonomy}. Ensuring the code quality of generated code can refer to several non-functional properties such as code size, resource or energy consumption, execution time, among others~\cite{pan2006fast}. Finding inconsistencies within code generators involves analyzing and inspecting the code and that, for each execution platform. For example, one of the methods to handle that is to analyze the memory footprint of software execution and find memory leaks. Developers then, can inspect the source code and the generated code and find some parts of the code-base that have triggered this issue. %Such non-functional error could occur when the code generator produces code that presents for example: incorrect typing, faulty memory management, code-smells, etc. 
+Therefore, software testers generally use to report statistics about the performance of generated code in order to fix, refactor, and optimize the code generation process.
 
 \subsection{An Infrastructure for Non-functional Testing Using System Containers}
 In general, there are many non-functional requirements that can be evaluated by software testers such as performance (execution time), code quality, robustness, resource usage, \textit{etc}. In this paper, our approach focuses on the non-functional properties related to the performance and efficiency of generated code in terms of resource consumption (memory and CPU).
@@ -21,6 +45,13 @@ The rest of this section details the technical choices we made to synthesis a te
 \subsection{Technical implementation}
 
 The general overview of the technical implementation is shown in Figure 2. In the following subsections, we describe the deployment and testing architecture of generated code within containers.
+
+
+\begin{figure*}[!h]
+	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
+	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
+	%		\label{AAA}
+\end{figure*}
 
 
 \subsubsection{System Containers as Execution platforms}
@@ -59,6 +90,8 @@ In short, the main advantages of this approach are:
 \end{itemize}
 
 
+
+
 \subsubsection{Runtime Testing Components}
 In order to test our running applications within Docker containers, we aim to use a set of Docker components to ease the extraction of non-functional properties related to resource usage.
 \paragraph{Monitoring Component}
@@ -66,6 +99,9 @@ This container provides an understanding of the resource usage and performance c
 To ease the monitoring process, we integrate cAdvisor, a Container Advisor\footnote{\url{https://github.com/google/cadvisor}}. It is a tool that monitors service containers at runtime. 
 
 However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, to make gathered data truly valuable for resource usage monitoring, it becomes necessary to log it into a database at runtime. Thus, we link our monitoring component to a back-end database component. 
+
+
+
 \paragraph{Back-end Database Component}
 This component represents a time-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. 
 
@@ -115,11 +151,6 @@ Apart from that, our framework provides also information about the size of gener
 For instance, resource usage statistics are collected and stored using these two components. It is relevant to show resource usage profiles of running programs overtime. To do so, we present a front-end visualization component for performance profiling. 
 
 \paragraph{Front-end Visualization Component}
-\begin{figure*}[h]
-	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
-	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
-	%		\label{AAA}
-\end{figure*}
 %Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. 
 Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. Therefore, we provide a dashboard to run queries and view different profiles of resource consumption of running components through web UI. Thereby, we can compare visually the profiles of resource consumption among containers. Moreover, we use this component to export the data currently being viewed into static CSV document. So, we can perform statistical analysis on this data to detect inconsistencies or performance anomalies.
 %Moreover, we use this component to export the data currently being viewed into static CSV document. 
@@ -133,9 +164,9 @@ To summarize, we present, in Figure 2, an overall overview of the different comp
 First, instead of configuring all code generators under test (GUTs) within the same host machine (as we presented in the motivation section), we wrap each GUT within a container. To do so, we create a new configuration image for each GUT (i.e., the Docker image) where we install all the libraries, compilers, and dependencies needed to ensure the code generation and compilation. Thereby, the GUT produce code within multiple instances of preconfigured Docker images. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated and configured environment. In this step, new configurations are needed to run each job without any issue (i.e., define the execution environment within the container, the host machine, the target platform, limit the resources, etc.). For our case, a job represents a generated and compiled program using one of the GUTs. Meanwhile, we start our runtime testing components (e.g., cAdvisor, InfluxDB and Grafana). The monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. The visualization component comes later to allow end users to define performance metrics and draw up charts. The use of the front-end visualization component is optional and we can directly access to information stored in the database through REST API calls. Thus, we can observe later informations about the resource usage of generated code and detect inconsistencies in the generated code by GUTs.
 
 
-\begin{remark}
-	We would notice that this testing infrastructure can be generalized and adapted to other case studies other than code generators. Using system containers, any software application/generated code can be easily deployed within containers (i.e., by configuring the container image). It will be later executed and monitored using our runtime monitoring engine. 
-\end{remark}
+%\begin{remark}
+%	We would notice that this testing infrastructure can be generalized and adapted to other case studies other than code generators. Using system containers, any software application/generated code can be easily deployed within containers (i.e., by configuring the container image). It will be later executed and monitored using our runtime monitoring engine. 
+%\end{remark}
 
 
 
