@@ -1,38 +1,43 @@
-\section{An Infrastructure for Non-functional Testing Using System Containers}
-In general, there are many non-functional requirements that can
-be evaluated by software testers such as performance
-(execution time), code quality, robustness, resource usage, etc. In this paper, we focus on the non-functional properties related to the performance and efficiency of generated code in terms of
-resource consumption (memory and CPU).
+\section{Approach overview}
 
-In fact, to assess the performance/non-functional properties of generated code many system configurations (i.e., execution environments) must be considered. Running different applications (i.e., generated code) with different configurations on one single machine is complicated because a single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc.
+\subsection{An Infrastructure for Non-functional Testing Using System Containers}
+In general, there are many non-functional requirements that can be evaluated by software testers such as performance (execution time), code quality, robustness, resource usage, \textit{etc}. In this paper, our approach focuses on the non-functional properties related to the performance and efficiency of generated code in terms of resource consumption (memory and CPU).
 
-Therefore, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that that provides to compiler user facilities to ensure the deployment and monitoring of generated code in different environment settings.
+In fact, to assess the performance/non-functional properties of generated code many system configurations (i.e., execution environments) must be considered. Running different applications (i.e., generated code) with different configurations on one single machine is complex  a single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc. Therefore, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides to compiler user facilities to ensure the deployment and monitoring of generated code in different environment settings. 
 
-Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management of deployed components. 
-			 
-
-For this purpose, we propose a testing infrastructure based on System Container techniques such as Docker\footnote{\url{https://www.docker.com}} environment. 
-This framework automates the deployment and execution of applications inside software containers by allowing multiple program configurations to run autonomously on different servers (i. e., a cloud servers).
-It also provides a distributed environment where system storage and resources can be finely managed and limited according to the needs. 
- 
-Consequently, we rely on this component-based infrastructure and benefit from all its advantages to automatically:
+Consequently, we rely on a component-based infrastructure and benefit from all its advantages to automatically:
 \begin{enumerate}
 	\item Deploy the generated code within a set of containers
 	\item Execute the produces binaries in an isolated environment 
 	\item Monitor service containers
-	\item Gather performance metrics (CPU, Memory, I/O, etc.)
+	\item Gather performance metrics (CPU, Memory, etc.)
 \end{enumerate}
 
-Thus, we integrate a collection of components to define the adequate infrastructure for testing and monitoring of code generators. 
-In the following sections, we describe the deployment and testing architecture of generated code within containers.
+First, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated monitored and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. Thus, we can compare later informations about the resource usage of generative program and detect inconsistencies in the generated code.
 
-\subsection{System Containers as Execution platforms}
 
-Before starting to monitor and test applications, we have to deploy generated code on different components to ease containers provisioning and profiling.
+The rest of this section details the technical choices we made to synthesis a testing infrastructure to detect inconsistencies between code-generator regarding memory and CPU consumption.  
+
+\subsection{Technical implementation}
+
+The general overview of the technical implementation is shown in Figure 2. In the following subsections, we describe the deployment and testing architecture of generated code within containers.
+
+
+\subsubsection{System Containers as Execution platforms}
+
+
+%For this purpose, we propose a testing infrastructure based on System Container techniques such as Docker\footnote{\url{https://www.docker.com}} environment. 
+%This framework automates the deployment and execution of applications inside software containers by allowing multiple program configurations to run autonomously on different servers (i. e., a cloud servers).
+%It also provides a distributed environment where system storage and resources can be finely managed and limited according to the needs. 
+
+%Thus, we integrate a collection of components to define the adequate infrastructure for testing and monitoring of code generators. 
+
+
+Before starting to monitor and test applications, we have to deploy generated code on different components to ease containers provisioning and profiling. 
 We aim to use Docker Linux containers to monitor the execution of different generated artifacts in terms of resource usage. 
-Docker is an open source engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
+Docker {\url{https://www.docker.com}} is an open source container engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
 %To achieve that, Docker uses the Linux container technology. 
-Using Docker, we can define preconfigured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine using configuration files called Dockerfiles. 
+Using Docker, we can define pre-configured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine using configuration files called Docker files. 
 %As properties, we can define the OS where the service has to run, dependencies, etc. 
 %A simple way to build images automatically is to use Dockerfiles which represents configuration files.
 %Docker can build images automatically by reading the instructions from a Dockerfile. 
@@ -54,14 +59,14 @@ In short, the main advantages of this approach are:
 \end{itemize}
 
 
-\subsection{Runtime Testing Components}
+\subsubsection{Runtime Testing Components}
 In order to test our running applications within Docker containers, we aim to use a set of Docker components to ease the extraction of non-functional properties related to resource usage.
-\subsubsection{Monitoring Component}
+\paragraph{Monitoring Component}
 This container provides an understanding of the resource usage and performance characteristics of our running containers. Generally, Docker containers rely on cgroups file systems to expose a lot of metrics about accumulated CPU cycles, memory, block I/O usage, etc. Therefore, our monitoring component automates the extraction of runtime performance metrics stored in cgroups files. For example, we access live resource consumption of each container available at the cgroup file system via stats found in \textit{"/sys/fs/cgroup/cpu/docker/(longid)/"} (for CPU consumption) and \textit{"/sys/fs/cgroup/memory/docker/(longid)/"} (for stats related to memory consumption). This component will automate the process of service discovery and metrics aggregation for each new container. Thus, instead of gathering manually metrics located in cgroups file systems, it extracts automatically the runtime resource usage statistics relative to the running component (i.e., the generated code that is running within a container). We note that resource usage information is collected in raw data. This process may induce a little overhead because it does very fine-grained accounting of resource usage on running container. Fortunately, this may not affect the gathered performance values since we run only one version of generated code within each container.
 To ease the monitoring process, we integrate cAdvisor, a Container Advisor\footnote{\url{https://github.com/google/cadvisor}}. It is a tool that monitors service containers at runtime. 
 
 However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, to make gathered data truly valuable for resource usage monitoring, it becomes necessary to log it into a database at runtime. Thus, we link our monitoring component to a back-end database component. 
-\subsubsection{Back-end Database Component}
+\paragraph{Back-end Database Component}
 This component represents a time-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. 
 
 During the execution of generated code, resource usage stats are continuously sent to this component. When a container is killed, we are able to access to its relative resource usage metrics through the database. We choose a time series database because we are collecting time series data that correspond to the resource utilization profiles of programs execution.
@@ -109,7 +114,7 @@ To give an idea about the data gathered from the monitoring component and stored
 Apart from that, our framework provides also information about the size of generated binaries and the compilation time needed to produced code.
 For instance, resource usage statistics are collected and stored using these two components. It is relevant to show resource usage profiles of running programs overtime. To do so, we present a front-end visualization component for performance profiling. 
 
-\subsubsection{Front-end Visualization Component}
+\paragraph{Front-end Visualization Component}
 \begin{figure*}[h]
 	\includegraphics[width=1\linewidth]{Ressources/background2.pdf}
 	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime.}
@@ -122,7 +127,7 @@ Once we gather and store resource usage data, the next step is visualizing them.
 %An overview of the monitoring dashboard is shown in Figure 3.
 To do so, we choose Grafana\footnote{\url{https://github.com/grafana/grafana}}, a time-series visualization tool available for Docker. 
 
-\subsection{Wrapping Everything Together: Architecture Overview}
+\subsubsection{Wrapping Everything Together: Architecture Overview}
 To summarize, we present, in Figure 2, an overall overview of the different components involved in our approach to perform the non-functional testing of code generators.
 
 First, instead of configuring all code generators under test (GUTs) within the same host machine (as we presented in the motivation section), we wrap each GUT within a container. To do so, we create a new configuration image for each GUT (i.e., the Docker image) where we install all the libraries, compilers, and dependencies needed to ensure the code generation and compilation. Thereby, the GUT produce code within multiple instances of preconfigured Docker images. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated and configured environment. In this step, new configurations are needed to run each job without any issue (i.e., define the execution environment within the container, the host machine, the target platform, limit the resources, etc.). For our case, a job represents a generated and compiled program using one of the GUTs. Meanwhile, we start our runtime testing components (e.g., cAdvisor, InfluxDB and Grafana). The monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. The visualization component comes later to allow end users to define performance metrics and draw up charts. The use of the front-end visualization component is optional and we can directly access to information stored in the database through REST API calls. Thus, we can observe later informations about the resource usage of generated code and detect inconsistencies in the generated code by GUTs.
