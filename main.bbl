@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -68,6 +68,17 @@ Z.~Pan and R.~Eigenmann.
 \newblock In \emph{International Symposium on Code Generation and Optimization
   (CGO'06)}, pages 12--pp. IEEE, 2006.
 
+\bibitem[Pazirandeh and Vorobyeva(2015)]{pazirandeh2015evaluation}
+A.~Pazirandeh and E.~Vorobyeva.
+\newblock Evaluation of cross-platform tools for mobile development.
+\newblock 2015.
+
+\bibitem[Richard-Foy et~al.(2013)Richard-Foy, Barais, and
+  J{\'e}z{\'e}quel]{richard2013efficient}
+J.~Richard-Foy, O.~Barais, and J.-M. J{\'e}z{\'e}quel.
+\newblock Efficient high-level abstractions for web programming.
+\newblock In \emph{ACM SIGPLAN Notices}, volume~49, pages 53--60. ACM, 2013.
+
 \bibitem[Spoiala et~al.(2016)Spoiala, Calinciuc, Turcu, and
   Filote]{spoiala2016performance}
 C.~C. Spoiala, A.~Calinciuc, C.~O. Turcu, and C.~Filote.
@@ -75,6 +86,20 @@ C.~C. Spoiala, A.~Calinciuc, C.~O. Turcu, and C.~Filote.
   machine.
 \newblock In \emph{2016 International Conference on Development and Application
   Systems (DAS)}, pages 295--298. IEEE, 2016.
+
+\bibitem[Stepasyuk and Paunov(2015)]{stepasyuk2015evaluating}
+S.~Stepasyuk and Y.~Paunov.
+\newblock Evaluating the haxe programming language-performance comparison
+  between haxe and platform-specific languages.
+\newblock 2015.
+
+\bibitem[{\v{S}}trekelj et~al.(2015){\v{S}}trekelj, Leventi{\'c}, and
+  Gali{\'c}]{vstrekelj2015performance}
+D.~{\v{S}}trekelj, H.~Leventi{\'c}, and I.~Gali{\'c}.
+\newblock Performance overhead of haxe programming language for cross-platform
+  game development.
+\newblock \emph{International Journal of Electrical and Computer Engineering
+  Systems}, 6\penalty0 (1):\penalty0 9--13, 2015.
 
 \bibitem[Stuermer et~al.(2007)Stuermer, Conrad, Doerr, and
   Pepper]{stuermer2007systematic}

@@ -5,46 +5,49 @@ The style file: abbrvnat.bst
 Database file #1: ref.bib
 Warning--empty journal in hundt2011loop
 Warning--can't use both volume and number fields in nethercote2007valgrind
+Warning--empty journal in pazirandeh2015evaluation
+Warning--can't use both volume and number fields in richard2013efficient
+Warning--empty journal in stepasyuk2015evaluating
 Warning--can't use both volume and number fields in sturmer2005overview
-You've used 13 entries,
+You've used 17 entries,
             2773 wiz_defined-function locations,
-            674 strings with 7035 characters,
-and the built_in function-call counts, 7104 in all, are:
-= -- 682
-> -- 334
-< -- 18
-+ -- 112
-- -- 99
-* -- 523
-:= -- 1002
-add.period$ -- 47
-call.type$ -- 13
-change.case$ -- 72
-chr.to.int$ -- 13
-cite$ -- 29
-duplicate$ -- 361
-empty$ -- 611
-format.name$ -- 124
-if$ -- 1585
+            693 strings with 7830 characters,
+and the built_in function-call counts, 8921 in all, are:
+= -- 846
+> -- 436
+< -- 22
++ -- 146
+- -- 129
+* -- 665
+:= -- 1274
+add.period$ -- 60
+call.type$ -- 17
+change.case$ -- 94
+chr.to.int$ -- 17
+cite$ -- 40
+duplicate$ -- 451
+empty$ -- 760
+format.name$ -- 162
+if$ -- 1971
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 13
-newline$ -- 73
-num.names$ -- 52
-pop$ -- 164
+missing$ -- 17
+newline$ -- 93
+num.names$ -- 68
+pop$ -- 211
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 77
 quote$ -- 0
-skip$ -- 287
+skip$ -- 358
 stack$ -- 0
-substring$ -- 322
-swap$ -- 94
-text.length$ -- 11
+substring$ -- 370
+swap$ -- 106
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 143
-warning$ -- 3
-while$ -- 71
+type$ -- 187
+warning$ -- 6
+while$ -- 88
 width$ -- 0
-write$ -- 184
-(There were 3 warnings)
+write$ -- 234
+(There were 6 warnings)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  29 JUN 2016 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  30 JUN 2016 00:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,11 +483,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./related.tex
-Underfull \vbox (badness 1472) has occurred while \output is active []
+(./related.tex [10]) (./conclusion.tex) (./main.bbl
+Underfull \vbox (badness 2142) has occurred while \output is active []
 
- [10])
-(./conclusion.tex) (./main.bbl
+
 Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
@@ -505,10 +504,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5631 strings out of 493027
- 79491 string characters out of 6134069
- 239886 words of memory out of 5000000
- 9052 multiletter control sequences out of 15000+600000
+ 5644 strings out of 493027
+ 79868 string characters out of 6134069
+ 240127 words of memory out of 5000000
+ 9065 multiletter control sequences out of 15000+600000
  30126 words of font info for 54 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,12n,42p,1721b,4212s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -524,7 +523,7 @@ al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1343155 bytes).
+Output written on main.pdf (11 pages, 1344589 bytes).
 PDF statistics:
  477 PDF objects out of 1000 (max. 8388607)
  299 compressed objects within 3 object streams
