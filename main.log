@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.10)  29 JUN 2016 09:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.10)  29 JUN 2016 11:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -407,40 +407,40 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
  [3])
-(./infra.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(./infra.tex [4] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Overfull \hbox (6.437pt too wide) in paragraph at lines 93--93
+Overfull \hbox (6.437pt too wide) in paragraph at lines 98--98
 []|\OT1/ptm/m/n/10 Network| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 []|\OT1/ptm/m/n/10 Disk
  []
 
 
-Overfull \hbox (5.98694pt too wide) in paragraph at lines 97--97
+Overfull \hbox (5.98694pt too wide) in paragraph at lines 102--102
 []|\OT1/ptm/m/n/10 Memory| 
  []
 
 
-Overfull \hbox (1.44109pt too wide) in paragraph at lines 85--103
+Overfull \hbox (1.44109pt too wide) in paragraph at lines 90--108
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] <Ressources/background2.pdf, id=112, 1017.8025pt x 377.41pt>
+
+Underfull \vbox (badness 2818) has occurred while \output is active []
+
+ [5]
+<Ressources/background2.pdf, id=113, 1017.8025pt x 377.41pt>
 File: Ressources/background2.pdf Graphic file (type pdf)
 
 <use Ressources/background2.pdf>
-Package pdftex.def Info: Ressources/background2.pdf used on input line 114.
+Package pdftex.def Info: Ressources/background2.pdf used on input line 119.
 (pdftex.def)             Requested size: 504.0pt x 186.8905pt.
 
 
@@ -456,13 +456,14 @@ Overfull \hbox (1.80586pt too wide) in paragraph at lines 32--44
  [][] 
  []
 
-<Ressources/settingup.pdf, id=116, 482.80376pt x 337.26pt>
+[7 <./Ressources/background2.pdf>]
+<Ressources/settingup.pdf, id=259, 482.80376pt x 337.26pt>
 File: Ressources/settingup.pdf Graphic file (type pdf)
 
 <use Ressources/settingup.pdf>
 Package pdftex.def Info: Ressources/settingup.pdf used on input line 60.
 (pdftex.def)             Requested size: 240.0pt x 167.65181pt.
- [7 <./Ressources/background2.pdf>]
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -481,14 +482,14 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tp') on input line 146.
 
-<Ressources/avgmem.pdf, id=259, 715.67375pt x 385.44pt>
+<Ressources/avgmem.pdf, id=260, 715.67375pt x 385.44pt>
 File: Ressources/avgmem.pdf Graphic file (type pdf)
 
 <use Ressources/avgmem.pdf>
 Package pdftex.def Info: Ressources/avgmem.pdf used on input line 182.
 (pdftex.def)             Requested size: 240.0pt x 129.25406pt.
 
-<Ressources/avgtime.pdf, id=260, 704.6325pt x 384.43625pt>
+<Ressources/avgtime.pdf, id=261, 704.6325pt x 384.43625pt>
 File: Ressources/avgtime.pdf Graphic file (type pdf)
 
 <use Ressources/avgtime.pdf>
@@ -499,10 +500,10 @@ Package pdftex.def Info: Ressources/avgtime.pdf used on input line 187.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./related.tex) (./conclusion.tex [8 <./Ressources/settingup.pdf> <./Ressourc
-es/avgmem.pdf>])
+es/avgmem.pdf>]
 Underfull \vbox (badness 2486) has occurred while \output is active []
 
- [9 <./Ressources/avgtime.pdf>] (./main.bbl
+ [9 <./Ressources/avgtime.pdf>]) (./main.bbl
 Underfull \hbox (badness 4569) in paragraph at lines 50--54
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
@@ -516,11 +517,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5650 strings out of 494310
- 79518 string characters out of 6162891
- 217207 words of memory out of 5000000
- 8863 multiletter control sequences out of 15000+600000
- 29859 words of font info for 53 fonts, out of 8000000 for 9000
+ 5652 strings out of 494310
+ 79539 string characters out of 6162891
+ 217588 words of memory out of 5000000
+ 8864 multiletter control sequences out of 15000+600000
+ 30027 words of font info for 54 fonts, out of 8000000 for 9000
  375 hyphenation exceptions out of 8191
  41i,16n,42p,1562b,1268s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -529,14 +530,15 @@ f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1372645 bytes).
+amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (10 pages, 1384563 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
+ 521 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
