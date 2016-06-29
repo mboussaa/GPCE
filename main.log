@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  29 JUN 2016 12:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  29 JUN 2016 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -466,7 +466,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [7 <./Ressources/background2.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tp') on input line 123.
+               Default added (so using `tp') on input line 120.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -477,16 +477,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [8 <./Ressources/settingup.pdf>]) (./related.tex) (./conclusion.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9])
+)
 (./main.bbl
 Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
 
-) [10] (./main.aux)
+[9]) [10
+
+] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -518,7 +517,7 @@ al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1336893 bytes).
+Output written on main.pdf (10 pages, 1334975 bytes).
 PDF statistics:
  474 PDF objects out of 1000 (max. 8388607)
  297 compressed objects within 3 object streams
