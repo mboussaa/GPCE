@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  29 JUN 2016 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  29 JUN 2016 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,12 +480,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9])
-(./related.tex) (./conclusion.tex) (./main.bbl
+(./related.tex) (./conclusion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
 
-[10]) [11
+) [11
 
 ] (./main.aux)
 
@@ -519,7 +526,7 @@ al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1340940 bytes).
+Output written on main.pdf (11 pages, 1341945 bytes).
 PDF statistics:
  477 PDF objects out of 1000 (max. 8388607)
  299 compressed objects within 3 object streams

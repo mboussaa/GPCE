@@ -236,8 +236,11 @@ We assume then that the faulty code generator, in this case, represents a threat
  
 The inconsistencies we are trying to find here are more related to the incorrect memory utilization patterns produced by the faulty code generator. Such inconsistencies may come from an inadequate type usage, high resource instantiation, etc.
 
-Now that we have observed the non-functional behavior of test suites execution in different languages, we can analyze the extreme points we have detected in previous tables to see more in deep the source of such deviation.
-For that reason, we present in table 5 and 6, the raw data values of these extreme test suites.
+Now that we have observed the non-functional behavior of test suites execution in different languages, we can analyze the extreme points we have detected in previous tables to dig more in deep the source of such deviation.
+For that reason, we present in table 5 and 6 the raw data values of these extreme test suites in terms of execution time and memory usage. 
+
+Table 5 is showing the execution time of each test suite in a specific target language. We provides also factors of execution times among test suites running in different languages by taking as a baseline the JS version. 
+Prior to this, wa calculated the average execution time and memory usage for all test suites per language (for all benchmark libraries). We found that JS has the lowest memory usage and execution time therefore, we choose it as a baseline. Based on these results, we can clearly see that the PHP code has the lowest performance with a factor ranging from x40.9 for testsuite 3 in benchamrk Format (Format\_TS3) to x481.7 for Math\_TS1. We remark also that running Core\_TS4 takes 61777 seconds (almost 17 hours) compared to a 416 seconds (around 6 minutes) in JAVA which is a very large gap. The highest factor detected for other languages ranges from 0.3 to 5.4 which is not negligible but it represents a small deviation compared to PHP version. While it is true that we are comparing different versions of generated code, it was expected to get some variations while running test cases in terms of execution time. However, in the case of PHP code generator it is far to be a simple variation but it is more likely to be a non-functional bug.  
  
 
 
