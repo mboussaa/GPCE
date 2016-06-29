@@ -1,16 +1,9 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Bragan{\c{c}}a and Machado(2008)]{bragancca2008transformation}
-A.~Bragan{\c{c}}a and R.~J. Machado.
-\newblock Transformation patterns for multi-staged model driven software
-  development.
-\newblock In \emph{Software Product Line Conference, 2008. SPLC'08. 12th
-  International}, pages 329--338. IEEE, 2008.
 
 \bibitem[Brambilla et~al.(2012)Brambilla, Cabot, and
   Wimmer]{brambilla2012model}
@@ -18,13 +11,6 @@ M.~Brambilla, J.~Cabot, and M.~Wimmer.
 \newblock Model-driven software engineering in practice.
 \newblock \emph{Synthesis Lectures on Software Engineering}, 1\penalty0
   (1):\penalty0 1--182, 2012.
-
-\bibitem[Czarnecki and Helsen(2003)]{czarnecki2003classification}
-K.~Czarnecki and S.~Helsen.
-\newblock Classification of model transformation approaches.
-\newblock In \emph{Proceedings of the 2nd OOPSLA Workshop on Generative
-  Techniques in the Context of the Model Driven Architecture}, volume~45, pages
-  1--17. USA, 2003.
 
 \bibitem[Delgado et~al.(2004)Delgado, Gates, and Roach]{delgado2004taxonomy}
 N.~Delgado, A.~Q. Gates, and S.~Roach.
@@ -64,20 +50,6 @@ S.~J{\"o}rges and B.~Steffen.
 \newblock Back-to-back testing of model-based code generators.
 \newblock In \emph{International Symposium On Leveraging Applications of Formal
   Methods, Verification and Validation}, pages 425--444. Springer, 2014.
-
-\bibitem[Jouault and Kurtev(2005)]{jouault2005transforming}
-F.~Jouault and I.~Kurtev.
-\newblock Transforming models with atl.
-\newblock In \emph{International Conference on Model Driven Engineering
-  Languages and Systems}, pages 128--138. Springer, 2005.
-
-\bibitem[Musset et~al.(2006)Musset, Juliot, Lacrampe, Piers, Brun, Goubet,
-  Lussaud, and Allilaire]{musset2006acceleo}
-J.~Musset, {\'E}.~Juliot, S.~Lacrampe, W.~Piers, C.~Brun, L.~Goubet,
-  Y.~Lussaud, and F.~Allilaire.
-\newblock Acceleo user guide.
-\newblock \emph{See also http://acceleo.
-  org/doc/obeo/en/acceleo-2.6-user-guide. pdf}, 2, 2006.
 
 \bibitem[Nethercote and Seward(2007)]{nethercote2007valgrind}
 N.~Nethercote and J.~Seward.

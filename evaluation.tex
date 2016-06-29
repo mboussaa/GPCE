@@ -53,6 +53,8 @@ It corresponds to the maximum memory consumption of the running container under 
 
 -\textit{Execution Time (T)}:
 Program execution time is measured in seconds.
+
+We recall that our tool is able to evaluate other non-functional properties of generated code such as code generation time, compilation time, code size, CPU usage.
  
 \subsubsection{Setting up Infrastructure}
 \begin{figure}[h]
@@ -62,102 +64,149 @@ Program execution time is measured in seconds.
 \end{figure}
 To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
 Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
-\begin{table*}[h]
+
+
+\begin{table}[h]
 	\centering
-	\resizebox{\linewidth}{!}{%
-	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-		\cline{2-16}
-		& \multicolumn{3}{c|}{\textbf{JAVA}} & \multicolumn{3}{c|}{\textbf{JS}} & \multicolumn{3}{c|}{\textbf{CPP}} & \multicolumn{3}{c|}{\textbf{CS}} & \multicolumn{3}{c|}{\textbf{PHP}}                                                 \\ \cline{2-16} 
-		& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg   & Min   & Max \\ \hhline{|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|}
-		\multicolumn{1}{|l|}{Color}   & 2.72   & 0,69   & 28,58   & 1,67   & 0,52  & 16,66  & 3,52   & 0,37   & 48,31  & 3,81   & 0,52  & 45,97  & 23,16  & 0,61  &  279,27  \\ \hline
-		\multicolumn{1}{|l|}{Core}    & 9,25   & 0,57   & 8,71    & 15,01   & 0,51  & 14,01  & 14,49   & 0,42   & 8,11   & 24,07   & 0,50  & 21,60  &  1238,49  & 0,47  &  2479,07 \\ \hline
-		\multicolumn{1}{|l|}{Hxmath}  & 1,62   & 0,66   & 3,38    & 1,1    & 0,54  & 2,04   & 0,81   & 0,39   & 1,42   & 1,64   & 0,56  & 4,01   &  26,53  & 1,06  &  73,44   \\ \hline
-		\multicolumn{1}{|l|}{Format}  & 2,19   & 0,71   & 5,03    & 2,23   & 0,60  & 5,402  & 2,57   & 0,37   & 7,67   & 4,97   & 0,54  & 12,38  &  93,53  & 1,11  &  220,75  \\ \hline
-		\multicolumn{1}{|l|}{Promise} & 0,89   & 0,63   & 1,72    & 1,44   & 0,54  & 2,09   & 0,69   & 0,39   & 1,12   & 0,99   & 0,48  & 1,71   &  11,96  & 1,13  &  31,18   \\ \hline
-		\multicolumn{1}{|l|}{Culture} & 0,64   & 0,55   & 0,82    & 0,50   & 0,46  & 0,57   & 0,44   & 0,37   & 0,62   & 0,50   & 0,43  & 0,65   & 1,46                           & 0,61  & 3,79                            \\ \hline
-		\multicolumn{1}{|l|}{Math}    & 5,26   & 0,98   & 12,51   & 1,66   & 0,75  & 3.10   & 6,30   & 0,93   & 16,29  & 5,75   & 0,94  & 14,14  & 523,17 & 55,45 &  1448,9  \\ \hline
+
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+		\hline
+		\textbf{Benchmark}                 & \textbf{TestSuite} & \textbf{Std\_dev}                & \textbf{TestSuite} & \textbf{Std\_dev}             & \textbf{TestSuite} & \textbf{Std\_dev}              \\ \hline
+		& \textbf{TS1}       & 0,55                             & \textbf{TS8}       & 0,24                          & \textbf{TS15}      & 0,73                           \\ \cline{2-7} 
+		& \textbf{TS2}       & 0,29                             & \textbf{TS9}       & 0,22                          & \textbf{TS16}      & 0,12                           \\ \cline{2-7} 
+		& \textbf{TS3}       & 0,34                             & \textbf{TS10}      & 0,10                          & \textbf{TS17}      & 0,31                           \\ \cline{2-7} 
+		& \textbf{TS4}       & 2,51                             & \textbf{TS11}      & 0,17                          & \textbf{TS18}      & 0,34                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 1,53                             & \textbf{TS12}      & 0,28                          & \textbf{TS19}      & \cellcolor[HTML]{C0C0C0}120,61 \\ \cline{2-7} 
+		& \textbf{TS6}       & 43,50                            & \textbf{TS13}      & 0,33                         & \multicolumn{2}{l|}{\multirow{2}{*}{}} \\ \cline{2-5}
+		\multirow{-7}{*}{\textbf{Color}}   & \textbf{TS7}       & 0,50                             & \textbf{TS14}      & 1,88                          & \multicolumn{2}{l|}{}                  \\ \hline
+		& \textbf{TS1}       & 0,35                             & \textbf{TS18}      & 0,16                          & \textbf{TS35}      & 1,30                           \\ \cline{2-7} 
+		& \textbf{TS2}       & 0,07                             & \textbf{TS19}      & 0,60                          & \textbf{TS36}      & 1,13                           \\ \cline{2-7} 
+		& \textbf{TS3}       & 0,30                             & \textbf{TS20}      & 5,79                          & \textbf{TS37}      & 2,02                           \\ \cline{2-7} 
+		& \textbf{TS4}       & \cellcolor[HTML]{C0C0C0}27299,89 & \textbf{TS21}      & 0,47                          & \textbf{TS38}      & 0,26                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 6,12                             & \textbf{TS22}      & 2,74                          & \textbf{TS39}      & 0,16                           \\ \cline{2-7} 
+		& \textbf{TS6}       & 21,90                            & \textbf{TS23}      & 2,14                          & \textbf{TS40}      & 8,12                           \\ \cline{2-7} 
+		& \textbf{TS7}       & 0,41                             & \textbf{TS24}      & 3,79                          & \textbf{TS41}      & 5,45                           \\ \cline{2-7} 
+		& \textbf{TS8}       & 0,28                             & \textbf{TS25}      & 0,19                          & \textbf{TS42}      & 0,11                           \\ \cline{2-7} 
+		& \textbf{TS9}       & 0,78                             & \textbf{TS26}      & 0,13                          & \textbf{TS43}      & 1,41                           \\ \cline{2-7} 
+		& \textbf{TS10}      & 1,82                             & \textbf{TS27}      & 5,59                          & \textbf{TS44}      & 1,56                           \\ \cline{2-7} 
+		& \textbf{TS11}      & \cellcolor[HTML]{C0C0C0}180,68   & \textbf{TS28}      & 1,71                          & \textbf{TS45}      & 0,11                           \\ \cline{2-7} 
+		& \textbf{TS12}      & \cellcolor[HTML]{C0C0C0}185,02   & \textbf{TS29}      & 0,26                          & \textbf{TS46}      & 1,04                           \\ \cline{2-7} 
+		& \textbf{TS13}      & \cellcolor[HTML]{C0C0C0}128,78   & \textbf{TS30}      & 0,44                          & \textbf{TS47}      & 0,23                           \\ \cline{2-7} 
+		& \textbf{TS14}      & 0,71                             & \textbf{TS31}      & 1,71                          & \textbf{TS48}      & 1,34                           \\ \cline{2-7} 
+		& \textbf{TS15}      & 0,12                             & \textbf{TS32}      & 2,42                          & \textbf{TS49}      & 1,86                           \\ \cline{2-7} 
+		& \textbf{TS16}      & 0,65                             & \textbf{TS33}      & 8,29                          & \textbf{TS50}      & 1,28                           \\ \cline{2-7} 
+		\multirow{-17}{*}{\textbf{Core}}   & \textbf{TS17}      & 0,26                             & \textbf{TS34}      & 5,25                          & \textbf{TS51}      & 3,53                           \\ \hline
+		& \textbf{TS1}       & 31,65                            & \textbf{TS3}       & 30,34                         & \textbf{TS5}       & 0,40                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Hxmath}}  & \textbf{TS2}       & 4,27                             & \textbf{TS4}       & 0,25                          & \textbf{TS6}       & 0,87                           \\ \hline
+		& \textbf{TS1}       & 0,28                             & \textbf{TS3}       & \cellcolor[HTML]{C0C0C0}95,36 & \textbf{TS4}       & 1,49                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Format}}  & \textbf{TS2}       & \cellcolor[HTML]{C0C0C0}64,94    & \multicolumn{4}{l|}{\textbf{}}                                                                           \\ \hline
+		\textbf{Promise}                   & \textbf{TS1}       & 0,29                             & \textbf{TS2}       & 13,21                         & \textbf{TS3}       & 1,21                           \\ \hline
+		& \textbf{TS1}       & 0,13                             & \textbf{TS3}       & 0,13                          & \textbf{TS4}       & 1,40                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Culture}} & \textbf{TS2}       & 0,10                             & \multicolumn{4}{l|}{}                                                                                    \\ \hline
+		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}642,85   & \textbf{TS2}       & 28,32                         & \textbf{TS3}       & 24,40                          \\ \hline
 	\end{tabular}%
-}
-	\caption{Execution time stats}
-	\label{my-label}
-\end{table*}
+	}
+		\caption{My caption}
+		\label{my-label}
+\end{table}
+
 % Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+	\centering
+
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+		\hline
+		\textbf{Benchmark}                 & \textbf{TestSuite} & \textbf{Std\_dev}               & \textbf{TestSuite} & \textbf{Std\_dev}              & \textbf{TestSuite} & \textbf{Std\_dev}              \\ \hline
+		& \textbf{TS1}       & 10,19                           & \textbf{TS8}       & 1,23                           & \textbf{TS15}      & 14,44                          \\ \cline{2-7} 
+		& \textbf{TS2}       & 1,17                            & \textbf{TS9}       & 1,95                           & \textbf{TS16}      & 1,13                           \\ \cline{2-7} 
+		& \textbf{TS3}       & 0,89                            & \textbf{TS10}      & 1,27                           & \textbf{TS17}      & 0,72                           \\ \cline{2-7} 
+		& \textbf{TS4}       & 30,34                           & \textbf{TS11}      & 0,57                           & \textbf{TS18}      & 0,97                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 31,79                           & \textbf{TS12}      & 1,11                           & \textbf{TS19}      & \cellcolor[HTML]{C0C0C0}777,32 \\ \cline{2-7} 
+		& \textbf{TS6}       & \cellcolor[HTML]{C0C0C0}593,05  & \textbf{TS13}      & 0,46                           & \multicolumn{2}{l|}{}                               \\ \cline{2-5}
+		\multirow{-7}{*}{\textbf{Color}}   & \textbf{TS7}       & 12,14                           & \textbf{TS14}      & 45,90                          & \multicolumn{2}{l|}{\multirow{-2}{*}{}}             \\ \hline
+		& \textbf{TS1}       & 1,40                            & \textbf{TS18}      & 1,00                           & \textbf{TS35}      & 14,13                          \\ \cline{2-7} 
+		& \textbf{TS2}       & 1,17                            & \textbf{TS19}      & 20,37                          & \textbf{TS36}      & 32,41                          \\ \cline{2-7} 
+		& \textbf{TS3}       & 0,60                            & \textbf{TS20}      & 128,23                         & \textbf{TS37}      & 22,72                          \\ \cline{2-7} 
+		& \textbf{TS4}       & \cellcolor[HTML]{C0C0C0}403,15  & \textbf{TS21}      & 24,38                          & \textbf{TS38}      & 2,19                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 41,95                           & \textbf{TS22}      & 76,24                          & \textbf{TS39}      & 0,26                           \\ \cline{2-7} 
+		& \textbf{TS6}       & 203,55                          & \textbf{TS23}      & 18,82                          & \textbf{TS40}      & 126,29                         \\ \cline{2-7} 
+		& \textbf{TS7}       & 19,69                           & \textbf{TS24}      & 72,01                          & \textbf{TS41}      & 31,01                          \\ \cline{2-7} 
+		& \textbf{TS8}       & 0,78                            & \textbf{TS25}      & 0,21                           & \textbf{TS42}      & 0,93                           \\ \cline{2-7} 
+		& \textbf{TS9}       & 30,41                           & \textbf{TS26}      & 2,30                           & \textbf{TS43}      & 50,36                          \\ \cline{2-7} 
+		& \textbf{TS10}      & 57,19                           & \textbf{TS27}      & 101,53                         & \textbf{TS44}      & 12,56                          \\ \cline{2-7} 
+		& \textbf{TS11}      & 68,92                           & \textbf{TS28}      & 43,67                          & \textbf{TS45}      & 0,91                           \\ \cline{2-7} 
+		& \textbf{TS12}      & 74,19                           & TS29               & 0,90                           & \textbf{TS46}      & 27,28                          \\ \cline{2-7} 
+		& \textbf{TS13}      & 263,99                          & \textbf{TS30}      & 4,02                           & \textbf{TS47}      & 1,10                           \\ \cline{2-7} 
+		& \textbf{TS14}      & 19,89                           & \textbf{TS31}      & 52,35                          & \textbf{TS48}      & 15,40                          \\ \cline{2-7} 
+		& \textbf{TS15}      & 0,30                            & \textbf{TS32}      & 134,75                         & \textbf{TS49}      & 37,01                          \\ \cline{2-7} 
+		& \textbf{TS16}      & 28,29                           & \textbf{TS33}      & 82,66                          & \textbf{TS50}      & 23,29                          \\ \cline{2-7} 
+		\multirow{-17}{*}{Core}            & \textbf{TS17}      & 1,16                            & \textbf{TS34}      & 89,57                          & \textbf{TS51}      & 1,28                           \\ \hline
+		& \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}444,18  & \textbf{TS3}       & \cellcolor[HTML]{C0C0C0}425,65 & \textbf{TS5}       & 17,69                          \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Hxmath}}  & \textbf{TS2}       & 154,80                          & \textbf{TS4}       & 0,96                           & \textbf{TS6}       & 46,13                          \\ \hline
+		& \textbf{TS1}       & 0,74                            & \textbf{TS3}       & 255,36                         & \textbf{TS4}       & 8,40                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Format}}  & \textbf{TS2}       & 106,87                          & \multicolumn{4}{l|}{\textbf{}}                                                                            \\ \hline
+		\textbf{Promise}                   & \textbf{TS1}       & 0,30                            & \textbf{TS2}       & 58,76                          & \textbf{TS3}       & 20,04                          \\ \hline
+		& \textbf{TS1}       & 1,28                            & \textbf{TS3}       & 0,58                           & \textbf{TS4}       & 15,69                          \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Culture}} & \textbf{TS2}       & 4,51                            & \multicolumn{4}{l|}{}                                                                                     \\ \hline
+		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}1041,53 & \textbf{TS2}       & 234,93                         & \textbf{TS3}       & 281,12                         \\ \hline
+	\end{tabular}%
+}
+	\caption{My caption}
+	\label{my-label}
+\end{table}
 
 
 \begin{table*}[h]
 	\centering
-	
+
 	\resizebox{\linewidth}{!}{%
-\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-	\cline{2-16}
-		& \multicolumn{3}{c|}{\textbf{JAVA}} & \multicolumn{3}{c|}{\textbf{JS}} & \multicolumn{3}{c|}{\textbf{CPP}} & \multicolumn{3}{c|}{\textbf{CS}} & \multicolumn{3}{c|}{\textbf{PHP}}                                                 \\ \cline{2-16} 
-	& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg   & Min   & Max \\ \hhline{|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|}
-	\multicolumn{1}{|l|}{Color}   & 115,98  & 0,53  & 1362,55 & 62,33   & 0,70 & 900,70 & 169,90  & 0,16 & 2275,49 & 87,51   & 0,42 & 1283,3 & 173,69  & 0,81   & 2189,85 \\ \hline
-	\multicolumn{1}{|l|}{Core}    & 55,32   & 0,52  & 1057,32 & 12,85    & 0,64 & 59,96  & 21,19    & 0,29 & 35,97   & 16,66    & 0,59 & 42,92  & 111,10    & 0,46   & 32,91   \\ \hline
-	\multicolumn{1}{|l|}{Hxmath}  & 121,47  & 0,70  & 389,72  & 37,23   & 1,37 & 111,68 & 96,15   & 1,20 & 296,43  & 50,19   & 0,81 & 156,40 & 472,26  & 1,11   & 1192,98 \\ \hline
-	\multicolumn{1}{|l|}{Format}  & 214,04  & 0,67  & 685,90  & 38,93   & 2,42 & 92,34  & 70,29   & 1,12 & 204,85  & 31,11   & 1,08 & 69,16  & 177,17  & 0,58   & 385,11  \\ \hline
-	\multicolumn{1}{|l|}{Promise} & 32,85   & 1,23  & 128,29  & 31,65   & 0,54 & 55,29  & 0,93    & 0,45 & 1,73    & 12,85   & 0,87 & 34,49  & 57,96   & 0,65   & 134,20  \\ \hline
-	\multicolumn{1}{|l|}{Culture} & 2,20    & 1,15  & 4,04    & 1,12    & 0,70 & 1,59   & 1,68    & 1,35 & 2,02    & 3,34    & 0,55 & 11,20  & 10,11   & 1,11   & 36,32   \\ \hline
-	\multicolumn{1}{|l|}{Math}    & 353,18  & 1,21  & 831,44  & 165,71  & 0,93 & 493,66 & 597,02  & 1,61 & 1492,97 & 312,37  & 3,37 & 806,33 & 1448,45 & 626,83 & 3088,15 \\ \hline
-\end{tabular}%
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+		\hline
+		\multirow{2}{*}{}    & \multicolumn{2}{c|}{\textbf{JS}}      & \multicolumn{2}{c|}{\textbf{JAVA}}    & \multicolumn{2}{c|}{\textbf{C++}}     & \multicolumn{2}{c|}{\textbf{CS}}      & \multicolumn{2}{c|}{\textbf{PHP}}     \\ \cline{2-11} 
+		& \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} \\ \hline
+		\textbf{Color\_TS6}  & 900,70              & x1.0            & 1362,55              & x1,5            & 2275,49             & x2,5            & 1283,31             & x1,4            & 758,79              & x0,8            \\ \hline
+		\textbf{Color\_TS19} & 253,01              & x1.0            & 819,92              & x3,2            & 923,99              & x3,7            & 327,61              & x1,3            & 2189,86             & x8,7            \\ \hline
+		\textbf{Core\_TS4}   & 303,09              & x1.0            & 768,22              & x2,5            & 618,42              & x2              & 235,75              & x0,8            & 1237,15             & x4,1            \\ \hline
+		\textbf{Hxmath\_TS1} & 104,00              & x1.0            & 335,50              & x3,2            & 296,43              & x2,9            & 156,41              & x1,5            & 1192,98             & x11,5           \\ \hline
+		\textbf{Hxmath\_TS3} & 111,68              & x1.0            & 389,73              & x3,5            & 273,12              & x2,4            & 136,49              & x1,2            & 1146,05             & x10,3           \\ \hline
+		\textbf{Math\_TS1}   & 493,66              & x1.0            & 831,44              & x1,7            & 1492,97             & x3              & 806,33              & x1,6            & 3088,15             & x6,3            \\ \hline
+	\end{tabular}%
 }
-\caption{Memory stats}
-\label{my-label}
+	\caption{My caption}
+	\label{my-label}
 \end{table*}
 
 
-\begin{table}[]
+\begin{table*}[h]
 	\centering
 
-	\begin{tabular}{|l|l|l|l|l|}
+	\resizebox{\linewidth}{!}{%
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
 		\hline
-		& \textbf{JAVA} & \textbf{CPP}  & \textbf{CS}   & \textbf{PHP}   \\ \hhline{|=|=|=|=|=|}
-		Color   & 1,86 & 2,72 & 1,40 & 2,78  \\ \hline
-		Core    & 4.30 & 1.64 & 1,29 & 8,64  \\ \hline
-		Hxmath  & 3,26 & 2,58 & 1,34 & 12,68 \\ \hline
-		Format  & 5,49 & 1,80 & 0,79 & 4,55  \\ \hline
-		Promise & 1,03 & 0,02 & 0,40 & 1,83  \\ \hline
-		Culture & 1,95 & 1,49 & 2,96 & 8,96  \\ \hline
-		Math    & 2,13 & 3,60 & 1,88 & 8,74  \\ \hline
-	\end{tabular}
-		\caption{Average memory usage compared to JS version}
-		\label{my-label}
-\end{table}
-\begin{table}[]
-	\centering
+		\multirow{2}{*}{}    & \multicolumn{2}{c|}{\textbf{JS}}   & \multicolumn{2}{c|}{\textbf{JAVA}} & \multicolumn{2}{c|}{\textbf{C++}}  & \multicolumn{2}{c|}{\textbf{CS}}   & \multicolumn{2}{c|}{\textbf{PHP}}  \\ \cline{2-11} 
+		& \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} \\ \hline
+		\textbf{Color\_TS19} & 4,52             & x1.0            & 8,61             & x1,9            & 10,73            & x2,4            & 14,99            & x3,3            & 279,27           & x61,8           \\ \hline
+		\textbf{Core\_TS4}   & 665,78           & x1.0            & 416,85           & x0,6            & 699,11           & x1,1            & 1161,29          & x1,7            & 61777,21         & x92,8           \\ \hline
+		\textbf{Core\_TS11}  & 4,27             & x1.0            & 1,80             & x0,4            & 1,57             & x0,4            & 5,71             & x1,3            & 407,33           & x95,4           \\ \hline
+		\textbf{Core\_TS12}  & 4,71             & x1.0            & 2,06             & x0,4            & 1,60             & x0,3            & 5,36             & x1,1            & 417,14           & x88,6           \\ \hline
+		\textbf{Core\_TS13}  & 6,26             & x1.0            & 5,91             & x0,9            & 11,04            & x1,8            & 14,14            & x2,3            & 297,21           & x47,5           \\ \hline
+		\textbf{Format\_2}   & 2,31             & x1.0            & 2,10             & x0,9            & 1,81             & x0,8            & 6,08             & x2,6            & 148,24           & x64,1           \\ \hline
+		\textbf{Format\_3}   & 5,40             & x1.0            & 5,03             & x0,9            & 7,67             & x1,4            & 12,38            & x2,3            & 220,76           & x40,9           \\ \hline
+		\textbf{Math\_TS1}   & 3,01             & x1.0            & 12,51            & x4,2            & 16,30            & x5,4            & 14,14            & x4,7            & 1448,90          & x481,7          \\ \hline
+	\end{tabular}%
+}
+	\caption{My caption}
+	\label{my-label}
+\end{table*}
 
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		& \textbf{JAVA} & \textbf{CPP}  & \textbf{CS}   & \textbf{PHP}    \\ 	\hhline{|=|=|=|=|=|}
-		Color   & 1,63 & 2,10 & 2,28 & 13,86  \\ \hline
-		Core    & 0,65 & 1,03 & 1,71 & 88,34  \\ \hline
-		Hxmath  & 1,47 & 0,73 & 1,49 & 24,11  \\ \hline
-		Format  & 0,97 & 1,15 & 2,22 & 41,79  \\ \hline
-		Promise & 0,61 & 0,47 & 0,68 & 8,27   \\ \hline
-		Culture & 1,27 & 0,87 & 0,99 & 2,89   \\ \hline
-		Math    & 3,16 & 3,79 & 3,46 & 314,65 \\ \hline
-	\end{tabular}
-		\caption{Average execution time compared to JS version}
-		\label{my-label}
-\end{table}
 
-\begin{table}[]
-	\centering
-
-	\begin{tabular}{|l|l||l|}
-		\hline
-		& \multicolumn{1}{c||}{\begin{tabular}[c]{@{}c@{}}\textbf{Average}\\ \textbf{speed}\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{Average}\\ \textbf{memory}\end{tabular} \\ 	\hhline{|=|=|=|}
-		JAVA & 3,22                                                                         & 127,86                                                   \\ \hline
-		JS   & 3,23                                                                         & 49,97                                                    \\ \hline
-		CPP  & 4,12                                                                         & 136,74                                                   \\ \hline
-		CS   & 5,96                                                                         & 73,43                                                    \\ \hline
-		PHP  & 274,04                                                                       & 350,10                                                   \\ \hline
-	\end{tabular}
-		\caption{Average memory usage and execution speed per target language}
-		\label{my-label}
-\end{table}
 
 First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
 In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
@@ -177,6 +226,124 @@ same hardware across all experiments: an AMD A10-7700K
 APU Radeon(TM) R7 Graphics processor with 4 CPU cores
 (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of
 system memory.
+
+\subsection{Experimental Results}
+We run our Haxe benchmark across the 
+The experimental consisted of comparing the execution time and memory consumption on the following targets: Java, JS, C++, CS, and PHP.
+
+
+
+\subsection{Discussions}
+
+
+
+
+
+
+
+
+
+\iffalse
+
+\begin{table*}[h]
+	\centering
+	\resizebox{\linewidth}{!}{%
+		\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+			\cline{2-16}
+			& \multicolumn{3}{c|}{\textbf{JAVA}} & \multicolumn{3}{c|}{\textbf{JS}} & \multicolumn{3}{c|}{\textbf{CPP}} & \multicolumn{3}{c|}{\textbf{CS}} & \multicolumn{3}{c|}{\textbf{PHP}}                                                 \\ \cline{2-16} 
+			& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg   & Min   & Max \\ \hhline{|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|}
+			\multicolumn{1}{|l|}{Color}   & 2.72   & 0,69   & 28,58   & 1,67   & 0,52  & 16,66  & 3,52   & 0,37   & 48,31  & 3,81   & 0,52  & 45,97  & 23,16  & 0,61  &  279,27  \\ \hline
+			\multicolumn{1}{|l|}{Core}    & 9,25   & 0,57   & 8,71    & 15,01   & 0,51  & 14,01  & 14,49   & 0,42   & 8,11   & 24,07   & 0,50  & 21,60  &  1238,49  & 0,47  &  2479,07 \\ \hline
+			\multicolumn{1}{|l|}{Hxmath}  & 1,62   & 0,66   & 3,38    & 1,1    & 0,54  & 2,04   & 0,81   & 0,39   & 1,42   & 1,64   & 0,56  & 4,01   &  26,53  & 1,06  &  73,44   \\ \hline
+			\multicolumn{1}{|l|}{Format}  & 2,19   & 0,71   & 5,03    & 2,23   & 0,60  & 5,402  & 2,57   & 0,37   & 7,67   & 4,97   & 0,54  & 12,38  &  93,53  & 1,11  &  220,75  \\ \hline
+			\multicolumn{1}{|l|}{Promise} & 0,89   & 0,63   & 1,72    & 1,44   & 0,54  & 2,09   & 0,69   & 0,39   & 1,12   & 0,99   & 0,48  & 1,71   &  11,96  & 1,13  &  31,18   \\ \hline
+			\multicolumn{1}{|l|}{Culture} & 0,64   & 0,55   & 0,82    & 0,50   & 0,46  & 0,57   & 0,44   & 0,37   & 0,62   & 0,50   & 0,43  & 0,65   & 1,46                           & 0,61  & 3,79                            \\ \hline
+			\multicolumn{1}{|l|}{Math}    & 5,26   & 0,98   & 12,51   & 1,66   & 0,75  & 3.10   & 6,30   & 0,93   & 16,29  & 5,75   & 0,94  & 14,14  & 523,17 & 55,45 &  1448,9  \\ \hline
+		\end{tabular}%
+	}
+	\caption{Execution time stats}
+	\label{my-label}
+\end{table*}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+
+
+\begin{table*}[h]
+	\centering
+	
+	\resizebox{\linewidth}{!}{%
+		\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+			\cline{2-16}
+			& \multicolumn{3}{c|}{\textbf{JAVA}} & \multicolumn{3}{c|}{\textbf{JS}} & \multicolumn{3}{c|}{\textbf{CPP}} & \multicolumn{3}{c|}{\textbf{CS}} & \multicolumn{3}{c|}{\textbf{PHP}}                                                 \\ \cline{2-16} 
+			& Avg    & Min    & Max     & Avg    & Min   & Max    & Avg    & Min    & Max    & Avg    & Min   & Max    & Avg   & Min   & Max \\ \hhline{|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|}
+			\multicolumn{1}{|l|}{Color}   & 115,98  & 0,53  & 1362,55 & 62,33   & 0,70 & 900,70 & 169,90  & 0,16 & 2275,49 & 87,51   & 0,42 & 1283,3 & 173,69  & 0,81   & 2189,85 \\ \hline
+			\multicolumn{1}{|l|}{Core}    & 55,32   & 0,52  & 1057,32 & 12,85    & 0,64 & 59,96  & 21,19    & 0,29 & 35,97   & 16,66    & 0,59 & 42,92  & 111,10    & 0,46   & 32,91   \\ \hline
+			\multicolumn{1}{|l|}{Hxmath}  & 121,47  & 0,70  & 389,72  & 37,23   & 1,37 & 111,68 & 96,15   & 1,20 & 296,43  & 50,19   & 0,81 & 156,40 & 472,26  & 1,11   & 1192,98 \\ \hline
+			\multicolumn{1}{|l|}{Format}  & 214,04  & 0,67  & 685,90  & 38,93   & 2,42 & 92,34  & 70,29   & 1,12 & 204,85  & 31,11   & 1,08 & 69,16  & 177,17  & 0,58   & 385,11  \\ \hline
+			\multicolumn{1}{|l|}{Promise} & 32,85   & 1,23  & 128,29  & 31,65   & 0,54 & 55,29  & 0,93    & 0,45 & 1,73    & 12,85   & 0,87 & 34,49  & 57,96   & 0,65   & 134,20  \\ \hline
+			\multicolumn{1}{|l|}{Culture} & 2,20    & 1,15  & 4,04    & 1,12    & 0,70 & 1,59   & 1,68    & 1,35 & 2,02    & 3,34    & 0,55 & 11,20  & 10,11   & 1,11   & 36,32   \\ \hline
+			\multicolumn{1}{|l|}{Math}    & 353,18  & 1,21  & 831,44  & 165,71  & 0,93 & 493,66 & 597,02  & 1,61 & 1492,97 & 312,37  & 3,37 & 806,33 & 1448,45 & 626,83 & 3088,15 \\ \hline
+		\end{tabular}%
+	}
+	\caption{Memory stats}
+	\label{my-label}
+\end{table*}
+
+
+\begin{table}[]
+	\centering
+	
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		& \textbf{JAVA} & \textbf{CPP}  & \textbf{CS}   & \textbf{PHP}   \\ \hhline{|=|=|=|=|=|}
+		Color   & 1,86 & 2,72 & 1,40 & 2,78  \\ \hline
+		Core    & 4.30 & 1.64 & 1,29 & 8,64  \\ \hline
+		Hxmath  & 3,26 & 2,58 & 1,34 & 12,68 \\ \hline
+		Format  & 5,49 & 1,80 & 0,79 & 4,55  \\ \hline
+		Promise & 1,03 & 0,02 & 0,40 & 1,83  \\ \hline
+		Culture & 1,95 & 1,49 & 2,96 & 8,96  \\ \hline
+		Math    & 2,13 & 3,60 & 1,88 & 8,74  \\ \hline
+	\end{tabular}
+	\caption{Average memory usage compared to JS version}
+	\label{my-label}
+\end{table}
+\begin{table}[]
+	\centering
+	
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		& \textbf{JAVA} & \textbf{CPP}  & \textbf{CS}   & \textbf{PHP}    \\ 	\hhline{|=|=|=|=|=|}
+		Color   & 1,63 & 2,10 & 2,28 & 13,86  \\ \hline
+		Core    & 0,65 & 1,03 & 1,71 & 88,34  \\ \hline
+		Hxmath  & 1,47 & 0,73 & 1,49 & 24,11  \\ \hline
+		Format  & 0,97 & 1,15 & 2,22 & 41,79  \\ \hline
+		Promise & 0,61 & 0,47 & 0,68 & 8,27   \\ \hline
+		Culture & 1,27 & 0,87 & 0,99 & 2,89   \\ \hline
+		Math    & 3,16 & 3,79 & 3,46 & 314,65 \\ \hline
+	\end{tabular}
+	\caption{Average execution time compared to JS version}
+	\label{my-label}
+\end{table}
+
+\begin{table}[]
+	\centering
+	
+	\begin{tabular}{|l|l||l|}
+		\hline
+		& \multicolumn{1}{c||}{\begin{tabular}[c]{@{}c@{}}\textbf{Average}\\ \textbf{speed}\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{Average}\\ \textbf{memory}\end{tabular} \\ 	\hhline{|=|=|=|}
+		JAVA & 3,22                                                                         & 127,86                                                   \\ \hline
+		JS   & 3,23                                                                         & 49,97                                                    \\ \hline
+		CPP  & 4,12                                                                         & 136,74                                                   \\ \hline
+		CS   & 5,96                                                                         & 73,43                                                    \\ \hline
+		PHP  & 274,04                                                                       & 350,10                                                   \\ \hline
+	\end{tabular}
+	\caption{Average memory usage and execution speed per target language}
+	\label{my-label}
+\end{table}
+
+
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Ressources/avgmem.pdf}
@@ -187,158 +354,4 @@ system memory.
 	\includegraphics[width=1\linewidth]{Ressources/avgtime.pdf}
 	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
 \end{figure}
-\subsection{Experimental Results}
-The experimental consisted of comparing the execution time and memory consumption on the following targets: Java, JS, C++, CS, and PHP.
-
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-
-\subsection{Discussions}
-\iffalse
-In this section, we evaluate the implementation of our approach across two case studies. These experiments aim at answering the following research questions:
-
-\textbf{RQ1:} How do standard GCC optimization levels influence on the resource consumption of generated programs?
-To answer this question, we apply standard optimization options to FFmpeg library. Then, we evaluate the memory footprint and execution time of running FFmpeg command lines and we compare the results. The goal of this initial experiment is to
-provide an understanding of the performance of generated code by GCC.
-
-\textbf{RQ2:} To what extent can the proposed diversity-based exploration of optimization options impact the resource consumption of generated programs?
-In a second experiment, we assess our NS approach for automatic optimization sequences generation by comparing the results found when applying standard optimization sequences to new results provided by our approach. The experimental results show that our novelty-based approach can produce optimization sequences with good performance and less resource consumption
-than standard optimization levels in GCC. In this experiment, we study the correlation between execution time and memory consumption of generated code.
-
-These two case studies  also enable to validate the global approach for non functional testing of code generators using system containers. 
-
-
-
-\subsection{Case Study 1: FFmpeg}
-In the first experiment, we set up our infrastructure for testing and monitoring of generated code. In this part, we compile the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we study the impact of these optimizations on memory consumption and execution time using our Docker-based infrastructure.
-
-\subsubsection{FFmpeg: Multimedia Encoding Library}
-FFmpeg\footnote{\url{https://www.ffmpeg.org/}} is a complete, cross-platform solution to record, convert, and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and an important amount of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
-\subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
-
-
-The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on top of different versions in order to compare the memory usage profiles and execution time of different variants using our test architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
-First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. This is done within Docker containers. We configure each container to install FFmpeg with a specific configuration and we upload all FFmpeg images in Docker Hub\footnote{https://hub.docker.com/}.
-Docker Hub is a cloud-based registry service for building and shipping application or service containers. We use it for building, saving, and managing all our Docker images.
-
-Afterwards, we execute the same stressload (FFmpeg examples) within each FFmpeg instance container. We choose 15 FFmpeg command examples that cover multiple domains\footnote{http://goo.gl/11VLYM} like video conversion, sound extraction, encoding file for iPod or PSP, etc. This list of examples is saved in a script file that should be executed later within FFmpeg containers. The media files needed for encoding are saved in a shared repository. In Docker environment, we call this repository the “Data Volume”. A data volume is a specially-designated directory within containers that share data with the host machine. Data is persistent and independent of container's life cycle. So, when we run FFmpeg containers we provide a shared volume with the host machine (where the media files are located). As well, the list of FFmpeg commands to execute is mounted in this volume so that, we can execute the same workload each time we run a new container.
-Before running FFmepg workload on different containers, we run monitoring components (cAdvisor, InfluxDB and Grafana) to start gathering usage statistics.
-In fact, in this experiment, we choose to gather statistics about memory consumption and execution time of different containers. 
-
-To obtain comparable and reproducible results, we use the same hardware across all experiments: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
-
-\subsubsection{Experimental Results}
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
-	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
-\end{figure}
-
-
-\begin{figure}[tbh]
-	\includegraphics[width=1\linewidth]{Ressources/infra_stats.png}
-	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
-	%		\label{AAA}
-\end{figure}
-
-In this first part of experiments with FFmpeg, we compare a zero-level optimization container (FFmpeg-O0) with a high-level optimization one (FFmpeg-O3) in order to study the impact of optimizations on memory usage and execution time. Figure 3 shows runtime statistics of running two FFmpeg containers O0 and O3 with the same input workload. This chart depicts a snapshot of our visualization component web UI. It presents the memory usage profiles of two components (FFmpeg O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution time of O3 (yellow) is faster than O0 (green) since O3 execution ended before O0. However, we can see that memory usage remains higher than O0 from the beginning to the end of running FFmpeg examples. 
-
-To better understand the resource usage of optimized code, we run the same experiment for all FFmpeg containers and we collect the same metrics. Figure 4 presents a comparison of average memory usage and execution time of FFmpeg containers compiled with all standard GCC optimization options. We notice that the memory usage increases as soon as we apply more aggressive optimization. However, when we apply higher optimization level, we clearly improve the execution time compared to O0. For example, O3 and Ofast have the highest memory consumption (100 MBytes more than O0) and best execution time (speedup around 1.8) which can be inconvenient for systems with limited resources.
-
-This results explain that optimizing for execution time (for the case of FFmpeg) is not always efficient regarding memory usage and unfortunately, optimizations may influence negatively the system resources.
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=1\linewidth]{Ressources/infra_ffmpeg_plot1.png}
-	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
-\end{figure}
-
-
-\subsection{Case Study 2: Novelty-based Exploration of Optimization Sequences}
-In this second case study, we assess the performance of GCC compiler across different benchmark programs. The goal of this experiment is to show that our approach for exploring the search space of optimizations is able to generate efficient code that yields to less resource consumption than GCC default optimizations.
-\subsubsection{Setting Up Infrastructure}
-\begin{figure}[b]
-	\centering
-	\includegraphics[scale=0.50]{Ressources/infra_novelty.png}
-	\caption{Overall process of monitoring code generated by GCC}
-	
-%	\vspace*{-5cm}
-	
-\end{figure}
-For this experiment, we keep the same architecture settings as first case study. However, we provide a more generalized approach for automatic testing of code generators using system containers. So, starting from a list of optimizations defined by the user, an input program and a specific target compiler, we are able to execute and monitor optimized code. Figure 5 shows more details about this process. First, our novelty-based test sequences generator generates a huge amount of diverse optimizations. We compile an input program with these generated sequences using GCC. Then, we execute produced binaries sequentially within isolated Docker containers (Docker image with GCC version 4.8.4 installed above). We keep the same monitoring chain to gather resource usage of running containers. This process is repeated until the end of generated sequences. Finally, end-users (testers) can access to resource consumption statistics through InfluxDB or Grafana Web UI to compare the impact of optimizations on resource consumption. In this example too, we choose to focus on studying the trade-off memory usage/execution time. 
-\subsubsection{Benchmark programs}
-To explore the impact of compiler optimizations a set of input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
-\begin{table}[h]
-	\begin{center}
-		\begin{tabular}{|c|c|p{3.9cm}|}
-			\hline
-			\textbf{Program} & \textbf{Source lines} & \textbf{Description}\\
-			\hline
-			automative\_susan\_s & 1376 & Image recognition package\\
-			\hline
-			bzip2e & 5125 & Compress any file
-			source code \\
-			\hline
-			bzip2d & 5125 & Decompress zipped files \\
-			\hline
-			office\_rsynth & 4111 & Text to speech program produced by integrating various pieces of code\\
-			\hline
-			consumer\_tiffmedian& 15870 & Apply the median cut algorithm to data in a TIFF file
-			\\
-			
-			\hline
-			 consumer\_tiffdither& 15399 & Convert a greyscale image to bilevel using dithering
-			 \\
-			\hline
-			
-		\end{tabular}
-		
-	\end{center}
-	\caption {Description of selected benchmark programs}
-\end{table}
-\subsubsection{Novelty Parameters}
-%Our experiments use the classical NS algorithm, where we evolve a set of optimization sequences through generations.
-NS is implemented as described in Section 3.
-The first step in the process of selection is to evaluate each individual and compute its novelty score. Novelty is calculated for each organism by taking the mean of its 15 lowest dissimilar optimization sequences (considering all sequences in the current population and in the archive). 
-Then, to create next populations, an elite of the 10 most novel organisms is copied unchanged, after which the rest of the new population is created by tournament selection according to novelty. Standard genetic programming crossover and mutation operators are applied to these novel sequences in order to produce offspring individuals and fulfill the next population.
-In the meanwhile, individuals that get a score higher than the threshold T they are automatically added to the archive as well. 
-In fact, this threshold is dynamic. Every 150 evaluations, we check how many individuals have been copied into the archive. If this number is below 3, the threshold is increased by multiplying it by 0.95, whereas if solutions added to archive are above 3, the threshold is decreased by multiplying it by 1.05. 
-Moreover, as the size of the archive grows, the nearest-neighbor calculations that determine the novelty scores for individuals become more computationally demanding. So to avoid having low accuracy of novelty, we choose to bound the size of the archive. Hence, it follows a first-in first-out data structure which means that when a new solution gets added, the oldest solution in the novelty archive will be discarded. Thus, we ensure individuals diversity by removing old sequences that may no longer be reachable from the current population.
-
-The parameters of the algorithm were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{lehman2008exploiting}. The value that yielded the highest performance scores was chosen. The resulting parameter values are listed in Table 4.
-\begin{table}
-		\caption{Parameters of NS algorithm}
-		\begin{tabular}{ l l || l l }
-			Parameter & Value & Parameter & Value \\	\hline
-			Novelty nearest-k  & 15 &  Tournament size & 2\\ 
-			Add archive prob. & 30 &  Mutation prob. & 0.1\\  
-			Max archive size & 500 &  Crossover & 0.5  \\  
-			Population size & 100 &  Nb generations &  100 \\  
-			Individual length & 76 & Elitism & 10  \\ 
-			Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 
-		\end{tabular}
-\end{table}
-
-\subsubsection{Experimental results}
-
-The goal of this experiment is to compare novelty-based generated sequences to standard GCC optimizations in term of memory consumption. Figure 6 shows this comparison across different benchmark programs. It presents the percentage of saved memory of standard and novelty optimizations over O0 level (no optimization applied).
- 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat3.png}
-	\caption{Evaluating the amount of saved memory after applying standard optimization options compared to best generated optimization using NS}
-\end{figure}
-
-For NS, we select the best sequence that reduces the memory consumption and we compare it to the memory footprint of O0, O1, O2, O3 and Ofast versions. The results show clearly that NS outperforms standard optimizations for all benchmark programs. Using NS, we are able to reach a maximum memory consumption reduction of almost 26\% for the case rsynth program against a maximum of 18\% reduction using Ofast option. We remark as well that the impact of applying standard optimizations on memory consumption for each program differs from one program to another. Using O1 for bzip2e and O2, O3 for tiffmedian can even increase the memory consumption by almost 13 \% (like the FFmpeg experiments). This agrees to the idea that standard optimizations does not produce always the same impact results on resource consumption and may be highly dependent on the benchmark and the source code they have been tested on. Our approach can clearly provide an alternative to catch most relevant optimization sequence regarding resource consumptions.
-
-To study the correlation between execution time and memory consumption of running programs, we present in Figure 7 an evaluation of the speedup. We compare the speedup (according to O0) of the best optimization sequences by NS (gathered in Figure 6) with standard optimization options. 
-The first observation is that optimizations yield to high level of speedup for all benchmark programs (between 1.5 and 4.3).
-The second observation we can make is that different optimizations do not differ too much in term of execution time. We  distinguish that Ofast is slightly more efficient for all programs and NS sequence has almost the same speedup as Ofast. 
-The results of this experiments shows that optimizing for memory usage using NS does not affect programs execution time and we demonstrate that we can find optimizations that reduce memory usage while guaranteeing program performance.
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat2.png}
-	\caption{Evaluating the speedup after applying standard optimization options compared to best generated optimization using NS}
-\end{figure}
-
 \fi

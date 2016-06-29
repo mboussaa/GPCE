@@ -1,5 +1,6 @@
 \section{Conclusion and Future Work}
 
+\iffalse
 In this paper we have described a new approach for testing and monitoring code generators using a component-based infrastructure. 
 We used a set of microservices in order to provide a fine-grained understanding of resource consumption. 
 To validate the approach, we investigated the problem of GCC compiler optimizations through the use of Novelty Search as a search engine.  Then, we studied the impact of optimizations on memory consumption and execution time across two case studies. 
@@ -8,4 +9,36 @@ Results showed that our approach is able to automatically find better optimizati
 As a future work, we plan to explore more trade-offs among resource usage metrics \eg, the correlation between CPU consumption and platform architectures. 
 We also intend to compare our findings using the novelty search approach to multi-objective evolutionary algorithms. 
 Finally, our proposed microservice-based approach for testing can easily be adapted and integrated to new case studies, so we would inspect the behavior of different other code generators and try to find non-functional bugs regarding code generation processes.
+
+ 
+ 
+Second, we have presented an automated tool for automatic extraction of non-functional properties of optimized code, called NOTICE. NOTICE applies different heuristics (including Novelty Search) and performs non-functional testing of compilers through the monitoring of generated code in a controlled sand-boxing environment. In fact, NOTICE uses a set of micro-services to provide a fine-grained understanding of optimization effects on resource consumption. 
+We evaluated the effectiveness of our approach by verifying the optimizations performed by GCC compiler. 
+%Then, we studied the impact of optimizations on memory consumption and execution time across two case studies. 
+Results showed that our approach is able to automatically extract information about memory and CPU consumption. We were also able to find better optimization sequences than standard GCC optimization levels.
+
+As a future work, we plan to explore more trade-offs among resource usage metrics \eg, the correlation between CPU consumption and platform architectures. 
+We also intend to provide more facilities to NOTICE users in order to test optimizations performed by modern compilers such as Clang, LLVM, etc.
+Finally, NOTICE can be easily adapted and integrated to new case studies. As an example, we would inspect the behavior of model-based code generators since different optimizations can be performed to generate code from models~\cite{stuermer2007systematic}. Thus, we aim to use the same approach to find non-functional issues during the code generation process.
+\fi
+
+
+\iffalse
+In the life-cycle of a code generator developers ask
+multiple questions to optimize and maintain its infrastructure.
+Particularly, once a code-generator has been built, developers
+face multiple scenarios of evolution [14]. The two most
+important among them are metamodel evolution, in which
+changes are needed to the domain-specific language
+that interfaces with the end user, or to the intermediate
+metamodels that modularize the code-generation process, in
+order to improve the language expressiveness, and platform
+evolution, where the generated code needs to be refined with
+different purposes, such as fixing a bug or optimizing the
+performance of a generated codebase. In the latter scenario,
+the generator’s model-to-text and, in some cases model-tomodel
+transformations, need to be modified in order to reflect
+such refinements in a systematic way
+\fi
+
 
