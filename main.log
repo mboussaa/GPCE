@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  28 JUN 2016 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  29 JUN 2016 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,9 +262,6 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-
-LaTeX Warning: Label `my-label' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -459,7 +456,7 @@ Overfull \hbox (1.80586pt too wide) in paragraph at lines 32--44
 File: Ressources/settingup.pdf Graphic file (type pdf)
 
 <use Ressources/settingup.pdf>
-Package pdftex.def Info: Ressources/settingup.pdf used on input line 60.
+Package pdftex.def Info: Ressources/settingup.pdf used on input line 62.
 (pdftex.def)             Requested size: 240.0pt x 167.65181pt.
 
 
@@ -469,50 +466,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tp') on input line 111.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tp') on input line 128.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tp') on input line 146.
-
-[7 <./Ressources/settingup.pdf>]
-<Ressources/avgmem.pdf, id=427, 715.67375pt x 385.44pt>
-File: Ressources/avgmem.pdf Graphic file (type pdf)
-
-<use Ressources/avgmem.pdf>
-Package pdftex.def Info: Ressources/avgmem.pdf used on input line 182.
-(pdftex.def)             Requested size: 240.0pt x 129.25406pt.
-
-<Ressources/avgtime.pdf, id=428, 704.6325pt x 384.43625pt>
-File: Ressources/avgtime.pdf Graphic file (type pdf)
-
-<use Ressources/avgtime.pdf>
-Package pdftex.def Info: Ressources/avgtime.pdf used on input line 187.
-(pdftex.def)             Requested size: 240.0pt x 130.94122pt.
+               Default added (so using `tp') on input line 123.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [8 <./Ressources/avgmem.pdf>]) (./related.tex) (./conclusion.tex) (./main.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[7 <./Ressources/settingup.pdf>]) (./related.tex) (./conclusion.tex
+Underfull \vbox (badness 2875) has occurred while \output is active []
 
 
+Underfull \vbox (badness 1946) has occurred while \output is active []
+
+ [8])
+(./main.bbl
 Underfull \hbox (badness 4569) in paragraph at lines 50--54
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
 
-[9 <./Ressources/avgtime.pdf>]) [10
+[9]) [10
 
 ] (./main.aux)
 
@@ -527,13 +502,13 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5649 strings out of 493027
- 80035 string characters out of 6134069
- 222904 words of memory out of 5000000
- 9070 multiletter control sequences out of 15000+600000
+ 5639 strings out of 493027
+ 79804 string characters out of 6134069
+ 246904 words of memory out of 5000000
+ 9062 multiletter control sequences out of 15000+600000
  28781 words of font info for 52 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,16n,42p,1562b,4210s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,42p,1562b,4210s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -545,10 +520,10 @@ cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1369998 bytes).
+Output written on main.pdf (10 pages, 1323827 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
+ 470 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
