@@ -3,48 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrvnat.bst
 Database file #1: ref.bib
-Warning--I didn't find a database entry for ""
+Warning--empty journal in hundt2011loop
 Warning--can't use both volume and number fields in nethercote2007valgrind
 Warning--can't use both volume and number fields in sturmer2005overview
-You've used 12 entries,
+You've used 13 entries,
             2773 wiz_defined-function locations,
-            671 strings with 6972 characters,
-and the built_in function-call counts, 6807 in all, are:
-= -- 657
-> -- 324
-< -- 17
-+ -- 108
-- -- 96
-* -- 508
-:= -- 954
-add.period$ -- 44
-call.type$ -- 12
-change.case$ -- 68
-chr.to.int$ -- 12
-cite$ -- 26
-duplicate$ -- 342
-empty$ -- 581
-format.name$ -- 120
-if$ -- 1524
+            674 strings with 7035 characters,
+and the built_in function-call counts, 7104 in all, are:
+= -- 682
+> -- 334
+< -- 18
++ -- 112
+- -- 99
+* -- 523
+:= -- 1002
+add.period$ -- 47
+call.type$ -- 13
+change.case$ -- 72
+chr.to.int$ -- 13
+cite$ -- 29
+duplicate$ -- 361
+empty$ -- 611
+format.name$ -- 124
+if$ -- 1585
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 68
-num.names$ -- 48
-pop$ -- 153
+missing$ -- 13
+newline$ -- 73
+num.names$ -- 52
+pop$ -- 164
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 59
 quote$ -- 0
-skip$ -- 274
+skip$ -- 287
 stack$ -- 0
-substring$ -- 320
+substring$ -- 322
 swap$ -- 94
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
-warning$ -- 2
-while$ -- 68
+type$ -- 143
+warning$ -- 3
+while$ -- 71
 width$ -- 0
-write$ -- 173
+write$ -- 184
 (There were 3 warnings)
