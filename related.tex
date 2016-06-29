@@ -1,7 +1,13 @@
 \section{Related Work}
-The idea of employing container-based approach for testing code generators can be found in several publications.
+//The idea of employing container-based approach for testing code generators can be found in several publications.
 
+Most of the previous research on testing code generators focus on 
 
+For code generators testing, Stuermer et al.~\cite{stuermer2007systematic} present a systematic test approach for model-based code generators. They investigate the impact of optimization rules for model-based code generation by comparing the output of the code execution with the output of the model execution. 
+If these outputs are equivalent, it is assumed that the code generator works as expected. 
+They evaluate the effectiveness of this approach by means of testing optimizations performed by the TargetLink code generator. 
+They have used Simulink as a simulation environment of models. 
+In our approach, we provide a component-based infrastructure to compare non-functional properties of generated code rather than functional ones. 
 
 \iffalse
 Our work is related to iterative compilation research field.

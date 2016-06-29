@@ -221,7 +221,7 @@ Next, we run Grafana and we link it to InfluxDB by setting up the data source po
 To obtain comparable and reproducible results, we use the same hardware across all experiments: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
 
 \subsection{Experimental Results}
-
+\subsubsection{Evaluation using the standard deviation}
 We now conduct experiments based on the Haxe benchmark. We run each test suite 1K times and we report the execution time and memory usage across the different target languages: Java, JS, C++, CS, and PHP. 
 The goal of running these experiments is to observe and compare the behavior of generated code regarding the testing load. We recall, as mentioned in the motivation, that we are not using any oracle function to detect inconsistencies. However, we rely on the comparison results across different targets to define code generator inconsistencies.
 Thus, we use, as a quality metric, the standard deviation to quantify the amount of variation among execution traces (i.e., memory usage or execution time) and that for the five target languages. A low standard deviation of a test suite execution, indicates that the data points (execution time or memory usage data) tend to be close to the mean which we consider as an acceptable behavior.  
@@ -236,6 +236,11 @@ We assume then that the faulty code generator, in this case, represents a threat
  
 The inconsistencies we are trying to find here are more related to the incorrect memory utilization patterns produced by the faulty code generator. Such inconsistencies may come from an inadequate type usage, high resource instantiation, etc.
 
+
+
+
+
+\subsubsection{Analysis}
 Now that we have observed the non-functional behavior of test suites execution in different languages, we can analyze the extreme points we have detected in previous tables to dig more in deep the source of such deviation.
 For that reason, we present in table 5 and 6 the raw data values of these extreme test suites in terms of execution time and memory usage. 
 
