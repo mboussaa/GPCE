@@ -252,10 +252,12 @@ Meanwhile, we gathered information about the points that led to the highest stan
 
 
 \subsection{Discussions}
-We reached interesting results, some of which were unexpected.
-For instance, the performance of the Haxe-produced C++ code
-was certainly a surprise. 
-The PHP target had the greatest overhead. 
+Through previously conducted experiments, we reached interesting results, some of which were unexpected.
+For instance, the poor performance of the Haxe-produced PHP code was certainly a surprise. 
+The PHP target had a very large execution time and memory usage for almost every test suite execution. 
+That is to say that PHP code generator is clearly generating non-efficient code regarding the non-functional properties. It is even possible to say that other code generators are not extremely efficient since we found that C++ code consumes, during one test suite execution (Color\_TS6), higher memory than PHP. But, we cannot say for sure that C++ code generator is bugging. Thus, we cannot make any assumption. The only point which, at this stage, can be statistically made is that PHP code generator has a real performance issue that has to be fixed by code generators developers. 
+
+In attempting to understand the reasons of this PHP performance regression for the selected test suites, 
 
 
 
