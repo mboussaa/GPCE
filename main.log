@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.10)  29 JUN 2016 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.10)  29 JUN 2016 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,17 +364,6 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 ) (./introduction.tex
-<Ressources/background.pdf, id=1, 930.47626pt x 303.1325pt>
-File: Ressources/background.pdf Graphic file (type pdf)
-
-<use Ressources/background.pdf>
-Package pdftex.def Info: Ressources/background.pdf used on input line 14.
-(pdftex.def)             Requested size: 504.0pt x 164.19328pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -384,65 +373,77 @@ Non-PDF special ignored!
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 22.
+(Font)              <5> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 22.
+(Font)              <8> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 22.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 28.
+(Font)              <6> on input line 17.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
 ) (./motivation.tex
-[2 <./Ressources/background.pdf>]
-Underfull \vbox (badness 4279) has occurred while \output is active []
+Underfull \vbox (badness 4492) has occurred while \output is active []
 
- [3])
-(./infra.tex [4] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-Overfull \hbox (6.437pt too wide) in paragraph at lines 98--98
-[]|\OT1/ptm/m/n/10 Network| 
- []
+ [2])
+(./infra.tex <Ressources/background.pdf, id=16, 930.47626pt x 303.1325pt>
+File: Ressources/background.pdf Graphic file (type pdf)
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-[]|\OT1/ptm/m/n/10 Disk
- []
-
-
-Overfull \hbox (5.98694pt too wide) in paragraph at lines 102--102
-[]|\OT1/ptm/m/n/10 Memory| 
- []
-
-
-Overfull \hbox (1.44109pt too wide) in paragraph at lines 90--108
- [] 
- []
+<use Ressources/background.pdf>
+Package pdftex.def Info: Ressources/background.pdf used on input line 12.
+(pdftex.def)             Requested size: 504.0pt x 164.19328pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 2818) has occurred while \output is active []
 
- [5]
-<Ressources/background2.pdf, id=113, 1017.8025pt x 377.41pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./Ressources/background.pdf>]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) [5]
+Overfull \hbox (6.437pt too wide) in paragraph at lines 122--122
+[]|\OT1/ptm/m/n/10 Network| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+[]|\OT1/ptm/m/n/10 Disk
+ []
+
+
+Overfull \hbox (5.98694pt too wide) in paragraph at lines 126--126
+[]|\OT1/ptm/m/n/10 Memory| 
+ []
+
+
+Overfull \hbox (1.44109pt too wide) in paragraph at lines 114--132
+ [] 
+ []
+
+<Ressources/background2.pdf, id=111, 1017.8025pt x 377.41pt>
 File: Ressources/background2.pdf Graphic file (type pdf)
 
 <use Ressources/background2.pdf>
-Package pdftex.def Info: Ressources/background2.pdf used on input line 119.
+Package pdftex.def Info: Ressources/background2.pdf used on input line 143.
 (pdftex.def)             Requested size: 504.0pt x 186.8905pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./evaluation.tex [6]
+Underfull \vbox (badness 4832) has occurred while \output is active []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []|\OT1/ptm/m/n/10 Library for lightweight
  []
@@ -452,14 +453,16 @@ Overfull \hbox (1.80586pt too wide) in paragraph at lines 32--44
  [][] 
  []
 
-[7 <./Ressources/background2.pdf>]
-<Ressources/settingup.pdf, id=259, 482.80376pt x 337.26pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Ressources/settingup.pdf, id=117, 482.80376pt x 337.26pt>
 File: Ressources/settingup.pdf Graphic file (type pdf)
 
 <use Ressources/settingup.pdf>
 Package pdftex.def Info: Ressources/settingup.pdf used on input line 62.
 (pdftex.def)             Requested size: 240.0pt x 167.65181pt.
-
+ [7 <./Ressources/background2.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -473,11 +476,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 3623) has occurred while \output is active []
-
- [8 <./Ressources/settingup.pdf>]) (./related.tex) (./conclusion.tex) (./main.b
-bl
+[8 <./Ressources/settingup.pdf>]) (./related.tex) (./conclusion.tex)
+(./main.bbl
 Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
@@ -491,11 +491,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5626 strings out of 494310
- 78884 string characters out of 6162891
- 232165 words of memory out of 5000000
- 8841 multiletter control sequences out of 15000+600000
- 28442 words of font info for 52 fonts, out of 8000000 for 9000
+ 5628 strings out of 494310
+ 78905 string characters out of 6162891
+ 235614 words of memory out of 5000000
+ 8842 multiletter control sequences out of 15000+600000
+ 30126 words of font info for 54 fonts, out of 8000000 for 9000
  375 hyphenation exceptions out of 8191
  41i,12n,42p,1716b,1268s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -509,7 +509,7 @@ ts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1335257 bytes).
+Output written on main.pdf (10 pages, 1336113 bytes).
 PDF statistics:
  474 PDF objects out of 1000 (max. 8388607)
  297 compressed objects within 3 object streams
