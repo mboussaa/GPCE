@@ -35,7 +35,7 @@ Consequently, we rely on an infrastructure that must provide the following featu
 	\item Gather performance metrics (CPU, Memory, etc.)
 \end{enumerate}
 
-To get this four main feature, the testing infrastructure is based on system containers~\cite{xxx}. First, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated monitored and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. Thus, we can compare later informations about the resource usage of generative program and detect inconsistencies in the generated code.
+To get this four main feature, the testing infrastructure is based on system containers~\cite{soltesz2007container}. First, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated monitored and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. Thus, we can compare later informations about the resource usage of generative program and detect inconsistencies in the generated code.
 
 
 The rest of this section details the technical choices we made to synthesis a testing infrastructure to detect inconsistencies between code-generator regarding memory and CPU consumption.  
@@ -63,8 +63,8 @@ The general overview of the technical implementation is shown in Figure 2. In th
 
 
 Before starting to monitor and test applications, we have to deploy generated code on different components to ease containers provisioning and profiling. 
-We aim to use Docker Linux containers to monitor the execution of different generated artifacts in terms of resource usage. 
-Docker \footnote{\url{https://www.docker.com}} is an open source container engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
+We aim to use Docker Linux containers to monitor the execution of different generated artifacts in terms of resource usage~\cite{merkel2014docker}. 
+Docker\footnote{\url{https://www.docker.com}} is an open source container engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
 %To achieve that, Docker uses the Linux container technology. 
 Using Docker, we can define pre-configured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine using configuration files called Docker files. 
 %As properties, we can define the OS where the service has to run, dependencies, etc. 
@@ -81,10 +81,10 @@ Since each program execution requires a new container to be created, it is cruci
 In short, the main advantages of this approach are:
 \begin{itemize}
 	\item The use of containers induces less performance overhead and resource isolation compared to using a full stack virtualization solution~\cite{spoiala2016performance}. Indeed, instrumentation and monitoring tools for memory profiling like Valgrind~\cite{nethercote2007valgrind} can induce too much overhead.
-	\item Thanks to the use of Dockerfiles, the proposed framework can be easily configured by software testers in order to define the code generators under test (\eg, code generator version, dependencies, etc.), the host IP and OS, the DSL design, the optimization options, etc. Thus, we can use the same configured Docker image to execute different instances of generated code. For hardware architecture, containers share the same platform architecture as the host machine (e.g., x86, x64, ARM, etc.). 
+	\item Thanks to the use of Dockerfiles, the proposed framework can be  configured by software testers in order to define the code generators under test (\eg, code generator version, dependencies, etc.), the host IP and OS, the DSL design, the optimization options, etc. Thus, we can use the same configured Docker image to execute different instances of generated code. For hardware architecture, containers share the same platform architecture as the host machine (e.g., x86, x64, ARM, etc.). 
 	\item Docker uses Linux control groups (Cgroups) to group processes running in the container. This allows us to manage the resources of a group of processes, which is very valuable. 
-	This approach increases the flexibility when we want to manage resources, since we can manage every group individually. For example, if we would evaluate the non-functional requirements of generated code within a resource-constraint environment, we can easily request and limit resources within the execution container according to the needs.
-	\item Although containers run in isolation, they can share data with the host machine and other running containers. Thus, non-functional data relative to resource consumption can be easily gathered and managed by other containers (\ie, for storage purpose, visualization)
+	This approach increases the flexibility when we want to manage resources, since we can manage every group individually. For example, if we would evaluate the non-functional requirements of generated code within a resource-constraint environment, we can  request and limit resources within the execution container according to the needs.
+	\item Although containers run in isolation, they can share data with the host machine and other running containers. Thus, non-functional data relative to resource consumption can be gathered and managed by other containers (\ie, for storage purpose, visualization)
 \end{itemize}
 
 
