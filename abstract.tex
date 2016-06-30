@@ -1,18 +1,9 @@
 \begin{abstract}
-	The intensive use of generative programming techniques provides an elegant engineering solution to deal with the heterogeneity of platforms or technological stacks. The use of Domain Specifics Language, for example, leads to the creation of numerous code generators that will automatically translate high-level system
-	specifications into multi-target executable code. 
-	%These practices reduce clearly the development and maintenance effort by developing at a higher-level of abstraction. 	
-	Producing correct and efficient code generator is complex and error-prone. Although software designers provide generally high-level test suites to verify the functional outcome of generated code, it remains challenging and tedious to verify the behavior of produced code in terms of non-functional properties.
-	%However, industrial code generators may have a huge number of bugs and 
-	
-	This paper describes a practical approach based on a runtime monitoring infrastructure to automatically check potential inefficient code generators. This infrastructure, based on system containers as execution platforms, allows code-generator developers to evaluate the generated code performance. %This approach provides a fine-grained understanding of resource consumption and analysis of components behavior. 
-	We evaluate our approach by analyzing the non-functional properties of HAXE, a popular high-level programming language that involves a set of cross-platform code generators able to compile to different target platforms. Our experimental results show that our approach is able to detect some performance inconsistencies within HAXE generated code that reveal issues in code generators.
-	%We evaluate the effectiveness of our appr oach by verifying the optimizations performed by the GCC compiler, a widely used compiler in software engineering community. We also present a number of case studies, in which the tool was successfully used.
-	
-	%system containers as execution platform
-	
-	
-	%they are highly dependent on target platforms
+The intensive use of generative programming techniques provides an elegant engineering solution to deal with the heterogeneity of platforms or technological stacks. The use of Domain Specifics Language, for example, leads to the creation of numerous code generators that automatically translate high-level system specifications into multi-target executable code. 
+Producing correct and efficient code generator is complex and error-prone. Although software designers provide generally high-level test suites to verify the functional outcome of generated code, it remains challenging and tedious to verify the behavior of produced code in terms of non-functional properties.
+This paper describes a practical approach based on a runtime monitoring infrastructure to automatically check potential inefficient code generators. This infrastructure, based on system containers as execution platforms, allows code-generator developers to evaluate the generated code performance.
+We evaluate our approach by analyzing the non-functional properties of Haxe, a popular high-level programming language that involves a set of cross-platform code generators that target different platforms. 
+Experimental results show that our approach is able to detect some performance inconsistencies among Haxe generated code that reveal issues in code generators.
 \end{abstract}
  
 
