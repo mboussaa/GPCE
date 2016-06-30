@@ -38,7 +38,7 @@ Consequently, we rely on an infrastructure that must provide the following featu
 	\item Gather performance metrics (CPU, Memory, etc.)
 \end{enumerate}
 
-To get this four main feature, the testing infrastructure is based on system containers~\cite{xxx}. First, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated monitored and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. Thus, we can compare later informations about the resource usage of generative program and detect inconsistencies in the generated code.
+To get this four main feature, the testing infrastructure is based on system containers~\cite{soltesz2007container}. First, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated monitored and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. Thus, we can compare later informations about the resource usage of generative program and detect inconsistencies in the generated code.
 
 
 The rest of this section details the technical choices we made to synthesis a testing infrastructure to detect inconsistencies between code-generator regarding memory and CPU consumption.  
@@ -66,8 +66,8 @@ The general overview of the technical implementation is shown in Figure 2. In th
 
 
 Before starting to monitor and test applications, we have to deploy generated code on different components to ease containers provisioning and profiling. 
-We aim to use Docker Linux containers to monitor the execution of different generated artifacts in terms of resource usage. 
-Docker \footnote{\url{https://www.docker.com}} is an open source container engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
+We aim to use Docker Linux containers to monitor the execution of different generated artifacts in terms of resource usage~\cite{merkel2014docker}. 
+Docker\footnote{\url{https://www.docker.com}} is an open source container engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
 %To achieve that, Docker uses the Linux container technology. 
 Using Docker, we can define pre-configured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine using configuration files called Docker files. 
 %As properties, we can define the OS where the service has to run, dependencies, etc. 
