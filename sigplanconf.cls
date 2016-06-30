@@ -351,7 +351,7 @@
 % Text area:
 
 \newdimen{\standardtextwidth}
-\setlength{\standardtextwidth}{42pc}
+\setlength{\standardtextwidth}{43pc}
 
 \if \@onecolumn
   \setlength{\textwidth}{40.5pc}
