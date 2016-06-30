@@ -26,18 +26,18 @@ Therefore, software testers generally use to report statistics about the perform
 \subsection{An Infrastructure for Non-functional Testing Using System Containers}
 To assess the performance/non-functional properties of generated code many system configurations (i.e., execution environments) must be considered. Running different applications (i.e., generated code) with different configurations on one single machine is complex  a single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc. Therefore, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides to compiler user facilities to ensure the deployment and monitoring of generated code in different environment settings. 
 
-Consequently, we rely on an infrastructure that must provide the following feature. The infrastructure must support to automatically:
+Consequently, our infrastructure provides support to automatically:
 \begin{enumerate}
 	\item Deploy the generated code, its dependencies and its  execution environments
-	\item Execute the produces binaries in an isolated environment 
-	\item Monitor the execution
+	\item Execute the produced binaries in an isolated environment 
+	\item Monitor the execution 
 	\item Gather performance metrics (CPU, Memory, etc.)
 \end{enumerate}
 
-To get this four main feature, the testing infrastructure is based on system containers~\cite{soltesz2007container}. First, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in a isolated monitored and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. Thus, we can compare later informations about the resource usage of generative program and detect inconsistencies in the generated code.
+To get these four main steps, we rely on system containers~\cite{soltesz2007container}. Thus, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in an isolated and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in a time series database component. Thus, we can compare later informations about the resource usage of generated programs and detect inconsistencies within code generators.
 
 
-The rest of this section details the technical choices we made to synthesis a testing infrastructure to detect inconsistencies between code-generator regarding memory and CPU consumption.  
+The rest of this section details the technical choices we have made to synthesize this testing infrastructure.
 
 \subsection{Technical implementation}
 
