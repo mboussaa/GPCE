@@ -252,13 +252,15 @@ Meanwhile, we gathered information about the points that led to the highest stan
 
 
 \subsection{Discussions}
-Through previously conducted experiments, we reached interesting results, some of which were unexpected.
+Through these conducted experiments, we reached interesting results, some of which were unexpected.
 For instance, the poor performance of the Haxe-produced PHP code was certainly a surprise. 
 The PHP target had a very large execution time and memory usage for almost every test suite execution. 
-That is to say that PHP code generator is clearly generating non-efficient code regarding the non-functional properties. It is even possible to say that other code generators are not extremely efficient since we found that C++ code consumes, during one test suite execution (Color\_TS6), higher memory than PHP. But, we cannot say for sure that C++ code generator is bugging. Thus, we cannot make any assumption. The only point which, at this stage, can be statistically made is that PHP code generator has a real performance issue that has to be fixed by code generators developers. 
+That is to say that PHP code generator is clearly generating non-efficient code regarding the non-functional properties. It is even possible to say that other code generators are not extremely efficient since we found that C++ code consumed, during one test suite execution (Color\_TS6), more memory than PHP. But, we cannot say for sure that C++ code generator is buggy. Thus, we cannot make any assumption. Nevertheless, the only point which, at this stage, can be statistically made is that PHP code generator has a real performance issue that has to be fixed by code generators developers. 
 
-In attempting to understand the reasons of this PHP performance regression for the selected test suites, 
+In attempting to understand the reasons of this PHP performance issues, we tried to take a look at the source code generated in PHP. As an example, we looked at the source code of Core\_TS4. 
+In fact, throughout the inspection of generated source code, we remark the intensive use of \textit{"arrays"} in most of the functions under test. In most languages, arrays are fixed-sized, but this is not the case in PHP since they are allocated dynamically. The dynamic allocation of arrays  leads to a slower write time because the memory locations needed to hold the new data is not already allocated. Thus, slow writing speed damages the performance of PHP code. This observation clearly confirm our findings. The solution for this problem may be to use another type of object from the Standard PHP Library. As an alternative, \textit{"SplFixedArray"} pre-allocates the necessary memory thereby solving the issue of slower write times.
 
+ 
 
 
 
