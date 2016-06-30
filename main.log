@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  30 JUN 2016 04:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  30 JUN 2016 05:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -358,9 +358,9 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 20.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -389,16 +389,26 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
 )
-(./motivation.tex [2]
-Underfull \vbox (badness 2478) has occurred while \output is active []
+(./motivation.tex
+Underfull \vbox (badness 1558) has occurred while \output is active []
 
-)
-(./infra.tex <Ressources/background.pdf, id=16, 930.47626pt x 303.1325pt>
+
+Underfull \vbox (badness 1097) has occurred while \output is active []
+
+ [2]
+Underfull \hbox (badness 1308) in paragraph at lines 28--29
+\OT1/ptm/m/n/10 Code gen-er-a-tors have to re-spect dif-fer-ent re-quire-ments
+ []
+
+) (./infra.tex <Ressources/background.pdf, id=16, 930.47626pt x 303.1325pt>
 File: Ressources/background.pdf Graphic file (type pdf)
 
 <use Ressources/background.pdf>
 Package pdftex.def Info: Ressources/background.pdf used on input line 12.
 (pdftex.def)             Requested size: 504.0pt x 164.19328pt.
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
  [3]
 <Ressources/background2.pdf, id=20, 1017.8025pt x 377.41pt>
 File: Ressources/background2.pdf Graphic file (type pdf)
@@ -411,7 +421,10 @@ Package pdftex.def Info: Ressources/background2.pdf used on input line 51.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./Ressources/background.pdf>]
-Underfull \vbox (badness 5533) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./Ressources/background2.pdf>]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -436,14 +449,7 @@ Overfull \hbox (1.44109pt too wide) in paragraph at lines 126--144
  [] 
  []
 
-
-Underfull \vbox (badness 1360) has occurred while \output is active []
-
- [6])
-(./evaluation.tex
-Underfull \vbox (badness 1694) has occurred while \output is active []
-
-
+[6]) (./evaluation.tex
 Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []|\OT1/ptm/m/n/10 Library for lightweight
  []
@@ -480,25 +486,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10])
-(./related.tex
+[10]) (./related.tex
 Overfull \hbox (1.538pt too wide) in paragraph at lines 13--14
 []\OT1/ptm/m/n/10 In [[]], au-thors pre-sented a test-ing ap-proach of the Gene
 sys
  []
 
-) (./conclusion.tex) (./main.bbl
+) (./conclusion.tex) (./main.bbl [11]
 Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
 
-
-Underfull \vbox (badness 1694) has occurred while \output is active []
-
- [11])
-[12
+) [12
 
 ] (./main.aux)
 
@@ -515,11 +514,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5647 strings out of 493027
  79943 string characters out of 6134069
- 240190 words of memory out of 5000000
+ 240541 words of memory out of 5000000
  9068 multiletter control sequences out of 15000+600000
  30126 words of font info for 54 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,12n,42p,1721b,4212s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,42p,1731b,4212s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -532,7 +531,7 @@ al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1347382 bytes).
+Output written on main.pdf (12 pages, 1347323 bytes).
 PDF statistics:
  481 PDF objects out of 1000 (max. 8388607)
  301 compressed objects within 4 object streams
