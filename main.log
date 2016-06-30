@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  30 JUN 2016 02:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  30 JUN 2016 04:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -494,7 +494,11 @@ Underfull \hbox (badness 4569) in paragraph at lines 36--40
 []\OT1/ptm/m/n/9 V. Guana and E. Strou-lia.  Chain-tracker, a model-
  []
 
-[11]) [12
+
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+ [11])
+[12
 
 ] (./main.aux)
 
@@ -528,7 +532,7 @@ al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1347075 bytes).
+Output written on main.pdf (12 pages, 1347382 bytes).
 PDF statistics:
  481 PDF objects out of 1000 (max. 8388607)
  301 compressed objects within 4 object streams
