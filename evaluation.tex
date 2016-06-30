@@ -5,20 +5,24 @@ The experimental material is available for replication purposes\footnote{\url{ht
 \subsubsection{Code Generators Under Test: HAXE compilers}
 In order to test the applicability of our approach, we conduct experiments on a popular high-level programming language called HAXE and its code generators.
 
-Haxe is an open source toolkit for cross-platform development which compiles to a number of different programming platforms, including JavaScript, Flash, PHP, C++, C\# and Java. Haxe involves many features: the Haxe language, multi-platform compilers, and different native libraries. 
-The Haxe language is a high-level programming language which is strictly typed. This language supports both functional programming and object-oriented programming paradigms. It has a common type hierarchy, making certain API available on every targeted platform.
-Moreover, Haxe comes with a set of compilers that translate manually-written code (in Haxe language) to different target languages and platforms. 
-Haxe code can be compiled for applications running on desktop, mobile and web platforms. Compilers ensure the correctness of user code in terms of syntax and type safety.
-Haxe comes also with a set of standard libraries that can be used on all supported targets and platform-specific libraries for each of them.
+%Haxe is an open source toolkit for cross-platform development which compiles to a number of different programming platforms, including JavaScript, Flash, PHP, C++, C\# and Java. Haxe involves many features: the Haxe language, multi-platform compilers, and different native libraries. 
+%The Haxe language is a high-level programming language which is strictly typed. This language supports both functional programming and object-oriented programming paradigms. It has a common type hierarchy, making certain API available on every targeted platform.
+Haxe comes with a set of compilers that translate manually-written code (in Haxe language) to different target languages and platforms. 
+%Haxe code can be compiled for applications running on desktop, mobile and web platforms. Compilers ensure the correctness of user code in terms of syntax and type safety.
+%Haxe comes also with a set of standard libraries that can be used on all supported targets and platform-specific libraries for each of them.
 
 The process of code transformation and generation can be described as following: Haxe compilers analyzes the source code written in Haxe language then, the code is checked and parsed into a typed structure, resulting in a typed abstract syntax tree (AST). This AST is optimized and transformed afterwards to produce source code for target platform/language.
 
 Haxe offers the option of choosing which platform to target for each program using a command-line tool. Moreover, some optimizations and debugging information can be enabled through CLI but in our experiments, we did not turned on any further options. 
 
 \subsubsection{Cross-platform Benchmark}
-One way to prove the effectiveness of our approach is to create benchmarks. Thus, we use the Haxe language and its code generators to build a cross-platform benchmark. The proposed benchmark is composed of a collection of cross-platform libraries that can be compiled to different targets\footnote{\url{http://thx-lib.org/}}. In these experiments, we consider five Haxe code generators to test: Java, JS, C++, CS, and PHP code generator. 
+One way to prove the effectiveness of our approach is to create benchmarks. Thus, we use the Haxe language and its code generators to build a cross-platform benchmark. The proposed benchmark is composed of a collection of cross-platform libraries that can be compiled to different targets. In these experiments, we consider five Haxe code generators to test: Java, JS, C++, CS, and PHP code generator. To select a subset of existing haxe library that can be used in out experiment, we crawl github and we use the haxe library repository\footnote{\url{http://thx-lib.org/}}. We select the seven libraries that has the best code coverage score. 
 
-In fact, each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different functions of the API. The main task of these tests is to check the correct functional behavior of generated programs once generated code is executed within the target platform. To prepare our benchmark, we have removed all the tests that fail to compile to our five targets (i.e., errors, crashes and failures) and we kept only test suites that are functionally correct. Moreover, we added manually new test cases to some libraries in order to extend the number of test suites. the number of test suites depends on the number of functions within the Haxe library.
+In fact, each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different functions of the API. The main task of these tests is to check the correct functional behavior of generated programs once generated code is executed within the target platform. To prepare our benchmark, we have removed all the tests that fail to compile to our five targets (i.e., errors, crashes and failures) and we kept only test suites that are functionally correct to focus on performance.  
+%TODO COmbien
+Moreover, we added manually new test cases to some libraries in order to extend the number of test suites. The number of test suites depends on the number of functions within the Haxe library.
+
+
 
 We use then, these test suites then, to generate a load and stress the target library. This can be useful to study the impact of this load on the resource usage of the system. For example, if one test suite consumes a lot of resources for a specific target, then this could be explained by the fact that the code generator has produced code that is very greedy in terms of resources.
 
@@ -107,7 +111,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}642,85   & \textbf{TS2}       & 28,32                         & \textbf{TS3}       & 24,40                          \\ \hline
 	\end{tabular}%
 	}
-		\caption{My caption}
+		\caption{Execution speed results}
 		\label{my-label}
 \end{table}
 
@@ -158,7 +162,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}1041,53 & \textbf{TS2}       & 234,93                         & \textbf{TS3}       & 281,12                         \\ \hline
 	\end{tabular}%
 }
-	\caption{My caption}
+	\caption{Memory consumption speed results}
 	\label{my-label}
 \end{table}
 
@@ -213,12 +217,13 @@ In Docker environment, this repository is called Data Volume. A data volume is a
 we execute the generated test suites, we provide a shared volume with
 the host machine so that, binaries can be executed in the execution container (Step 2). In fact, for the code execution we created, as well, a new Docker image in where we install all execution tools and environments such as php interpreter, NodeJS, etc. 
 
-In the meantime, while running test suites inside the container, we collect runtime resource usage data using cAdvisor (step 3). The cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our host machine. It will then have access to resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described previously to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI (\textit{http://localhost:8080}) to view live resource consumption of each container. cAdvisor has been widely used in different projects such as Heapster\footnote{\url{https://github.com/kubernetes/heapster}} and Google Cloud Platform\footnote{\url{https://cloud.google.com/}}. In this experiment, we choose to gather information about the memory usage of running container.
-Afterwards, we record these data into a new time-series database using our InfluxDB back-end container (step 4). Thus, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g., \textit{8083}) exposed by the database component. 
+In the meantime, while running test suites inside the container, we collect runtime resource usage data using cAdvisor (step 3). The cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our host machine. It will then have access to resource usage and performance characteristics of all running containers. This image uses the Cgroups mechanism described previously to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI to view live resource consumption of each container. cAdvisor has been widely used in different projects such as Heapster\footnote{\url{https://github.com/kubernetes/heapster}} and Google Cloud Platform\footnote{\url{https://cloud.google.com/}}. In this experiment, we choose to gather information about the memory usage of running container.
+Afterwards, we record these data into a new time-series database using our InfluxDB back-end container (step 4). %Thus, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g., \textit{8083}) exposed by the database component. 
 
-Next, we run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. We recall that InfluxDB also provides a web UI to query the database and show graphs (step 5). But, Grafana let us display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization and analysis (step 6). In our experiment, we are gathering the maximum memory usage values without presenting the graphs of resource usage profiles.
+Next, we run Grafana and we link it to InfluxDB. % by setting up the data source port 8086 so that, 
+Grafana can  request data from the database. We recall that InfluxDB also provides a web UI to query the database and show graphs (step 5). But, Grafana let us display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization and analysis (step 6). In our experiment, we are gathering the maximum memory usage values without presenting the graphs of resource usage profiles.
 
-To obtain comparable and reproducible results, we use the same hardware across all experiments: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
+To obtain comparable and reproducible results, we use the same hardware across all experiments: a farm of AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory. We reserve one core and 4Gbytes of memory for each running container. 
 
 \subsection{Experimental Results}
 \subsubsection{Evaluation using the standard deviation}
@@ -227,6 +232,7 @@ The goal of running these experiments is to observe and compare the behavior of 
 Thus, we use, as a quality metric, the standard deviation to quantify the amount of variation among execution traces (i.e., memory usage or execution time) and that for the five target languages. A low standard deviation of a test suite execution, indicates that the data points (execution time or memory usage data) tend to be close to the mean which we consider as an acceptable behavior.  
 On the other hand, a high standard deviation indicates that one or more data points are spread out over a wider range of values which can be more likely interpreted as a code generator inconsistency. 
 
+%TODO explique comment tu calcul ta standard deviation
 
 In Table 3, we report the comparison results of running the benchmark in terms of execution speed. At the first glance, we can clearly see that all standard deviations are more mostly close to 0 - 8 interval. It is completely normal to get such small deviations, because we are comparing the execution time of test suites that are written in heterogeneous languages and executed using different technologies (e.g., interpreters for PHP, JVM for JAVA, etc.). So, it is expected to get a small deviation between the execution times after running the test suite in different languages. However, we remark in the same table, that there are some variation points where the deviation is relatively high. We count 8 test suites where the deviation is higher than 60 (highlighted in gray). We choose this value (i.e., standard deviation = 60) as a threshold to designate the points where the variation is extremely high. Thus, we consider values higher than 60 as a potential possibility that a non-functional bug can occur. These variations can be explained by the fact that the execution speed of one or more test suites varies considerably from one language to another. This argues the idea that the code generator has produced a suspect behavior of code for one or more target language. We provide later better explanation in order to detect the faulty code generators.
 
