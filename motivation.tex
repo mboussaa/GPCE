@@ -7,7 +7,7 @@
 
 \subsection{Code Generator Families}
 
-In different domain, the use of code generator is a common practice. We can cite three approaches that intensively develop and use code generators. 
+We can cite three approaches that intensively develop and use code generators: 
 
 \paragraph{a. Haxe.} 	Haxe\footnote{\url{http://haxe.org/}}~\cite{dasnois2011haxe} is an open source toolkit for cross-platform development which compiles to a number of different programming platforms, including JavaScript, Flash, PHP, C++, C\#, and Java. Haxe involves many features: the Haxe language, multi-platform compilers, and different native libraries. The Haxe language is a high-level programming language which is strictly typed. This language supports both, functional and object-oriented programming paradigms. It has a common type hierarchy, making certain API available on every targeted platform. Moreover, Haxe comes with a set of code generators that translate manually-written code (in Haxe language) to different target languages and platforms.  Haxe code can be compiled for applications running on desktop, mobile and web platforms. Compilers ensure the correctness of user code in terms of syntax and type safety. Haxe comes also with a set of standard libraries that can be used on all supported targets and platform-specific libraries for each of them. One of the main usage of Haxe is to develop Cross-Platform Games or Cross-Platform libraries that can run on mobile, on the Web or on a Desktop.  This project is popular (more than \num{1440} stars on GitHub).
 
@@ -23,7 +23,7 @@ This project is popular (more than \num{12619} stars on GitHub).
 
 A reliable and acceptable way to increase the confidence in the correctness of code generators is to validate and check the functionality of generated code, which is a common practice for compiler validation and testing.
 Therefore, developers try to check the syntactic and semantic correctness of the generated code by means of different techniques such as static analysis, test suites, etc., and ensure that the code is behaving correctly.  In model-based testing for example~\cite{jorges2014back,stuermer2007systematic}, testing code generators focuses on testing the generated code against its design. Thus, the model and the generated code are executed in parallel, by means of simulations, with the same set of test suites. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage~\cite{sturmer2005overview}. 
-Based on the three sample projects presented above, we observe on their GitHub code repository that they all use unit tests to check the correctness of the code generators.  
+Based on the three sample projects presented above, we remark that all GitHub code repositories of the corresponding projects use unit tests to check the correctness of code generators.  
 
 \subsection{Performance Evaluation of a Code Generator Family}
 
