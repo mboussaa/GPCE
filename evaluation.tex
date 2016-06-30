@@ -276,7 +276,7 @@ Any automated approach has limitations. We resume, in the following paragraphs, 
 
 \textit{External validity} refers to the generalizability of our findings. In this study, we perform experiments on Haxe and a set of test suite selected from Github and from the Haxe community. We have no guarantee that these libraries covers all the Haxe language feature neither than all the Haxe standard library. Consequently, we cannot guarantee that the approach is able to find all the code generators issues. In particular, the threshold to detect singular behavior has a huge impact on the precision and recall of the proposed approach. Experiments should be replicated to other case studies to confirm our findings and try to understand the best heuristic to detect the code generator issue regarding performance. 
 
-\textit{Internal validity} is concerned with the use of a container based approach. Even if it exists emulator such as Qemu that allows to reflect the behavior of heterogeneous hardware, the chosen infrastructure has not been evaluated to test generated code that target heterogeneous hardware machine. In such a case, the provided compiler for a dedicated hardware can provide specific optimization that lead to a large number of false positives. 
+\textit{Internal validity} is concerned with the use of a container based approach. Even if it exists emulator such as Qemu that allows to reflect the behavior of heterogeneous hardware, the chosen infrastructure has not been evaluated to test generated code that target heterogeneous hardware machine. In such a case, the provided compiler for a dedicated hardware can provide specific optimizations that lead to a large number of false positives. 
  
 
 
