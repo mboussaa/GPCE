@@ -360,8 +360,8 @@
 \fi
 
 \setlength{\topskip}{8pt}
-\setlength{\columnsep}{2pc}
-\setlength{\textheight}{54.5pc}
+\setlength{\columnsep}{1.7pc}
+\setlength{\textheight}{55.5pc}
 
 % Running foot:
 
