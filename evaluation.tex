@@ -234,7 +234,7 @@ Grafana can  request data from the database. We recall that InfluxDB also provid
 To obtain comparable and reproducible results, we use the same hardware across all experiments: a farm of AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory. We reserve one core and 4Gbytes of memory for each running container. 
 
 \subsection{Experimental Results}
-\subsubsection{Evaluation using the standard deviation}
+\subsubsection{Evaluation Using the Standard Deviation}
 We now conduct experiments based on the Haxe benchmark. We run each test suite 1K times and we report the execution time and memory usage across the different target languages: Java, JS, C++, CS, and PHP. 
 The goal of running these experiments is to observe and compare the behavior of generated code regarding the testing load. We recall, as mentioned in the motivation, that we are not using any oracle function to detect inconsistencies. However, we rely on the comparison results across different targets to define code generator inconsistencies.
 Thus, we use, as a quality metric, the standard deviation to quantify the amount of variation among execution traces (i.e., memory usage or execution time) and that for the five target languages. We recall that the formula of standard deviation is the square root of the variance. Thus, we are calculating this variance as the squared differences from the mean. Our data values in our experiment represent the obtained values in five languages. So, for each test suite we are taking the mean of these five values in order to calculate the variance.
@@ -266,7 +266,7 @@ Meanwhile, we gathered information about the points that led to the highest stan
  
 
 
-\subsection{Discussions}
+\subsection{Discussion}
 Through these conducted experiments, we reached interesting results, some of which were unexpected.
 For instance, the poor performance of the Haxe-produced PHP code was certainly a surprise. 
 The PHP target had a very large execution time and memory usage for almost every test suite execution. 
