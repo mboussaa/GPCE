@@ -15,18 +15,18 @@ The process of code transformation and generation can be described as following:
 Haxe offers the option of choosing which platform to target for each program using a command-line tool. Moreover, some optimizations and debugging information can be enabled through CLI but in our experiments, we did not turned on any further options. 
 
 \subsubsection{Cross-platform Benchmark}
-One way to prove the effectiveness of our approach is to create benchmarks. Thus, we use the Haxe language and its code generators to build a cross-platform benchmark. The proposed benchmark is composed of a collection of cross-platform libraries that can be compiled to different targets. In these experiments, we consider five Haxe code generators to test: Java, JS, C++, CS, and PHP code generator. To select a subset of existing Haxe library that can be used in out experiment, we explore github and we use the Haxe library repository\footnote{\url{http://thx-lib.org/}}. We select the seven libraries that has the best code coverage score. 
+One way to prove the effectiveness of our approach is to create benchmarks. Thus, we use the Haxe language and its code generators to build a cross-platform benchmark. The proposed benchmark is composed of a collection of cross-platform libraries that can be compiled to different targets. In these experiments, we consider five Haxe code generators to test: Java, JS, C++, CS, and PHP code generators. To select cross-platform libraries, we explore github and we use the Haxe library repository\footnote{\url{http://thx-lib.org/}}. We select seven libraries that have the best code coverage score. 
 
-In fact, each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different functions of the API. The main task of these tests is to check the correct functional behavior of generated programs once generated code is executed within the target platform. To prepare our benchmark, we have removed all the tests that fail to compile to our five targets (i.e., errors, crashes and failures) and we kept only test suites that are functionally correct to focus on performance.  
-%TODO COmbien
-Moreover, we added manually new test cases to some libraries in order to extend the number of test suites. The number of test suites depends on the number of functions within the Haxe library.
+In fact, each Haxe library comes with an API and a set of test suites. These tests, written in Haxe, represent a set of unit tests that covers the different functions of the API. The main task of these tests is to check the correct functional behavior of generated programs once generated code is executed within the target platform. To prepare our benchmark, we remove all the tests that fail to compile to our five targets (i.e., errors, crashes and failures) and we keep only test suites that are functionally correct in order to focus only on the non-functional properties.
+
+Moreover, we add manually new test cases to some libraries in order to extend the number of test suites. The number of test suites depends on the number of existing functions within the Haxe library.
 
 
 
 We use then, these test suites then, to generate a load and stress the target library. This can be useful to study the impact of this load on the resource usage of the system. For example, if one test suite consumes a lot of resources for a specific target, then this could be explained by the fact that the code generator has produced code that is very greedy in terms of resources.
 
 Thus, we run each test suite 1000 times to get comparable values in terms of resource usage.
-Table 2 describes the Haxe libraries that we have selected from this benchmark to evaluate our
+Table 2 describes the Haxe libraries that we have selected in this benchmark to evaluate our
 approach.
 
 \begin{table}[h]
@@ -35,7 +35,7 @@ approach.
 	\begin{tabular}{|c|c|p{4.3cm}|}
 		\hline
 		\textbf{Library} & \textbf{\#TestSuites} & \textbf{Description} \\
-		\hhline{|=|=|=|}
+		\hline
 		Color  &  19 &  Color conversion from/to any color space   \\ \hline
 		Core & 51  & Provides extensions to many types  \\ \hline
 		Hxmath & 6  & A 2D/3D math library  \\ \hline
@@ -51,13 +51,13 @@ approach.
 \subsubsection{Evaluation Metrics Used}
 We use to evaluate the efficiency of generated code using the following non-functional metrics:
 
--\textit{Memory Usage (MU)}:
-It corresponds to the maximum memory consumption of the running container under test. Memory usage is measured in bytes.
+-\textit{Memory usage}:
+It corresponds to the maximum memory consumption of the running container under test. Memory usage is measured in Mbytes.
 
--\textit{Execution Time (T)}:
+-\textit{Execution time}:
 Program execution time is measured in seconds.
 
-We recall that our tool is able to evaluate other non-functional properties of generated code such as code generation time, compilation time, code size, CPU usage.
+We recall that our tool is able to evaluate other non-functional properties of generated code such as code generation time, compilation time, code size, CPU usage. We choose to focus, in this experiment, on the performance (i.e., execution time) and resource usage (i.e., memory usage).
  
 \subsubsection{Setting up Infrastructure}
 \begin{figure}[h]
@@ -65,7 +65,7 @@ We recall that our tool is able to evaluate other non-functional properties of g
 	\includegraphics[width=1\linewidth]{Ressources/settingup.pdf}
 	\caption{Infrastructure settings for running experiments}
 \end{figure}
-To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
+To assess our approach, we configure our previously proposed container-based infrastructure in order to run experiments on the Haxe case study.
 Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
 
 
@@ -221,7 +221,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
  
 
 First, we create a new Docker image in where we install the Haxe code generators and compilers (through the configuration file "Dockerfile"). Then a new instance of that image is created. It takes as an input the Haxe library we would to test and the list of test suites (step 1). It produces as an output the source code and binaries that have to be executed. These files are saved in a shared repository.
-In Docker environment, this repository is called Data Volume. A data volume is a specially-designated directory within containers that share data with the host machine. So, when
+In Docker environment, this repository is called "data volume". A data volume is a specially-designated directory within containers that shares data with the host machine. So, when
 we execute the generated test suites, we provide a shared volume with
 the host machine so that, binaries can be executed in the execution container (Step 2). In fact, for the code execution we created, as well, a new Docker image in where we install all execution tools and environments such as php interpreter, NodeJS, etc. 
 
