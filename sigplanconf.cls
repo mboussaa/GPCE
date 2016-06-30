@@ -1137,7 +1137,7 @@
    \noindent \LARGE \bfseries \@titletext \par}
   \vskip 6pt
   \noindent \Large \@subtitletext \par
-  \vskip 12pt
+  \vskip 6pt
   \ifcase \@authorcount
     \@latex@error{No authors were specified for this paper}{}\or
     \@titleauthors{i}{}{}\or
@@ -1161,7 +1161,7 @@
   \else
     \@latex@error{Cannot handle more than 12 authors}{}%
   \fi
-  \vspace{1.75pc}
+  \vspace{1.2pc}
   \end{center}}
 
 \def \@settitlebanner {%
