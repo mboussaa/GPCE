@@ -1,8 +1,8 @@
 %\section{Background and Motivation}
 
-\section{Motivations}
+\section{Motivation}
 
-\subsection{Code generator families example}
+\subsection{Code Generator Families}
 
 In different domain, the use of code generator is a common practice. We can cite three approaches that intensively develop and use code generators. 
 
@@ -14,14 +14,14 @@ This project is still confidential but it is a good candidate to represent the m
 \paragraph{c. TypeScript.} TypeScript\footnote{\url{https://www.typescriptlang.org/}}\cite{rastogi2015safe} is a typed superset of JavaScript that compiles to plain JavaScript. In fact, it does not compile to only one version of JavaScript. It can transform TypeScript to EcmaScript 3, 5 or 6. It can generate JavaScript that uses different system modules ('none', 'commonjs', 'amd', 'system', 'umd', 'es6', or 'es2015'). \footnote{Each of this variation point can target different code generators (function \textit{emitES6Module} vs \textit{emitUMDModule} in emitter.ts for example).} This project is popular (more than 12,619 stars on github).
 
 
-\subsection{Functional  correctness of a family of code generators}
+\subsection{Functional Correctness of a Code Generator Family}
 
 
 A reliable and accepted way to increase confidence in the correct functioning of code generators is to validate and check the functionality of generated code, which is common practice for compiler validation and testing.
 Therefore, developers try to check the syntactic and semantic correctness of generated code by means of different techniques such as static analysis, test suites, etc., and ensure that the code is behaving correctly.  In model-based testing for example~\cite{jorges2014back,stuermer2007systematic}, testing code generators focuses on testing the generated code against its design. Thus, the model and the generated code are executed in parallel, by means of simulations, with the same set of test suites. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage~\cite{sturmer2005overview}. 
 Based on the three sample projects presented above, we can eventually observe on github that all of them use unit tests to check the correct behavior of the code generators.  
 
-\subsection{Non-Functional  correctness of a family of code generators}
+\subsection{Non-Functional Correctness of a Code Generator Family}
 
 
 Code generators have to respect different requirements which preserve software reliability and quality~\cite{demertzi2011analyzing}. A non-efficient code generator might generate defective software artifacts (code smells) that violates common software engineering practices. Thus, poor-quality code can affect system reliability and performance (e.g., high resource usage, low execution speed, etc.). Thus, another important aspect of code generator's testing is to test the non-functional properties of produced code. Proving that the generated code is functionally correct is not enough to claim the effectiveness of the code generator under test. In looking at the three motivating example, ThingML and TypeScript do not provide any specific test to check the consistency of the different memory usage or CPU consumption regarding the different code generators and their variants. Haxe provides two test cases \footnote{https://github.com/HaxeFoundation/haxe/tree/development/tests/benchs} to benchmark the resulting generated code. One serves to benchmark an example in which object allocations are deliberately (over) used to measure how memory access/GC mixes with numeric processing in different target languages. The second test mainly bench the network speed for each target platform. 
