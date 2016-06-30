@@ -60,7 +60,7 @@ We recall that our tool is able to evaluate other non-functional properties of g
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Ressources/settingup.pdf}
-	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
+	\caption{Infrastructure settings for running experiments}
 \end{figure}
 To assess our approach, we configure our previously proposed container-based infrastructure for non-functional testing of code generators in order to run experiments on the Haxe case study.
 Figure 3 shows a big picture of the testing and monitoring infrastructure considered in these experiments.
@@ -107,7 +107,7 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}642,85   & \textbf{TS2}       & 28,32                         & \textbf{TS3}       & 24,40                          \\ \hline
 	\end{tabular}%
 	}
-		\caption{My caption}
+		\caption{The comparison results of running each test suite across five target languages: the metric used is the standard deviation between execution times  }
 		\label{my-label}
 \end{table}
 
@@ -158,9 +158,33 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}1041,53 & \textbf{TS2}       & 234,93                         & \textbf{TS3}       & 281,12                         \\ \hline
 	\end{tabular}%
 }
-	\caption{My caption}
+	\caption{The comparison results of running each test suite across five target languages: the metric used is the standard deviation between memory consumptions}
 	\label{my-label}
 \end{table}
+
+
+
+\begin{table*}[h]
+	\centering
+	
+	\resizebox{\linewidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\multirow{2}{*}{}    & \multicolumn{2}{c|}{\textbf{JS}}   & \multicolumn{2}{c|}{\textbf{JAVA}} & \multicolumn{2}{c|}{\textbf{C++}}  & \multicolumn{2}{c|}{\textbf{CS}}   & \multicolumn{2}{c|}{\textbf{PHP}}  \\ \cline{2-11} 
+			& \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} \\ \hline
+			\textbf{Color\_TS19} & 4,52             & x1.0            & 8,61             & x1,9            & 10,73            & x2,4            & 14,99            & x3,3            & 279,27           & x61,8           \\ \hline
+			\textbf{Core\_TS4}   & 665,78           & x1.0            & 416,85           & x0,6            & 699,11           & x1,1            & 1161,29          & x1,7            & 61777,21         & x92,8           \\ \hline
+			\textbf{Core\_TS11}  & 4,27             & x1.0            & 1,80             & x0,4            & 1,57             & x0,4            & 5,71             & x1,3            & 407,33           & x95,4           \\ \hline
+			\textbf{Core\_TS12}  & 4,71             & x1.0            & 2,06             & x0,4            & 1,60             & x0,3            & 5,36             & x1,1            & 417,14           & x88,6           \\ \hline
+			\textbf{Core\_TS13}  & 6,26             & x1.0            & 5,91             & x0,9            & 11,04            & x1,8            & 14,14            & x2,3            & 297,21           & x47,5           \\ \hline
+			\textbf{Format\_TS2}   & 2,31             & x1.0            & 2,10             & x0,9            & 1,81             & x0,8            & 6,08             & x2,6            & 148,24           & x64,1           \\ \hline
+			\textbf{Format\_TS3}   & 5,40             & x1.0            & 5,03             & x0,9            & 7,67             & x1,4            & 12,38            & x2,3            & 220,76           & x40,9           \\ \hline
+			\textbf{Math\_TS1}   & 3,01             & x1.0            & 12,51            & x4,2            & 16,30            & x5,4            & 14,14            & x4,7            & 1448,90          & x481,7          \\ \hline
+		\end{tabular}%
+	}
+	\caption{Raw data values of test suites that led to the highest variation in terms of execution time}
+	\label{my-label}
+\end{table*}
 
 
 \begin{table*}[h]
@@ -179,32 +203,11 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 		\textbf{Math\_TS1}   & 493,66              & x1.0            & 831,44              & x1,7            & 1492,97             & x3              & 806,33              & x1,6            & 3088,15             & x6,3            \\ \hline
 	\end{tabular}%
 }
-	\caption{My caption}
+	\caption{Raw data values of test suites that led to the highest variation in terms of memory usage}
 	\label{my-label}
 \end{table*}
 
 
-\begin{table*}[h]
-	\centering
-
-	\resizebox{\linewidth}{!}{%
-	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
-		\hline
-		\multirow{2}{*}{}    & \multicolumn{2}{c|}{\textbf{JS}}   & \multicolumn{2}{c|}{\textbf{JAVA}} & \multicolumn{2}{c|}{\textbf{C++}}  & \multicolumn{2}{c|}{\textbf{CS}}   & \multicolumn{2}{c|}{\textbf{PHP}}  \\ \cline{2-11} 
-		& \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} \\ \hline
-		\textbf{Color\_TS19} & 4,52             & x1.0            & 8,61             & x1,9            & 10,73            & x2,4            & 14,99            & x3,3            & 279,27           & x61,8           \\ \hline
-		\textbf{Core\_TS4}   & 665,78           & x1.0            & 416,85           & x0,6            & 699,11           & x1,1            & 1161,29          & x1,7            & 61777,21         & x92,8           \\ \hline
-		\textbf{Core\_TS11}  & 4,27             & x1.0            & 1,80             & x0,4            & 1,57             & x0,4            & 5,71             & x1,3            & 407,33           & x95,4           \\ \hline
-		\textbf{Core\_TS12}  & 4,71             & x1.0            & 2,06             & x0,4            & 1,60             & x0,3            & 5,36             & x1,1            & 417,14           & x88,6           \\ \hline
-		\textbf{Core\_TS13}  & 6,26             & x1.0            & 5,91             & x0,9            & 11,04            & x1,8            & 14,14            & x2,3            & 297,21           & x47,5           \\ \hline
-		\textbf{Format\_TS2}   & 2,31             & x1.0            & 2,10             & x0,9            & 1,81             & x0,8            & 6,08             & x2,6            & 148,24           & x64,1           \\ \hline
-		\textbf{Format\_TS3}   & 5,40             & x1.0            & 5,03             & x0,9            & 7,67             & x1,4            & 12,38            & x2,3            & 220,76           & x40,9           \\ \hline
-		\textbf{Math\_TS1}   & 3,01             & x1.0            & 12,51            & x4,2            & 16,30            & x5,4            & 14,14            & x4,7            & 1448,90          & x481,7          \\ \hline
-	\end{tabular}%
-}
-	\caption{My caption}
-	\label{my-label}
-\end{table*}
 
 
 
