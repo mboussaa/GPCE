@@ -73,41 +73,41 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 	\centering
 
 	\resizebox{\columnwidth}{!}{%
-	\begin{tabular}{|l|l|l|l|l|l|l|}
+	\begin{tabular}{|l|l|S[table-format=3.2]|l|S[table-format=3.2]|l|S[table-format=3.2]|}
 		\hline
 		\textbf{Benchmark}                 & \textbf{TestSuite} & \textbf{Std\_dev}                & \textbf{TestSuite} & \textbf{Std\_dev}             & \textbf{TestSuite} & \textbf{Std\_dev}              \\ \hline
-		& \textbf{TS1}       & 0,55                             & \textbf{TS8}       & 0,24                          & \textbf{TS15}      & 0,73                           \\ \cline{2-7} 
-		& \textbf{TS2}       & 0,29                             & \textbf{TS9}       & 0,22                          & \textbf{TS16}      & 0,12                           \\ \cline{2-7} 
-		& \textbf{TS3}       & 0,34                             & \textbf{TS10}      & 0,10                          & \textbf{TS17}      & 0,31                           \\ \cline{2-7} 
-		& \textbf{TS4}       & 2,51                             & \textbf{TS11}      & 0,17                          & \textbf{TS18}      & 0,34                           \\ \cline{2-7} 
-		& \textbf{TS5}       & 1,53                             & \textbf{TS12}      & 0,28                          & \textbf{TS19}      & \cellcolor[HTML]{C0C0C0}120,61 \\ \cline{2-7} 
-		& \textbf{TS6}       & 43,50                            & \textbf{TS13}      & 0,33                         & \multicolumn{2}{l|}{\multirow{2}{*}{}} \\ \cline{2-5}
-		\multirow{-7}{*}{\textbf{Color}}   & \textbf{TS7}       & 0,50                             & \textbf{TS14}      & 1,88                          & \multicolumn{2}{l|}{}                  \\ \hline
-		& \textbf{TS1}       & 0,35                             & \textbf{TS18}      & 0,16                          & \textbf{TS35}      & 1,30                           \\ \cline{2-7} 
-		& \textbf{TS2}       & 0,07                             & \textbf{TS19}      & 0,60                          & \textbf{TS36}      & 1,13                           \\ \cline{2-7} 
-		& \textbf{TS3}       & 0,30                             & \textbf{TS20}      & 5,79                          & \textbf{TS37}      & 2,02                           \\ \cline{2-7} 
-		& \textbf{TS4}       & \cellcolor[HTML]{C0C0C0}27299,89 & \textbf{TS21}      & 0,47                          & \textbf{TS38}      & 0,26                           \\ \cline{2-7} 
-		& \textbf{TS5}       & 6,12                             & \textbf{TS22}      & 2,74                          & \textbf{TS39}      & 0,16                           \\ \cline{2-7} 
-		& \textbf{TS6}       & 21,90                            & \textbf{TS23}      & 2,14                          & \textbf{TS40}      & 8,12                           \\ \cline{2-7} 
-		& \textbf{TS7}       & 0,41                             & \textbf{TS24}      & 3,79                          & \textbf{TS41}      & 5,45                           \\ \cline{2-7} 
-		& \textbf{TS8}       & 0,28                             & \textbf{TS25}      & 0,19                          & \textbf{TS42}      & 0,11                           \\ \cline{2-7} 
-		& \textbf{TS9}       & 0,78                             & \textbf{TS26}      & 0,13                          & \textbf{TS43}      & 1,41                           \\ \cline{2-7} 
-		& \textbf{TS10}      & 1,82                             & \textbf{TS27}      & 5,59                          & \textbf{TS44}      & 1,56                           \\ \cline{2-7} 
-		& \textbf{TS11}      & \cellcolor[HTML]{C0C0C0}180,68   & \textbf{TS28}      & 1,71                          & \textbf{TS45}      & 0,11                           \\ \cline{2-7} 
-		& \textbf{TS12}      & \cellcolor[HTML]{C0C0C0}185,02   & \textbf{TS29}      & 0,26                          & \textbf{TS46}      & 1,04                           \\ \cline{2-7} 
-		& \textbf{TS13}      & \cellcolor[HTML]{C0C0C0}128,78   & \textbf{TS30}      & 0,44                          & \textbf{TS47}      & 0,23                           \\ \cline{2-7} 
-		& \textbf{TS14}      & 0,71                             & \textbf{TS31}      & 1,71                          & \textbf{TS48}      & 1,34                           \\ \cline{2-7} 
-		& \textbf{TS15}      & 0,12                             & \textbf{TS32}      & 2,42                          & \textbf{TS49}      & 1,86                           \\ \cline{2-7} 
-		& \textbf{TS16}      & 0,65                             & \textbf{TS33}      & 8,29                          & \textbf{TS50}      & 1,28                           \\ \cline{2-7} 
-		\multirow{-17}{*}{\textbf{Core}}   & \textbf{TS17}      & 0,26                             & \textbf{TS34}      & 5,25                          & \textbf{TS51}      & 3,53                           \\ \hline
-		& \textbf{TS1}       & 31,65                            & \textbf{TS3}       & 30,34                         & \textbf{TS5}       & 0,40                           \\ \cline{2-7} 
-		\multirow{-2}{*}{\textbf{Hxmath}}  & \textbf{TS2}       & 4,27                             & \textbf{TS4}       & 0,25                          & \textbf{TS6}       & 0,87                           \\ \hline
-		& \textbf{TS1}       & 0,28                             & \textbf{TS3}       & \cellcolor[HTML]{C0C0C0}95,36 & \textbf{TS4}       & 1,49                           \\ \cline{2-7} 
-		\multirow{-2}{*}{\textbf{Format}}  & \textbf{TS2}       & \cellcolor[HTML]{C0C0C0}64,94    & \multicolumn{4}{l|}{\textbf{}}                                                                           \\ \hline
-		\textbf{Promise}                   & \textbf{TS1}       & 0,29                             & \textbf{TS2}       & 13,21                         & \textbf{TS3}       & 1,21                           \\ \hline
-		& \textbf{TS1}       & 0,13                             & \textbf{TS3}       & 0,13                          & \textbf{TS4}       & 1,40                           \\ \cline{2-7} 
-		\multirow{-2}{*}{\textbf{Culture}} & \textbf{TS2}       & 0,10                             & \multicolumn{4}{l|}{}                                                                                    \\ \hline
-		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}642,85   & \textbf{TS2}       & 28,32                         & \textbf{TS3}       & 24,40                          \\ \hline
+		& \textbf{TS1}       & 0.55                             & \textbf{TS8}       & 0.24                          & \textbf{TS15}      & 0.73                           \\ \cline{2-7} 
+		& \textbf{TS2}       & 0.29                             & \textbf{TS9}       & 0.22                          & \textbf{TS16}      & 0.12                           \\ \cline{2-7} 
+		& \textbf{TS3}       & 0.34                             & \textbf{TS10}      & 0.10                          & \textbf{TS17}      & 0.31                           \\ \cline{2-7} 
+		& \textbf{TS4}       & 2.51                             & \textbf{TS11}      & 0.17                          & \textbf{TS18}      & 0.34                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 1.53                             & \textbf{TS12}      & 0.28                          & \textbf{TS19}      & \cellcolor[HTML]{C0C0C0}120.61 \\ \cline{2-7} 
+		& \textbf{TS6}       & 43.50                            & \textbf{TS13}      & 0.33                         & \multicolumn{2}{l|}{\multirow{2}{*}{}} \\ \cline{2-5}
+		\multirow{-7}{*}{\textbf{Color}}   & \textbf{TS7}       & 0.50                             & \textbf{TS14}      & 1.88                          & \multicolumn{2}{l|}{}                  \\ \hline
+		& \textbf{TS1}       & 0.35                             & \textbf{TS18}      & 0.16                          & \textbf{TS35}      & 1.30                           \\ \cline{2-7} 
+		& \textbf{TS2}       & 0.07                             & \textbf{TS19}      & 0.60                          & \textbf{TS36}      & 1.13                           \\ \cline{2-7} 
+		& \textbf{TS3}       & 0.30                             & \textbf{TS20}      & 5.79                          & \textbf{TS37}      & 2.02                           \\ \cline{2-7} 
+		& \textbf{TS4}       & \cellcolor[HTML]{C0C0C0}27299.89 & \textbf{TS21}      & 0.47                          & \textbf{TS38}      & 0.26                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 6.12                             & \textbf{TS22}      & 2.74                          & \textbf{TS39}      & 0.16                           \\ \cline{2-7} 
+		& \textbf{TS6}       & 21.90                            & \textbf{TS23}      & 2.14                          & \textbf{TS40}      & 8.12                           \\ \cline{2-7} 
+		& \textbf{TS7}       & 0.41                             & \textbf{TS24}      & 3.79                          & \textbf{TS41}      & 5.45                           \\ \cline{2-7} 
+		& \textbf{TS8}       & 0.28                             & \textbf{TS25}      & 0.19                          & \textbf{TS42}      & 0.11                           \\ \cline{2-7} 
+		& \textbf{TS9}       & 0.78                             & \textbf{TS26}      & 0.13                          & \textbf{TS43}      & 1.41                           \\ \cline{2-7} 
+		& \textbf{TS10}      & 1.82                             & \textbf{TS27}      & 5.59                          & \textbf{TS44}      & 1.56                           \\ \cline{2-7} 
+		& \textbf{TS11}      & \cellcolor[HTML]{C0C0C0}180.68   & \textbf{TS28}      & 1.71                          & \textbf{TS45}      & 0.11                           \\ \cline{2-7} 
+		& \textbf{TS12}      & \cellcolor[HTML]{C0C0C0}185.02   & \textbf{TS29}      & 0.26                          & \textbf{TS46}      & 1.04                           \\ \cline{2-7} 
+		& \textbf{TS13}      & \cellcolor[HTML]{C0C0C0}128.78   & \textbf{TS30}      & 0.44                          & \textbf{TS47}      & 0.23                           \\ \cline{2-7} 
+		& \textbf{TS14}      & 0.71                             & \textbf{TS31}      & 1.71                          & \textbf{TS48}      & 1.34                           \\ \cline{2-7} 
+		& \textbf{TS15}      & 0.12                             & \textbf{TS32}      & 2.42                          & \textbf{TS49}      & 1.86                           \\ \cline{2-7} 
+		& \textbf{TS16}      & 0.65                             & \textbf{TS33}      & 8.29                          & \textbf{TS50}      & 1.28                           \\ \cline{2-7} 
+		\multirow{-17}{*}{\textbf{Core}}   & \textbf{TS17}      & 0.26                             & \textbf{TS34}      & 5.25                          & \textbf{TS51}      & 3.53                           \\ \hline
+		& \textbf{TS1}       & 31.65                            & \textbf{TS3}       & 30.34                         & \textbf{TS5}       & 0.40                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Hxmath}}  & \textbf{TS2}       & 4.27                             & \textbf{TS4}       & 0.25                          & \textbf{TS6}       & 0.87                           \\ \hline
+		& \textbf{TS1}       & 0.28                             & \textbf{TS3}       & \cellcolor[HTML]{C0C0C0}95.36 & \textbf{TS4}       & 1.49                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Format}}  & \textbf{TS2}       & \cellcolor[HTML]{C0C0C0}64.94    & \multicolumn{4}{l|}{\textbf{}}                                                                           \\ \hline
+		\textbf{Promise}                   & \textbf{TS1}       & 0.29                             & \textbf{TS2}       & 13.21                         & \textbf{TS3}       & 1.21                           \\ \hline
+		& \textbf{TS1}       & 0.13                             & \textbf{TS3}       & 0.13                          & \textbf{TS4}       & 1.40                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Culture}} & \textbf{TS2}       & 0.10                             & \multicolumn{4}{l|}{}                                                                                    \\ \hline
+		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}642.85   & \textbf{TS2}       & 28.32                         & \textbf{TS3}       & 24.40                          \\ \hline
 	\end{tabular}%
 	}
  
@@ -128,41 +128,41 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 	\centering
 
 	\resizebox{\columnwidth}{!}{%
-	\begin{tabular}{|l|l|l|l|l|l|l|}
+	\begin{tabular}{|l|l|S[table-format=3.2]|l|S[table-format=3.2]|l|S[table-format=3.2]|}
 		\hline
 		\textbf{Benchmark}                 & \textbf{TestSuite} & \textbf{Std\_dev}               & \textbf{TestSuite} & \textbf{Std\_dev}              & \textbf{TestSuite} & \textbf{Std\_dev}              \\ \hline
-		& \textbf{TS1}       & 10,19                           & \textbf{TS8}       & 1,23                           & \textbf{TS15}      & 14,44                          \\ \cline{2-7} 
-		& \textbf{TS2}       & 1,17                            & \textbf{TS9}       & 1,95                           & \textbf{TS16}      & 1,13                           \\ \cline{2-7} 
-		& \textbf{TS3}       & 0,89                            & \textbf{TS10}      & 1,27                           & \textbf{TS17}      & 0,72                           \\ \cline{2-7} 
-		& \textbf{TS4}       & 30,34                           & \textbf{TS11}      & 0,57                           & \textbf{TS18}      & 0,97                           \\ \cline{2-7} 
-		& \textbf{TS5}       & 31,79                           & \textbf{TS12}      & 1,11                           & \textbf{TS19}      & \cellcolor[HTML]{C0C0C0}777,32 \\ \cline{2-7} 
-		& \textbf{TS6}       & \cellcolor[HTML]{C0C0C0}593,05  & \textbf{TS13}      & 0,46                           & \multicolumn{2}{l|}{}                               \\ \cline{2-5}
-		\multirow{-7}{*}{\textbf{Color}}   & \textbf{TS7}       & 12,14                           & \textbf{TS14}      & 45,90                          & \multicolumn{2}{l|}{\multirow{-2}{*}{}}             \\ \hline
-		& \textbf{TS1}       & 1,40                            & \textbf{TS18}      & 1,00                           & \textbf{TS35}      & 14,13                          \\ \cline{2-7} 
-		& \textbf{TS2}       & 1,17                            & \textbf{TS19}      & 20,37                          & \textbf{TS36}      & 32,41                          \\ \cline{2-7} 
-		& \textbf{TS3}       & 0,60                            & \textbf{TS20}      & 128,23                         & \textbf{TS37}      & 22,72                          \\ \cline{2-7} 
-		& \textbf{TS4}       & \cellcolor[HTML]{C0C0C0}403,15  & \textbf{TS21}      & 24,38                          & \textbf{TS38}      & 2,19                           \\ \cline{2-7} 
-		& \textbf{TS5}       & 41,95                           & \textbf{TS22}      & 76,24                          & \textbf{TS39}      & 0,26                           \\ \cline{2-7} 
-		& \textbf{TS6}       & 203,55                          & \textbf{TS23}      & 18,82                          & \textbf{TS40}      & 126,29                         \\ \cline{2-7} 
-		& \textbf{TS7}       & 19,69                           & \textbf{TS24}      & 72,01                          & \textbf{TS41}      & 31,01                          \\ \cline{2-7} 
-		& \textbf{TS8}       & 0,78                            & \textbf{TS25}      & 0,21                           & \textbf{TS42}      & 0,93                           \\ \cline{2-7} 
-		& \textbf{TS9}       & 30,41                           & \textbf{TS26}      & 2,30                           & \textbf{TS43}      & 50,36                          \\ \cline{2-7} 
-		& \textbf{TS10}      & 57,19                           & \textbf{TS27}      & 101,53                         & \textbf{TS44}      & 12,56                          \\ \cline{2-7} 
-		& \textbf{TS11}      & 68,92                           & \textbf{TS28}      & 43,67                          & \textbf{TS45}      & 0,91                           \\ \cline{2-7} 
-		& \textbf{TS12}      & 74,19                           & TS29               & 0,90                           & \textbf{TS46}      & 27,28                          \\ \cline{2-7} 
-		& \textbf{TS13}      & 263,99                          & \textbf{TS30}      & 4,02                           & \textbf{TS47}      & 1,10                           \\ \cline{2-7} 
-		& \textbf{TS14}      & 19,89                           & \textbf{TS31}      & 52,35                          & \textbf{TS48}      & 15,40                          \\ \cline{2-7} 
-		& \textbf{TS15}      & 0,30                            & \textbf{TS32}      & 134,75                         & \textbf{TS49}      & 37,01                          \\ \cline{2-7} 
-		& \textbf{TS16}      & 28,29                           & \textbf{TS33}      & 82,66                          & \textbf{TS50}      & 23,29                          \\ \cline{2-7} 
-		\multirow{-17}{*}{\textbf{Core}}            & \textbf{TS17}      & 1,16                            & \textbf{TS34}      & 89,57                          & \textbf{TS51}      & 1,28                           \\ \hline
-		& \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}444,18  & \textbf{TS3}       & \cellcolor[HTML]{C0C0C0}425,65 & \textbf{TS5}       & 17,69                          \\ \cline{2-7} 
-		\multirow{-2}{*}{\textbf{Hxmath}}  & \textbf{TS2}       & 154,80                          & \textbf{TS4}       & 0,96                           & \textbf{TS6}       & 46,13                          \\ \hline
-		& \textbf{TS1}       & 0,74                            & \textbf{TS3}       & 255,36                         & \textbf{TS4}       & 8,40                           \\ \cline{2-7} 
-		\multirow{-2}{*}{\textbf{Format}}  & \textbf{TS2}       & 106,87                          & \multicolumn{4}{l|}{\textbf{}}                                                                            \\ \hline
-		\textbf{Promise}                   & \textbf{TS1}       & 0,30                            & \textbf{TS2}       & 58,76                          & \textbf{TS3}       & 20,04                          \\ \hline
-		& \textbf{TS1}       & 1,28                            & \textbf{TS3}       & 0,58                           & \textbf{TS4}       & 15,69                          \\ \cline{2-7} 
-		\multirow{-2}{*}{\textbf{Culture}} & \textbf{TS2}       & 4,51                            & \multicolumn{4}{l|}{}                                                                                     \\ \hline
-		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}1041,53 & \textbf{TS2}       & 234,93                         & \textbf{TS3}       & 281,12                         \\ \hline
+		& \textbf{TS1}       & 10.19                           & \textbf{TS8}       & 1.23                           & \textbf{TS15}      & 14.44                          \\ \cline{2-7} 
+		& \textbf{TS2}       & 1.17                            & \textbf{TS9}       & 1.95                           & \textbf{TS16}      & 1.13                           \\ \cline{2-7} 
+		& \textbf{TS3}       & 0.89                            & \textbf{TS10}      & 1.27                           & \textbf{TS17}      & 0.72                           \\ \cline{2-7} 
+		& \textbf{TS4}       & 30.34                           & \textbf{TS11}      & 0.57                           & \textbf{TS18}      & 0.97                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 31.79                           & \textbf{TS12}      & 1.11                           & \textbf{TS19}      & \cellcolor[HTML]{C0C0C0}777.32 \\ \cline{2-7} 
+		& \textbf{TS6}       & \cellcolor[HTML]{C0C0C0}593.05  & \textbf{TS13}      & 0.46                           & \multicolumn{2}{l|}{}                               \\ \cline{2-5}
+		\multirow{-7}{*}{\textbf{Color}}   & \textbf{TS7}       & 12.14                           & \textbf{TS14}      & 45.90                          & \multicolumn{2}{l|}{\multirow{-2}{*}{}}             \\ \hline
+		& \textbf{TS1}       & 1.40                            & \textbf{TS18}      & 1.00                           & \textbf{TS35}      & 14.13                          \\ \cline{2-7} 
+		& \textbf{TS2}       & 1.17                            & \textbf{TS19}      & 20.37                          & \textbf{TS36}      & 32.41                          \\ \cline{2-7} 
+		& \textbf{TS3}       & 0.60                            & \textbf{TS20}      & 128.23                         & \textbf{TS37}      & 22.72                          \\ \cline{2-7} 
+		& \textbf{TS4}       & \cellcolor[HTML]{C0C0C0}403.15  & \textbf{TS21}      & 24.38                          & \textbf{TS38}      & 2.19                           \\ \cline{2-7} 
+		& \textbf{TS5}       & 41.95                           & \textbf{TS22}      & 76.24                          & \textbf{TS39}      & 0.26                           \\ \cline{2-7} 
+		& \textbf{TS6}       & 203.55                          & \textbf{TS23}      & 18.82                          & \textbf{TS40}      & 126.29                         \\ \cline{2-7} 
+		& \textbf{TS7}       & 19.69                           & \textbf{TS24}      & 72.01                          & \textbf{TS41}      & 31.01                          \\ \cline{2-7} 
+		& \textbf{TS8}       & 0.78                            & \textbf{TS25}      & 0.21                           & \textbf{TS42}      & 0.93                           \\ \cline{2-7} 
+		& \textbf{TS9}       & 30.41                           & \textbf{TS26}      & 2.30                           & \textbf{TS43}      & 50.36                          \\ \cline{2-7} 
+		& \textbf{TS10}      & 57.19                           & \textbf{TS27}      & 101.53                         & \textbf{TS44}      & 12.56                          \\ \cline{2-7} 
+		& \textbf{TS11}      & 68.92                           & \textbf{TS28}      & 43.67                          & \textbf{TS45}      & 0.91                           \\ \cline{2-7} 
+		& \textbf{TS12}      & 74.19                           & TS29               & 0.90                           & \textbf{TS46}      & 27.28                          \\ \cline{2-7} 
+		& \textbf{TS13}      & 263.99                          & \textbf{TS30}      & 4.02                           & \textbf{TS47}      & 1.10                           \\ \cline{2-7} 
+		& \textbf{TS14}      & 19.89                           & \textbf{TS31}      & 52.35                          & \textbf{TS48}      & 15.40                          \\ \cline{2-7} 
+		& \textbf{TS15}      & 0.30                            & \textbf{TS32}      & 134.75                         & \textbf{TS49}      & 37.01                          \\ \cline{2-7} 
+		& \textbf{TS16}      & 28.29                           & \textbf{TS33}      & 82.66                          & \textbf{TS50}      & 23.29                          \\ \cline{2-7} 
+		\multirow{-17}{*}{\textbf{Core}}            & \textbf{TS17}      & 1.16                            & \textbf{TS34}      & 89.57                          & \textbf{TS51}      & 1.28                           \\ \hline
+		& \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}444.18  & \textbf{TS3}       & \cellcolor[HTML]{C0C0C0}425.65 & \textbf{TS5}       & 17.69                          \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Hxmath}}  & \textbf{TS2}       & 154.80                          & \textbf{TS4}       & 0.96                           & \textbf{TS6}       & 46.13                          \\ \hline
+		& \textbf{TS1}       & 0.74                            & \textbf{TS3}       & 255.36                         & \textbf{TS4}       & 8.40                           \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Format}}  & \textbf{TS2}       & 106.87                          & \multicolumn{4}{l|}{\textbf{}}                                                                            \\ \hline
+		\textbf{Promise}                   & \textbf{TS1}       & 0.30                            & \textbf{TS2}       & 58.76                          & \textbf{TS3}       & 20.04                          \\ \hline
+		& \textbf{TS1}       & 1.28                            & \textbf{TS3}       & 0.58                           & \textbf{TS4}       & 15.69                          \\ \cline{2-7} 
+		\multirow{-2}{*}{\textbf{Culture}} & \textbf{TS2}       & 4.51                            & \multicolumn{4}{l|}{}                                                                                     \\ \hline
+		\textbf{Math}                      & \textbf{TS1}       & \cellcolor[HTML]{C0C0C0}1041.53 & \textbf{TS2}       & 234.93                         & \textbf{TS3}       & 281.12                         \\ \hline
 	\end{tabular}%
 }
  
@@ -179,18 +179,18 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 	\centering
 	
 	\resizebox{0.75\linewidth}{!}{%
-		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+		\begin{tabular}{|l|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|}
 			\hline
 			\multirow{2}{*}{}    & \multicolumn{2}{c|}{\textbf{JS}}   & \multicolumn{2}{c|}{\textbf{JAVA}} & \multicolumn{2}{c|}{\textbf{C++}}  & \multicolumn{2}{c|}{\textbf{CS}}   & \multicolumn{2}{c|}{\textbf{PHP}}  \\ \cline{2-11} 
 			& \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} & \textbf{Time} & \textbf{Factor} \\ \hline
-			\textbf{Color\_TS19} & 4,52             & x1.0            & 8,61             & x1,9            & 10,73            & x2,4            & 14,99            & x3,3            & 279,27           & x61,8           \\ \hline
-			\textbf{Core\_TS4}   & 665,78           & x1.0            & 416,85           & x0,6            & 699,11           & x1,1            & 1161,29          & x1,7            & 61777,21         & x92,8           \\ \hline
-			\textbf{Core\_TS11}  & 4,27             & x1.0            & 1,80             & x0,4            & 1,57             & x0,4            & 5,71             & x1,3            & 407,33           & x95,4           \\ \hline
-			\textbf{Core\_TS12}  & 4,71             & x1.0            & 2,06             & x0,4            & 1,60             & x0,3            & 5,36             & x1,1            & 417,14           & x88,6           \\ \hline
-			\textbf{Core\_TS13}  & 6,26             & x1.0            & 5,91             & x0,9            & 11,04            & x1,8            & 14,14            & x2,3            & 297,21           & x47,5           \\ \hline
-			\textbf{Format\_TS2}   & 2,31             & x1.0            & 2,10             & x0,9            & 1,81             & x0,8            & 6,08             & x2,6            & 148,24           & x64,1           \\ \hline
-			\textbf{Format\_TS3}   & 5,40             & x1.0            & 5,03             & x0,9            & 7,67             & x1,4            & 12,38            & x2,3            & 220,76           & x40,9           \\ \hline
-			\textbf{Math\_TS1}   & 3,01             & x1.0            & 12,51            & x4,2            & 16,30            & x5,4            & 14,14            & x4,7            & 1448,90          & x481,7          \\ \hline
+			\textbf{Color\_TS19} & 4.52             & x1.0            & 8.61             & x1.9            & 10.73            & x2.4            & 14.99            & x3.3            & 279.27           & x61.8           \\ \hline
+			\textbf{Core\_TS4}   & 665.78           & x1.0            & 416.85           & x0.6            & 699.11           & x1.1            & 1161.29          & x1.7            & 61777.21         & x92.8           \\ \hline
+			\textbf{Core\_TS11}  & 4.27             & x1.0            & 1.80             & x0.4            & 1.57             & x0.4            & 5.71             & x1.3            & 407.33           & x95.4           \\ \hline
+			\textbf{Core\_TS12}  & 4.71             & x1.0            & 2.06             & x0.4            & 1.60             & x0.3            & 5.36             & x1.1            & 417.14           & x88.6           \\ \hline
+			\textbf{Core\_TS13}  & 6.26             & x1.0            & 5.91             & x0.9            & 11.04            & x1.8            & 14.14            & x2.3            & 297.21           & x47.5           \\ \hline
+			\textbf{Format\_TS2}   & 2.31             & x1.0            & 2.10             & x0.9            & 1.81             & x0.8            & 6.08             & x2.6            & 148.24           & x64.1           \\ \hline
+			\textbf{Format\_TS3}   & 5.40             & x1.0            & 5.03             & x0.9            & 7.67             & x1.4            & 12.38            & x2.3            & 220.76           & x40.9           \\ \hline
+			\textbf{Math\_TS1}   & 3.01             & x1.0            & 12.51            & x4.2            & 16.30            & x5.4            & 14.14            & x4.7            & 1448.90          & x481.7          \\ \hline
 		\end{tabular}%
 	}
 	\caption{Raw data values of test suites that led to the highest variation in terms of execution time}
@@ -202,16 +202,16 @@ Figure 3 shows a big picture of the testing and monitoring infrastructure consid
 	\centering
 
 	\resizebox{0.75\linewidth}{!}{%
-	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+	\begin{tabular}{|l|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|S[table-format=3.2]|}
 		\hline
 		\multirow{2}{*}{}    & \multicolumn{2}{c|}{\textbf{JS}}      & \multicolumn{2}{c|}{\textbf{JAVA}}    & \multicolumn{2}{c|}{\textbf{C++}}     & \multicolumn{2}{c|}{\textbf{CS}}      & \multicolumn{2}{c|}{\textbf{PHP}}     \\ \cline{2-11} 
 		& \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} & \textbf{Memory} & \textbf{Factor} \\ \hline
-		\textbf{Color\_TS6}  & 900,70              & x1.0            & 1362,55              & x1,5            & 2275,49             & x2,5            & 1283,31             & x1,4            & 758,79              & x0,8            \\ \hline
-		\textbf{Color\_TS19} & 253,01              & x1.0            & 819,92              & x3,2            & 923,99              & x3,7            & 327,61              & x1,3            & 2189,86             & x8,7            \\ \hline
-		\textbf{Core\_TS4}   & 303,09              & x1.0            & 768,22              & x2,5            & 618,42              & x2              & 235,75              & x0,8            & 1237,15             & x4,1            \\ \hline
-		\textbf{Hxmath\_TS1} & 104,00              & x1.0            & 335,50              & x3,2            & 296,43              & x2,9            & 156,41              & x1,5            & 1192,98             & x11,5           \\ \hline
-		\textbf{Hxmath\_TS3} & 111,68              & x1.0            & 389,73              & x3,5            & 273,12              & x2,4            & 136,49              & x1,2            & 1146,05             & x10,3           \\ \hline
-		\textbf{Math\_TS1}   & 493,66              & x1.0            & 831,44              & x1,7            & 1492,97             & x3              & 806,33              & x1,6            & 3088,15             & x6,3            \\ \hline
+		\textbf{Color\_TS6}  & 900.70              & x1.0            & 1362.55              & x1.5            & 2275.49             & x2.5            & 1283.31             & x1.4            & 758.79              & x0.8            \\ \hline
+		\textbf{Color\_TS19} & 253.01              & x1.0            & 819.92              & x3.2            & 923.99              & x3.7            & 327.61              & x1.3            & 2189.86             & x8.7            \\ \hline
+		\textbf{Core\_TS4}   & 303.09              & x1.0            & 768.22              & x2.5            & 618.42              & x2              & 235.75              & x0.8            & 1237.15             & x4.1            \\ \hline
+		\textbf{Hxmath\_TS1} & 104.00              & x1.0            & 335.50              & x3.2            & 296.43              & x2.9            & 156.41              & x1.5            & 1192.98             & x11.5           \\ \hline
+		\textbf{Hxmath\_TS3} & 111.68              & x1.0            & 389.73              & x3.5            & 273.12              & x2.4            & 136.49              & x1.2            & 1146.05             & x10.3           \\ \hline
+		\textbf{Math\_TS1}   & 493.66              & x1.0            & 831.44              & x1.7            & 1492.97             & x3              & 806.33              & x1.6            & 3088.15             & x6.3            \\ \hline
 	\end{tabular}%
 }
 	\caption{Raw data values of test suites that led to the highest variation in terms of memory usage}

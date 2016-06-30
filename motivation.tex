@@ -1,5 +1,8 @@
 %\section{Background and Motivation}
 
+%\vspace*{-0.3cm}
+
+
 \section{Motivation}
 
 \subsection{Code Generator Families}
@@ -22,13 +25,14 @@ A reliable and acceptable way to increase the confidence in the correctness of c
 Therefore, developers try to check the syntactic and semantic correctness of the generated code by means of different techniques such as static analysis, test suites, etc., and ensure that the code is behaving correctly.  In model-based testing for example~\cite{jorges2014back,stuermer2007systematic}, testing code generators focuses on testing the generated code against its design. Thus, the model and the generated code are executed in parallel, by means of simulations, with the same set of test suites. Afterwards, the two outputs are compared with respect to certain acceptance criteria. Test cases, in this case, can be designed to maximize the code or model coverage~\cite{sturmer2005overview}. 
 Based on the three sample projects presented above, we observe on their GitHub code repository that they all use unit tests to check the correctness of the code generators.  
 
-\subsection{Non-Functional Correctness of a Code Generator Family}
+\subsection{Performance Evaluation of a Code Generator Family}
 
 
 Code generators have to respect different requirements to preserve software reliability and quality~\cite{demertzi2011analyzing}. A non-efficient code generator might generate defective software artifacts (code smells) that violates common software engineering practices. Thus, poor-quality code can affect system reliability and performance (e.g., high resource usage, low execution speed, etc.). Thus, another important aspect of code generator's testing is to test the non-functional properties of produced code. Proving that the generated code is functionally correct is not enough to claim the effectiveness of the code generator under test. In looking at the three motivating example, ThingML and TypeScript do not provide any specific test to check the consistency of the different memory usage or CPU consumption regarding the different code generators and their variants. Haxe provides two test cases \footnote{https://github.com/HaxeFoundation/haxe/tree/development/tests/benchs} to benchmark the resulting generated code. One serves to benchmark an example in which object allocations are deliberately (over) used to measure how memory access/GC mixes with numeric processing in different target languages. The second test mainly bench the network speed for each target platform. 
 
 However, based on existing benchmarks between technical environments~\cite{hundt2011loop}, in comparing the behavior of the generated code of a large data set of programs, our feeling is that we could detect inefficient code generators. The kinds of error that we track are the following:
 \begin{itemize}
+	\setlength\itemsep{0em}
 	\item  the lack of use of a \textbf{specific function that exists in the standard library} of the targeted language  that can speed or reduce the memory consumption of the resulting program.
 	\item the lack of use of \textbf{a specific type that exists in the standard library} of the targeted language  that can speed or reduce the memory consumption of the resulting program.
 	\item  the lack of use of\textbf{ a specific language feature in a targeted language}  that can speed or reduce the memory consumption of the resulting program. 
