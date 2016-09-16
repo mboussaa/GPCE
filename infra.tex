@@ -23,13 +23,12 @@ In the first step, software developers have to define, at design time, the softw
 Afterwards, generated software artifacts (e.g., JAVA, C\#, C++, etc.) are compiled, deployed and executed across different target platforms (e.g., Android, ARM/Linux, JVM, x86/Linux, etc.). 
 %Thus, several code compilers are needed to transform source code to machine code (binaries) in order to get executed. 
 Finally, to perform the non-functional testing of generated code, developers have to collect, visualize and compare information about the performance and efficiency of running code across the different platforms. 
-Therefore, they generally use several platform-specific profilers, trackers, instrumenting and monitoring tools in order to find some inconsistencies or bugs during code execution~\cite{guana2014chaintracker,delgado2004taxonomy}. Finding inconsistencies within code generators involves analyzing and inspecting the code and that, for each execution platform. For example, one of the ways to handle that, is to analyze the memory footprint of software execution and find memory leaks~\cite{nethercote2007valgrind}. Developers can then inspect the generated code and find some parts of the code-base that have triggered this issue. %Such non-functional error could occur when the code generator produces code that presents for example: incorrect typing, faulty memory management, code-smells, etc. 
+Therefore, they generally use several platform-specific profilers, trackers, instrumenting and monitoring tools in order to find some inconsistencies or bugs during code execution~\cite{guana2014chaintracker,delgado2004taxonomy}. Finding inconsistencies within code generators involves analyzing and inspecting the code and that, for each execution platform. For example, one way to handle that, is to analyze the memory footprint of software execution and find memory leaks~\cite{nethercote2007valgrind}. Developers can then inspect the generated code and find some parts of the code-base that have triggered this issue. %Such non-functional error could occur when the code generator produces code that presents for example: incorrect typing, faulty memory management, code-smells, etc. 
 Therefore, software testers generally use to report statistics about the performance of generated code in order to fix, refactor, and optimize the code generation process. Compared to this classical testing approach, our proposed work seeks to automate the last three steps: generate code, execute it on top of different platforms, and find code generator issues. 
 
 \subsection{An Infrastructure for Non-functional Testing Using System Containers}
 To assess the performance/non-functional properties of generated code many system configurations (i.e., execution environments) must be considered. Running different applications (i.e., generated code) with different configurations on one single machine is complex. 
-A single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc. Therefore, we need to deploy the test harness, i.e., the produced binaries, on an elastic infrastructure that provides to code generator developers facilities to ensure the deployment and monitoring of generated code in different environment settings. 
-
+A single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc. Therefore, we need to deploy the test harness, i.e., the produced binaries, on an elastic infrastructure that provide facilities to the code generator developers to ensure the deployment and monitoring of generated code in different environment settings. 
 Consequently, our infrastructure provides support to automatically:
 \begin{enumerate}
 	\item Deploy the generated code, its dependencies and its  execution environments
@@ -39,10 +38,10 @@ Consequently, our infrastructure provides support to automatically:
 \end{enumerate}
 
 To ensure these four main steps, we rely on system containers~\cite{soltesz2007container}. 
-System or Linux Containers is an operating system-level virtualization method for running multiple isolated Linux systems (containers) on a control host using a single Linux kernel. 
-The Linux kernel provides the cgroups functionality that allows limitation and prioritization of resources (CPU, memory, block I/O, network, etc.) without the need for starting any virtual machines~\cite{luotowards}.
+It is an operating system-level virtualization method for running multiple isolated Linux systems (containers) on a control host using a single Linux kernel. 
+The Linux kernel provides the cgroups functionality that allows limitation and prioritization of resources (CPU, memory, block I/O, network, etc.) for each container without the need for starting any virtual machines~\cite{luotowards}.
 These containers share the same OS and hardware as the hosting machine and it is very useful to use them in order to create new configurable and isolated instances to run. 
-With container-based virtualization, there isn't the overhead associated with having each guest running a new installed operating system like using virtual machines. This approach can also improve performance because there is just one operating system taking care of hardware calls.
+With container-based virtualization, we reduce the overhead associated with having each guest running a new installed operating system like using virtual machines. This approach can also improve performance because there is just one operating system taking care of hardware calls.
 
 %Thus, instead of configuring all code generators under test (GUTs) within the same host machine, we wrap each GUT within a system container. Afterwards, a new instance of the container is created to enable the execution of generated code in an isolated and configured environment. Meanwhile, we start our runtime testing components. A monitoring component collects usage statistics of all running containers and save them at runtime in a time series database component. Thus, we can compare later information about the resource usage of generated programs and detect inconsistencies within code generators.
 
@@ -51,7 +50,7 @@ The rest of this section details the technical choices we have made to synthesiz
 
 \subsection{Technical Implementation}
 
-The general overview of the technical implementation is shown in Figure~2. In the following subsections, we describe the deployment and testing architecture of generated code using system containers.
+The overall overview of our proposed approach is shown in Figure~2. In the following subsections, we describe the deployment and testing architecture using system containers.
 
 
 \begin{figure*}[!h]
@@ -72,7 +71,7 @@ The general overview of the technical implementation is shown in Figure~2. In th
 %Thus, we integrate a collection of components to define the adequate infrastructure for testing and monitoring of code generators. 
 
 
-Before starting to monitor and test applications, we have to deploy generated code on different components to ease containers provisioning and profiling. 
+Before starting to monitor and test applications, we need to deploy the generated code on different components to ease containers provisioning and profiling. 
 We aim to use Docker Linux containers to monitor the execution of different generated artifacts in terms of resource usage~\cite{merkel2014docker}. 
 Docker\footnote{\url{https://www.docker.com}} is an engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
 %To achieve that, Docker uses the Linux container technology. 
@@ -88,7 +87,6 @@ We can then instantiate different containers from these Docker images.
 
 Next, each generated code is executed individually inside an isolated Linux container (see code execution step in Figure~2). By doing so, we ensure that each executed program runs in isolation without being affected by the host machine or any other processes. Moreover, since a container is cheap to create, we are able to create new container instances as long as we have new programs to execute.  
 Since each program execution requires a new container to be created, it is crucial to remove and kill containers that have finished their job to eliminate the load on the system. We run the experiment on top of a private data-center that provide a bare-metal installation of  docker and docker swarm. On a single machine,  containers/softwares are running sequentially and we pin $p$ cores and $n$ Gbytes of memory for each container\footnote{$p$ and $n$ can be configured}. Once the execution is done, resources reserved for the container are automatically released to enable spawning next containers. Therefore, the host machine will not suffer too much from performance trade-offs.
-
 In short, the main advantages of this approach are:
 \begin{itemize}
 	\item The use of containers induces less performance overhead and resource isolation compared to using a full stack virtualization solution~\cite{spoiala2016performance}. Indeed, instrumentation and monitoring tools for memory profiling can induce too much overhead.
