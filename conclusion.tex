@@ -2,12 +2,12 @@
 
 In this paper we have described a new approach for testing and monitoring code generators families using a container-based infrastructure. 
 We used a set of micro-services in order to provide a fine-grained understanding of resource consumption. 
-To validate the approach, we applied the proposed approach on an popular family of code generators: HAXE. 
+To validate the approach, we applied the proposed approach on a popular family of code generators: HAXE. 
 The evaluation results show that we can find real issues in existing code generators. 
 In particular, we show that we could find two kinds of errors: the lack of use of a specific function and an abstract type that exist in the standard library of the target language which can reduce the memory usage/execution time of the resulting program.
 
 As a current work, we are discussing with the Haxe community to submit a patch with the first findings. 
 We are also conducting the same evaluation for two other code generators families: ThingML and TypeScript. 
 As a future work, we are going to improve our understanding on the threshold which can provide a best precision for detecting performance issues in code generators. 
-We seek also to detect more code generator inconsistencies related to other non-functional metrics such CPU consumption, etc. 
+In this paper, we detected inconsistencies related to execution speed and memory usage. In the future, we seek, using the same testing infrastructure, to detect more code generator inconsistencies related to other non-functional metrics such CPU consumption, etc. 
 
