@@ -20,7 +20,7 @@
 %-----------------------------------------------------------------------------
 
 
-\documentclass[preprint,10pt]{sigplanconf}
+\documentclass[10pt]{sigplanconf}
 
 % The following \documentclass options may be useful:
 
@@ -32,8 +32,10 @@
  
 
 \newcommand{\cL}{{\cal L}}
-
-
+          \clubpenalty = 10000
+          \widowpenalty = 10000
+          \displaywidowpenalty = 10000
+\usepackage{flushend}
 \usepackage{amsthm}
 \newtheorem*{mydef}{Definition}
 \usepackage[table]{xcolor}
@@ -112,7 +114,7 @@
 %\def\@copyrightspace{\relax}
 %\makeatother
 \begin{document}
- 
+ \toappear{}
 
 \title{Automatic Non-functional Testing of Code Generators Families}
  
