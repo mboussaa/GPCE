@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,9 +711,6 @@ File: Ressources/background.pdf Graphic file (type pdf)
 Package pdftex.def Info: Ressources/background.pdf used on input line 15.
 (pdftex.def)             Requested size: 490.19843pt x 157.99521pt.
  [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 <Ressources/background2.pdf, id=23, 1017.8025pt x 377.41pt>
 File: Ressources/background2.pdf Graphic file (type pdf)
 
@@ -724,8 +721,11 @@ Package pdftex.def Info: Ressources/background2.pdf used on input line 59.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./Ressources/background.pdf>]
-Underfull \vbox (badness 1728) has occurred while \output is active []
+
+Underfull \vbox (badness 5519) has occurred while \output is active []
+
+ [4 <./Ressources/background.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./Ressources/background2.pdf>]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -742,6 +742,9 @@ File: Ressources/settingup.pdf Graphic file (type pdf)
 <use Ressources/settingup.pdf>
 Package pdftex.def Info: Ressources/settingup.pdf used on input line 65.
 (pdftex.def)             Requested size: 247.80002pt x 173.09645pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1156,11 +1159,14 @@ Overfull \hbox (5.0pt too wide) detected at line 216
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7 <./Ressources/settingup.pdf>] [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[7 <./Ressources/settingup.pdf>]
+Underfull \vbox (badness 2698) has occurred while \output is active []
 
-
+ [8]
 Underfull \vbox (badness 5908) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
 Overfull \hbox (3.77739pt too wide) in paragraph at lines 273--274
@@ -1174,10 +1180,7 @@ Overfull \hbox (103.70486pt too wide) in paragraph at lines 280--280
 rs-[]on-[]any-[]x86-[]machine-[]even-[]dockerhub/$| 
  []
 
-) (./related.tex) (./conclusion.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10])
+) (./related.tex) (./conclusion.tex [10])
 Overfull \hbox (9.84857pt too wide) in paragraph at lines 151--152
 \OT1/ptm/m/n/10 work Pro-gram (FP7/2007-2013) un-der grant agree-ment n611337,
  []
@@ -1199,7 +1202,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  15050 strings out of 493027
  293211 string characters out of 6134069
- 474135 words of memory out of 5000000
+ 457579 words of memory out of 5000000
  18418 multiletter control sequences out of 15000+600000
  33415 words of font info for 63 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1217,7 +1220,7 @@ exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1357758 bytes).
+Output written on main.pdf (12 pages, 1357251 bytes).
 PDF statistics:
  485 PDF objects out of 1000 (max. 8388607)
  304 compressed objects within 4 object streams
