@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,7 +731,10 @@ Underfull \vbox (badness 5077) has occurred while \output is active []
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
-(./evaluation.tex [6]
+(./evaluation.tex
+Underfull \vbox (badness 2486) has occurred while \output is active []
+
+ [6]
 Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|\OT1/ptm/m/n/10 Library for lightweight
  []
@@ -1159,17 +1162,14 @@ Overfull \hbox (5.0pt too wide) detected at line 216
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 1412) has occurred while \output is active []
-
- [7 <./Ressources/settingup.pdf>]
-Underfull \vbox (badness 2698) has occurred while \output is active []
+[7 <./Ressources/settingup.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
 Underfull \vbox (badness 5908) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6893) has occurred while \output is active []
 
  [9]
 Overfull \hbox (3.77739pt too wide) in paragraph at lines 273--274
@@ -1177,13 +1177,10 @@ Overfull \hbox (3.77739pt too wide) in paragraph at lines 273--274
 tm/m/it/10 SplFixedAr-
  []
 
+) (./related.tex) (./conclusion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (103.70486pt too wide) in paragraph at lines 280--280
-[] []$\OT1/cmtt/m/n/8 https : / / resin . io / blog / building-[]arm-[]containe
-rs-[]on-[]any-[]x86-[]machine-[]even-[]dockerhub/$| 
- []
-
-) (./related.tex) (./conclusion.tex [10])
+ [10])
 Overfull \hbox (9.84857pt too wide) in paragraph at lines 151--152
 \OT1/ptm/m/n/10 work Pro-gram (FP7/2007-2013) un-der grant agree-ment n611337,
  []
@@ -1203,7 +1200,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  15050 strings out of 493027
  293211 string characters out of 6134069
- 457407 words of memory out of 5000000
+ 457137 words of memory out of 5000000
  18418 multiletter control sequences out of 15000+600000
  33415 words of font info for 63 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1221,7 +1218,7 @@ exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1356873 bytes).
+Output written on main.pdf (11 pages, 1357069 bytes).
 PDF statistics:
  482 PDF objects out of 1000 (max. 8388607)
  302 compressed objects within 4 object streams

@@ -23,7 +23,7 @@ Moreover, we add manually new test cases to some libraries in order to extend th
 
 
 
-We use then these test suites to transform functional tests into stress tests. This can be useful to study the impact of this load on the non-functional properties of generated code such as the performance and resource usage. For example, if one test suite consumes a lot of resources for a specific target, then this could be explained by the fact that the code generator under test has produced code that is very greedy in terms of resources.
+We use then these test suites to transform functional tests into stress tests. This can be useful to study the impact of this load on the non-functional properties of generated code such as the performance and resource usage. For example, if one test suite consumes a lot of resources for a specific target, then this could be explained by the fact that the GUT has produced code that is very greedy in terms of resources.
 
 Thus, we run each test suite 1000 times to get comparable values in terms of resource usage.
 Table 2 describes the Haxe libraries that we have selected in this benchmark to evaluate our
@@ -277,7 +277,7 @@ Any automated approach has limitations. We resume, in the following paragraphs, 
 
 \textit{External validity} refers to the generalizability of our findings. In this study, we perform experiments on Haxe and a set of test suite selected from Github and from the Haxe community. For instance, we have no guarantee that these libraries covers all the Haxe language features neither than all the Haxe standard libraries. Consequently, we cannot guarantee that the approach is able to find all the code generators issues unless we develop a more comprehensive test suite. Moreover, the threshold defined to detect the singular performance behavior has a huge impact on the precision and recall of the proposed approach. Experiments should be replicated to other case studies to confirm our findings and try to understand the best heuristic to detect the code generator issues regarding performance (i.e., automatically calculate the threshold values)
 
-\textit{Internal validity} is concerned with the use of a container-based approach. Even if it exists emulator such as Qemu\footnote{\url{https://resin.io/blog/building-arm-containers-on-any-x86-machine-even-dockerhub/}} that allows to reflect the behavior of heterogeneous hardware, the chosen infrastructure has not been evaluated to test generated code that target heterogeneous hardware machine. In addition, even though system containers are known to be lightweight and less resource-intensive compared to full-stack virtualization, we would validate the reliability of our approach by comparing it with a non-virtualized approach in order to see the impact of using containers on the accuracy of the results.
+\textit{Internal validity} is concerned with the use of a container-based approach. Even if it exists emulator such as Qemu\footnote{\url{https://goo.gl/SxKG1e}} that allows to reflect the behavior of heterogeneous hardware, the chosen infrastructure has not been evaluated to test generated code that target heterogeneous hardware machine. In addition, even though system containers are known to be lightweight and less resource-intensive compared to full-stack virtualization, we would validate the reliability of our approach by comparing it with a non-virtualized approach in order to see the impact of using containers on the accuracy of the results.
  
 
 
