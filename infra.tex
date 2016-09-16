@@ -5,7 +5,7 @@
 
 \subsection{Non-Functional Testing of a Code Generator Family: a Common Process}
 
-Figure 1 summarizes the classical steps to ensure the code generation and non-functional testing of produced code from design time to run time. 
+Figure 1 summarizes the classical steps that ensure the code generation and non-functional testing of produced code from design time to runtime. 
 We distinguish 4 major steps: the software design using high-level system specifications, code generation by means of code generators, code execution, and non-functional testing of generated code. 
 
 
@@ -13,22 +13,22 @@ We distinguish 4 major steps: the software design using high-level system specif
 		\center
 		
 	\includegraphics[width=0.95\linewidth]{Ressources/background.pdf}
-	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to run time: the classical way}
+	\caption{An overall overview of the different processes involved to ensure the code generation and non-functional testing of produced code from design time to runtime: the classical way}
 	%		\label{AAA}
 \end{figure*}
 
 
-In the first step, software developers have to define, at design time, software's behavior using a high-level abstract language (DSLs, models, program, etc). Afterwards, developers can use platform-specific code generators to ease the software development and generate automatically code that targets different languages and platforms. We depict, in Figure~1, three code generators capable to generate code in three software programming languages (JAVA, C\# and C++). In this step, code generators transform the previously designed model to produce, as a consequence, software artifacts for the target platform.
-
+In the first step, software developers have to define, at design time, the software's behavior using a high-level abstract language (DSLs, models, program, etc). Afterwards, developers can use platform-specific code generators to ease the software development and generate automatically code that targets different languages and platforms. We depict, as an example in Figure~1, three code generators from the same family capable to generate code to three software programming languages (JAVA, C\# and C++). The first step is to transform the previously designed model to produce, as a consequence, software artifacts.
 % Transformations from model to code within each code generator might be different and may integrate different transformation rules. As an example, we distinguish model-to-model transformations languages such as ATL~\cite{jouault2005transforming} and template-based model-to-text transformation languages such as Acceleo~\cite{musset2006acceleo} to translate high-level system specifications into executable code and scripts~\cite{bragancca2008transformation,czarnecki2003classification}. The main task of code generators is to transform models to general-purpose and platform-dependent languages.
-In the next step, generated software artifacts (e.g., JAVA, C\#, C++, etc.) are compiled, deployed and executed across different target platforms (e.g., Android, ARM/Linux, JVM, x86/Linux, etc.). Thus, several code compilers are needed to transform source code to machine code (binaries) in order to get executed. 
-
+In the next step, generated software artifacts (e.g., JAVA, C\#, C++, etc.) are compiled, deployed and executed across different target platforms (e.g., Android, ARM/Linux, JVM, x86/Linux, etc.). 
+%Thus, several code compilers are needed to transform source code to machine code (binaries) in order to get executed. 
 Finally, to perform the non-functional testing of generated code, developers have to collect, visualize and compare information about the performance and efficiency of running code across the different platforms. 
-Therefore, they generally use several platform-specific profilers, trackers, instrumenting and monitoring tools in order to find some inconsistencies or bugs during code execution~\cite{guana2014chaintracker,delgado2004taxonomy}. Ensuring the code quality of generated code can refer to several non-functional properties such as code size, resource or energy consumption, execution time, among others~\cite{pan2006fast}. Finding inconsistencies within code generators involves analyzing and inspecting the code and that, for each execution platform. For example, one of the methods to handle that is to analyze the memory footprint of software execution and find memory leaks. Developers can then inspect the generated code and find some parts of the code-base that have triggered this issue. %Such non-functional error could occur when the code generator produces code that presents for example: incorrect typing, faulty memory management, code-smells, etc. 
-Therefore, software testers generally use to report statistics about the performance of generated code in order to fix, refactor, and optimize the code generation process. Our approach aims to automate the last three steps: generate code for a set of platforms, execute code on top of different platforms, monitor and compare the execution. 
+Therefore, they generally use several platform-specific profilers, trackers, instrumenting and monitoring tools in order to find some inconsistencies or bugs during code execution~\cite{guana2014chaintracker,delgado2004taxonomy}. Finding inconsistencies within code generators involves analyzing and inspecting the code and that, for each execution platform. For example, one of the ways to handle that, is to analyze the memory footprint of software execution and find memory leaks~\cite{nethercote2007valgrind}. Developers can then inspect the generated code and find some parts of the code-base that have triggered this issue. %Such non-functional error could occur when the code generator produces code that presents for example: incorrect typing, faulty memory management, code-smells, etc. 
+Therefore, software testers generally use to report statistics about the performance of generated code in order to fix, refactor, and optimize the code generation process. Compared to this classical testing approach, Our proposed work aims to automate the last three steps: generate code, execute code on top of different platforms, monitor and compare the execution profiles. 
 
 \subsection{An Infrastructure for Non-functional Testing Using System Containers}
-To assess the performance/non-functional properties of generated code many system configurations (i.e., execution environments) must be considered. Running different applications (i.e., generated code) with different configurations on one single machine is complex  a single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc. Therefore, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides to compiler user facilities to ensure the deployment and monitoring of generated code in different environment settings. 
+To assess the performance/non-functional properties of generated code many system configurations (i.e., execution environments) must be considered. Running different applications (i.e., generated code) with different configurations on one single machine is complex. 
+A single system has limited resources and this can lead to performance regressions. Moreover, each execution environment comes with a collection of appropriate tools such as compilers, code generators, debuggers, profilers, etc. Therefore, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides to compiler user facilities to ensure the deployment and monitoring of generated code in different environment settings. 
 
 Consequently, our infrastructure provides support to automatically:
 \begin{enumerate}
@@ -38,7 +38,7 @@ Consequently, our infrastructure provides support to automatically:
 	\item Gather performance metrics (CPU, Memory, etc.)
 \end{enumerate}
 
-To get these four main steps, we rely on system containers~\cite{soltesz2007container}. 
+To ensure these four main steps, we rely on system containers~\cite{soltesz2007container}. 
 System or Linux Containers is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a control host using a single Linux kernel. 
 The Linux kernel provides the cgroups functionality that allows limitation and prioritization of resources (CPU, memory, block I/O, network, etc.) without the need for starting any virtual machines~\cite{luotowards}.
 These containers share the same OS and hardware as the hosting machine and it is very useful to use them in order to create new configurable and isolated instances to run. 
@@ -91,7 +91,7 @@ Since each program execution requires a new container to be created, it is cruci
 
 In short, the main advantages of this approach are:
 \begin{itemize}
-	\item The use of containers induces less performance overhead and resource isolation compared to using a full stack virtualization solution~\cite{spoiala2016performance}. Indeed, instrumentation and monitoring tools for memory profiling like Valgrind~\cite{nethercote2007valgrind} can induce too much overhead.
+	\item The use of containers induces less performance overhead and resource isolation compared to using a full stack virtualization solution~\cite{spoiala2016performance}. Indeed, instrumentation and monitoring tools for memory profiling can induce too much overhead.
 	\item Thanks to the use of Dockerfiles, the proposed framework can be  configured by software testers in order to define the code generators under test (\eg, code generator version, dependencies, etc.), the host IP and OS, the DSL design, the optimization options, etc. Thus, we can use the same configured Docker image to execute different instances of generated code. For hardware architecture, containers share the same platform architecture as the host machine (e.g., x86, x64, ARM, etc.). 
 	\item Docker uses Linux control groups (Cgroups) to group processes running in the container. This allows us to manage the resources of a group of processes, which is very valuable. 
 	This approach increases the flexibility when we want to manage resources since we can manage every group individually. For example, if we would evaluate the non-functional requirements of generated code within a resource-constrained environment, we can  request and limit resources within the execution container according to the needs.

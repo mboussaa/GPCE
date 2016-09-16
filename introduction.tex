@@ -15,14 +15,14 @@ Code generators are then necessarily needed to transform specifications/models r
 However, code generators are known to be difficult to understand since they involve a set of complex and heterogeneous technologies which make the activities of design, implementation, and testing very hard and time-consuming~\cite{france2007model,guana2015developers}. Code generators have to respect different requirements which preserve software reliability and quality. In fact, faulty code generators can generate defective software artifacts which range from uncompilable or semantically dysfunctional code that causes serious damage to the generated software; to non-functional bugs which lead to poor-quality code that can affect system reliability and performance (\eg, high resource usage, high execution time, etc.). 
 %Thus, these issues should be corrected by hand each time the code generator triggers functional or non-functional failures.
 
-In order to check the correctness of the code generation process, developers often define (at design time) a set of test cases that verify afterwards the functional behavior of the generated code. After code generation, test suites are executed within each target platform. This may lead to either a correct behavior (\ie, expected output) or incorrect one (\ie, failures, errors).
+In order to check the correctness of the code generation process, developers often define (at design time) a set of test cases that verify the functional behavior of generated code. After code generation, test suites are executed within each target platform. This may lead to either a correct behavior (\ie, expected output) or incorrect one (\ie, failures, errors).
 On the other hand, testing the non-functional properties of code generators remains a challenging and time-consuming task because developers have to analyze and verify the non-functional behavior of generated code for different target platforms using platform-specific tools~\cite{guana2014chaintracker,delgado2004taxonomy}. Currently, there is a lack of automatic solutions that check the non-functional issues such as the properties related to the resource consumption of generated code (Memory or CPU consumption).
 
 
 %for performance testing of code generators, developers need to deploy and execute the generated software artifacts on different execution platforms. Then, they have to collect and compare information about the quality and efficiency of generated code. Finally, they report issues related to the code generation process such as incorrect typing, memory management leaks, etc. Currently, there is a lack of automatic solutions that check the non-functional issues such as the properties related to the resource consumption of generated code (Memory or CPU consumption). Hence, developers often manually use several platform-specific profilers, trackers, and monitoring tools~\cite{guana2014chaintracker,delgado2004taxonomy} in order to find some inconsistencies or bugs during code execution. In this case, ensuring the code quality of generated code can require examining several non-functional properties such as code size, resource or energy consumption, execution time, among others~\cite{pan2006fast}. %Comparing the results is often complex as it does not exist a general benchmark that compares the execution of C, Java or JavaScript program. Consequently, 
 %In brief, 
 
-In this paper, we propose an approach to automatically compare and detect inconsistencies between code generators. This approach provides a runtime monitoring infrastructure based on system containers, as execution platforms, to compare the generated code performance. %In fact, we provide a fine-grained understanding of resource consumption and analysis of components behavior. 
+In this paper, we propose a practical approach based on a runtime monitoring infrastructure to automatically check the potential inefficient code generators. This infrastructure, based on system containers as execution platforms, allows code-generator developers to evaluate the generated code performance. %In fact, we provide a fine-grained understanding of resource consumption and analysis of components behavior. 
 We evaluate our approach by analyzing the non-functional properties of Haxe code generators. Haxe is a popular high-level programming language\footnote{\num{1442} GitHub stars} that involves a set of cross-platform code generators able to generate code to different target platforms. Our experimental results show that our approach is able to detect performance inconsistencies that reveal real issues in Haxe code generators.
 
 
@@ -33,12 +33,12 @@ The contributions of this paper are the following:
 			
 	\item We propose a fully automated micro-service infrastructure to ensure the deployment and monitoring of generated code. This paper focuses on the relationship between runtime execution of generated code and resource consumption profiles (memory usage).
 	\item We also report the results of an empirical study by evaluating the non-functional properties of the Haxe code generators. 
-	The obtained results provide evidence to support the claim that our proposed infrastructure is effective.	
+	The obtained results provide evidence to support the claim that our proposed infrastructure is able to detect code generator issues.
 \end{itemize}
 
 The paper is organized as follows.
 Section~2 describes the motivations behind this work by discussing three examples of code generator families. 
-Section~3 presents an overview of our approach to automatically perform non-functional tests of code generator families. In particular, we present our infrastructure for non-functional testing of code generators using micro-services. 
+Section~3 presents an overview of our approach to automatically perform non-functional tests. In particular, we present our infrastructure for non-functional testing of code generators using micro-services. 
 The evaluation and results of our experiments are discussed in Section~4. 
 Finally, related work, concluding remarks, and future work are provided in Sections~5 and~6.
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -162,6 +162,14 @@ I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper.
 \newblock Systematic testing of model-based code generators.
 \newblock \emph{IEEE Transactions on Software Engineering}, 33\penalty0
   (9):\penalty0 622, 2007.
+
+\bibitem[St{\"u}rmer et~al.(2005)St{\"u}rmer, Weinberg, and
+  Conrad]{sturmer2005overview}
+I.~St{\"u}rmer, D.~Weinberg, and M.~Conrad.
+\newblock Overview of existing safeguarding techniques for automatically
+  generated code.
+\newblock In \emph{ACM SIGSOFT Software Engineering Notes}, volume~30, pages
+  1--6. ACM, 2005.
 
 \bibitem[Sun et~al.(2016)Sun, White, Eade, and Schmidt]{sun2016roar}
 Y.~Sun, J.~White, S.~Eade, and D.~C. Schmidt.
