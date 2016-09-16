@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 19:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1157,24 +1157,31 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5908) has occurred while \output is active []
 
 
-Overfull \hbox (3.77739pt too wide) in paragraph at lines 276--277
+Overfull \hbox (3.77739pt too wide) in paragraph at lines 277--278
 \OT1/ptm/m/n/10 stan-dard li-brary, by the PHP code gen-er-a-tor such as \OT1/p
 tm/m/it/10 SplFixedAr-
  []
 
 
-Underfull \vbox (badness 2359) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9])
-(./related.tex) (./conclusion.tex)
+(./related.tex
+Underfull \vbox (badness 2932) has occurred while \output is active []
+
+)
+(./conclusion.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 Overfull \hbox (9.84857pt too wide) in paragraph at lines 151--152
 \OT1/ptm/m/n/10 work Pro-gram (FP7/2007-2013) un-der grant agree-ment n611337,
  []
 
-(./main.bbl [10]) [11] (./main.aux)
+(./main.bbl) [11] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1207,7 +1214,7 @@ exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1356582 bytes).
+Output written on main.pdf (11 pages, 1356847 bytes).
 PDF statistics:
  482 PDF objects out of 1000 (max. 8388607)
  302 compressed objects within 4 object streams
