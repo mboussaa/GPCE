@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 09:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.12)  16 SEP 2016 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,7 +701,7 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
 )
 (./motivation.tex
-Underfull \vbox (badness 4217) has occurred while \output is active []
+Underfull \vbox (badness 3449) has occurred while \output is active []
 
  [2]
 Underfull \vbox (badness 5064) has occurred while \output is active []
@@ -1198,10 +1198,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15047 strings out of 493027
- 293115 string characters out of 6134069
- 472754 words of memory out of 5000000
- 18415 multiletter control sequences out of 15000+600000
+ 15046 strings out of 493027
+ 293122 string characters out of 6134069
+ 472713 words of memory out of 5000000
+ 18414 multiletter control sequences out of 15000+600000
  33415 words of font info for 63 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,15n,46p,10384b,8374s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1218,7 +1218,7 @@ exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1358232 bytes).
+Output written on main.pdf (12 pages, 1358143 bytes).
 PDF statistics:
  485 PDF objects out of 1000 (max. 8388607)
  304 compressed objects within 4 object streams
